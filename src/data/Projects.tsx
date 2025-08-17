@@ -13,6 +13,17 @@ export const projectsData: ProjectCardProps[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL"],
     type: "Serious Projects",
   },
+    {
+    title: "Cognitive Games",
+    href: "https://games.nishul.dev/",
+    github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
+    description:
+      "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
+    status: "running",
+    image: "/Projects/games.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    type: "Serious Projects",
+  },
   {
     title: "PostaVid",
     href: "https://playavid.vercel.app/",
@@ -43,17 +54,6 @@ export const projectsData: ProjectCardProps[] = [
     type: "Fun Projects",
   },
   {
-    title: "Cognitive Games",
-    href: "https://games.nishul.dev/",
-    github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
-    description:
-      "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
-    status: "running",
-    image: "/Projects/games.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    type: "Serious Projects",
-  },
-  {
     title: "DropIthere",
     href: "https://dropithere.nishul.dev/",
     github: "https://github.com/NishulDhakar/dropithere",
@@ -79,7 +79,7 @@ export const projectsData: ProjectCardProps[] = [
       "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
     status: "abandoned",
     image: "/Projects/CourseSelling.jpeg",
-    technologies: ["Node.js", "Express", "MongoDB"],
+    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
     type: "Fun Projects",
   },
   {
