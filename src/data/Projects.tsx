@@ -4,7 +4,7 @@ export const projectsData: ProjectCardProps[] = [
 
   {
     title: "PlacementReady",
-    href: "https://Placify.nishul.dev/",
+    href: "https://github.com/NishulDhakar/Placify",
     github: "https://github.com/NishulDhakar/Placify",
     description:
       "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
