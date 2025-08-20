@@ -9,7 +9,7 @@ export default function ExperienceSection() {
         </Highlighter>
       </div>
       <ExperienceCard
-        role="Software Engineer"
+        role="Software Developer"
         company="Averoft"
         type="Internship"
         duration="Aug 2025 – Present · 1 mo"
