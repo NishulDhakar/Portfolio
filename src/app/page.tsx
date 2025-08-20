@@ -13,6 +13,7 @@ import GitHubStars from "@/components/sections/landingPage/GithubStar";
 import Reachout from "@/components/sections/landingPage/Reachout";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
+import Experience from "@/components/sections/Experience/Experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
 
 export default function HomePage() {
@@ -23,13 +24,16 @@ export default function HomePage() {
           <Reveal>
             <About />
           </Reveal>
+          
+    
+
 
 
          <Reveal>          <div className="mt-12 hidden justify-center md:flex">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-600" />
           </div></Reveal>
 
-
+                        <Reveal>           <Experience />  </Reveal>
           <Reveal>
             {" "}
             <TechSkills />
