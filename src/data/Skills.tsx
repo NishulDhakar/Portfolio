@@ -24,7 +24,7 @@ export const techSkills: Skill[] = [
 { name: "TypeScript", icon: BiLogoTypescript, color: "text-blue-600", variant: "secondary" },
 { name: "React", icon: FaReact, color: "text-cyan-500", variant: "outline" },
 { name: "Next.js", icon: RiNextjsFill, color: "text-gray-900 dark:text-white", variant: "outline" },
-{ name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-cyan-600", variant: "outline" },
+{ name: "Tailwind", icon: RiTailwindCssFill, color: "text-cyan-600", variant: "outline" },
 { name: "Framer Motion", icon: TbBrandFramerMotion, color: "text-purple-600", variant: "outline" },
 { name: "Redux", icon: SiRedux, color: "text-purple-700", variant: "outline" },
 

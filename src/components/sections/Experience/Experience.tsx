@@ -1,12 +1,12 @@
-import { Highlighter } from "@/components/magicui/highlighter";
+
 import ExperienceCard from "./ExperienceCard";
 export default function ExperienceSection() {
   return (
     <section className="mx-auto max-w-4xl px-6 mt-12 lg:px-6">
       <div className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-        <Highlighter action="underline" color="#FF9800">
+
           Experience.
-        </Highlighter>
+ 
       </div>
       <ExperienceCard
         role="Software Developer"

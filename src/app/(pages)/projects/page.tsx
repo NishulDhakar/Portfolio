@@ -5,7 +5,7 @@ import Container from "@/components/common/Container";
 import ProjectCard from "@/components/sections/Projects/ProjectCard";
 import { projectsData } from "@/data/Projects";
 import { Button } from "@/components/ui/button";
-import { Highlighter } from "@/components/magicui/highlighter";
+
 
 interface ProjectsPageProps {
   containerClassName?: string;
@@ -34,9 +34,9 @@ export default function ProjectsPage({
   return (
     <Container className={containerClassName}>
       <h1 className={titleClassName}>
-          <Highlighter action="underline" color="#FF9800">
+
     My Projects
-  </Highlighter>
+
   </h1>
 
       {showFilter && (

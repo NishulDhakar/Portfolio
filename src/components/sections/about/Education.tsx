@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Container from '@/components/common/Container'
-import { Highlighter } from '@/components/magicui/highlighter'
+
 
 const educationData = [
   {
@@ -21,9 +21,9 @@ const educationData = [
 const Education = () => {
   return (
     <Container className="mb-20">
-      <h2 className="text-2xl font-bold mb-8"> <Highlighter action="underline" color="#FF9800">
+      <h2 className="text-2xl font-bold mb-8"> 
                                       🎓 Education
-                                      </Highlighter></h2>
+                                      </h2>
       <div className="space-y-6">
         {educationData.map((edu, index) => (
           <div

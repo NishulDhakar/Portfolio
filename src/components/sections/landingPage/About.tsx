@@ -14,9 +14,9 @@ export default function About() {
         <Name />
         <div className="grid gap-14 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
-            <div className="text-primary text-2xl font-semibold">          <Highlighter action="underline" color="#FF9800">
+            <div className="text-primary text-2xl font-semibold">        
                 About.
-              </Highlighter></div>
+              </div>
             <div className="text-secondary space-y-4 leading-relaxed">
               <p>{about.description}</p>
               <Link
