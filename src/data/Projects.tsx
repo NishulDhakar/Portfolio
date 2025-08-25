@@ -2,17 +2,17 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
 
-  {
-    title: "PlacementReady",
-    href: "https://github.com/NishulDhakar/Placify",
-    github: "https://github.com/NishulDhakar/Placify",
-    description:
-      "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
-    status: "building",
-    image: "/Projects/job1.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL"],
-    type: "Serious Projects",
-  },
+  // {
+  //   title: "PlacementReady",
+  //   href: "https://github.com/NishulDhakar/Placify",
+  //   github: "https://github.com/NishulDhakar/Placify",
+  //   description:
+  //     "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
+  //   status: "building",
+  //   image: "/Projects/job1.jpeg",
+  //   technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL"],
+  //   type: "Serious Projects",
+  // },
     {
     title: "Cognitive Games",
     href: "https://games.nishul.dev/",
@@ -79,7 +79,7 @@ export const projectsData: ProjectCardProps[] = [
       "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
     status: "abandoned",
     image: "/Projects/CourseSelling.jpeg",
-    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
+    technologies: ["Node.js", "MongoDB", "REST API"],
     type: "Fun Projects",
   },
   {
