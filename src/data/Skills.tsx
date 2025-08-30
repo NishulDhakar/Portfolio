@@ -2,7 +2,7 @@ import { FaBootstrap, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPro
 import { PiFileCssFill } from "react-icons/pi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import {  SiEslint, SiExpress,  SiGithubactions,  SiKubernetes, SiMongodb, SiMysql,  SiPostgresql,  SiPrettier,  SiRedux, SiSocketdotio } from "react-icons/si";
+import {  SiExpress,  SiGithubactions,  SiKubernetes, SiMongodb, SiMysql,  SiPostgresql,  SiRedux, SiSocketdotio } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaDocker } from "react-icons/fa";
 
