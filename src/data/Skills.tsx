@@ -2,7 +2,7 @@ import { FaBootstrap, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPro
 import { PiFileCssFill } from "react-icons/pi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import {  SiEslint, SiExpress,  SiGithubactions,  SiKubernetes, SiMongodb, SiMysql,  SiPrettier,  SiRedux, SiSocketdotio } from "react-icons/si";
+import {  SiEslint, SiExpress,  SiGithubactions,  SiKubernetes, SiMongodb, SiMysql,  SiPostgresql,  SiPrettier,  SiRedux, SiSocketdotio } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaDocker } from "react-icons/fa";
 
@@ -31,12 +31,14 @@ export const techSkills: Skill[] = [
 // Backend
 { name: "Node.js", icon: FaNodeJs, color: "text-green-600", variant: "outline" },
 { name: "Express", icon: SiExpress, color: "text-gray-600", variant: "outline" },
+{name:"jQuery", icon: FaJs, color: "text-yellow-500", variant: "outline" },
 { name: "REST API", icon: FaProjectDiagram, color: "text-green-600", variant: "outline" },
 // { name: "GraphQL", icon: SiGraphql, color: "text-pink-600", variant: "outline" },
 { name: "WebSockets", icon: SiSocketdotio, color: "text-gray-800", variant: "outline" },
 
 // Databases
 { name: "MongoDB", icon: SiMongodb, color: "text-green-500", variant: "outline" },
+{name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-700", variant: "outline" },
 { name: "MySQL", icon: SiMysql, color: "text-blue-700", variant: "outline" },
 // { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-700", variant: "outline" },
 // { name: "Redis", icon: SiRedis, color: "text-red-600", variant: "outline" },
@@ -51,8 +53,8 @@ export const techSkills: Skill[] = [
 // Testing & Quality
 // { name: "Jest", icon: SiJest, color: "text-red-500", variant: "outline" },
 // { name: "Cypress", icon: SiCypress, color: "text-green-700", variant: "outline" },
-{ name: "ESLint", icon: SiEslint, color: "text-indigo-600", variant: "outline" },
-{ name: "Prettier", icon: SiPrettier, color: "text-pink-500", variant: "outline" },
+// { name: "ESLint", icon: SiEslint, color: "text-indigo-600", variant: "outline" },
+// { name: "Prettier", icon: SiPrettier, color: "text-pink-500", variant: "outline" },
 
 // Tools & Version Control
 { name: "Git", icon: FaGitAlt, color: "text-red-600", variant: "outline" },

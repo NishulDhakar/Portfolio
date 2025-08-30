@@ -32,9 +32,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Container>
-      <Reveal>  <Info /></Reveal>
-          <Reveal><Education /></Reveal>
-              <Reveal>  <CertificatesSection /></Reveal>
+      <Reveal>
+        {" "}
+        <Info />
+      </Reveal>
+      <Reveal>
+        <Education />
+      </Reveal>
+      <Reveal>
+        {" "}
+        <CertificatesSection />
+      </Reveal>
       {/* <LeetCodeDSAVisuals /> */}
     </Container>
   );

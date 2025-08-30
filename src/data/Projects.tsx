@@ -2,17 +2,17 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
 
-  // {
-  //   title: "PlacementReady",
-  //   href: "https://github.com/NishulDhakar/Placify",
-  //   github: "https://github.com/NishulDhakar/Placify",
-  //   description:
-  //     "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
-  //   status: "building",
-  //   image: "/Projects/job1.jpeg",
-  //   technologies: ["Next.js", "TypeScript", "Tailwind", "MySQL"],
-  //   type: "Serious Projects",
-  // },
+  {
+    title: "PlacementReady",
+    href: "https://placementprep.nishul.dev",
+    github: "https://placementprep.nishul.dev",
+    description:
+      "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
+    status: "building",
+    image: "/Projects/job1.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+    type: "Serious Projects",
+  },
     {
     title: "Cognitive Games",
     href: "https://games.nishul.dev/",
@@ -21,7 +21,7 @@ export const projectsData: ProjectCardProps[] = [
       "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
     status: "running",
     image: "/Projects/games.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL", ],
     type: "Serious Projects",
   },
   {
