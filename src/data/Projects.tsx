@@ -5,7 +5,7 @@ export const projectsData: ProjectCardProps[] = [
   {
     title: "PlacementReady",
     href: "https://placementprep.nishul.dev",
-    github: "https://placementprep.nishul.dev",
+    github: "https://github.com/NishulDhakar/PlacementPrep",
     description:
       "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
     status: "building",
@@ -79,7 +79,7 @@ export const projectsData: ProjectCardProps[] = [
       "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
     status: "abandoned",
     image: "/Projects/CourseSelling.jpeg",
-    technologies: ["Node.js", "MongoDB", "REST API"],
+    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
     type: "Fun Projects",
   },
   {
