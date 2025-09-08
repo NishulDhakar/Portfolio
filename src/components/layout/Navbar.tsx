@@ -6,7 +6,6 @@ import { HiMenu, HiX } from "react-icons/hi";
 import DesktopNav from "./DesktopNav";
 
 import MobileNav from "./MobileNav";
-import ThemeSwitch from "../Theam/ThemeSwitch";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,16 +40,13 @@ export default function Navbar() {
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className={`rounded-4xl hidden sm:flex mx-auto px-4  sm:px-6 py-2 max-w-3xl items-center justify-between ${
-          scrolled
-            ? "bg-white/90 dark:bg-neutral-800/80 backdrop-blur-sm"
-            : "bg-transparent"
-        }`}
+        className={`rounded-4xl hidden sm:flex mx-auto px-4  sm:px-6 py-2 max-w-3xl items-center justify-between`}
       >
+        
+        <div className="pr-8">
         <DesktopNav />
-        <div className="hidden sm:block">
-        <ThemeSwitch variant="polygon" start="center" />
         </div>
+
       </motion.nav>
 
       <div className="sm:hidden relative w-full">

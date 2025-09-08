@@ -1,4 +1,3 @@
-// animations.ts
 export type AnimationVariant = 'circle' | 'circle-blur' | 'polygon' | 'gif';
 export type AnimationStart =
   | 'top-left'
