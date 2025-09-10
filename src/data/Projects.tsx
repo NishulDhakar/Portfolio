@@ -12,10 +12,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/planyourmeal.png", 
   technologies: ["Flutter", "Dart", "Firebase"],
   type: "Mobile",
-  viewDetails: {
-    type: "Details",
-    href: "/planyourmeal",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/planyourmeal",
+  // },
 },
 
 
@@ -29,10 +29,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/job1.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/placementready",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/placementready",
+  // },
 },
 {
   title: "Cognitive Games",
@@ -44,10 +44,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/games.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/cognitivegames",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/cognitivegames",
+  // },
 },
 {
   title: "PostaVid",
@@ -59,10 +59,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/share.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/postavid",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/postavid",
+  // },
 },
 {
   title: "Quick Pay",
@@ -74,10 +74,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/pay.jpeg",
   technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "REST API"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/quickpay",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/quickpay",
+  // },
 },
 {
   title: "DropIthere",
@@ -89,10 +89,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/drop.png",
   technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "REST API"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/dropithere",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/dropithere",
+  // },
 },
 {
   title: "Course Selling Web",
@@ -104,10 +104,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/CourseSelling.jpeg",
   technologies: ["Node.js", "Express", "MongoDB", "REST API"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/courseselling",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/courseselling",
+  // },
 },
 {
   title: "DrumKit",
@@ -119,10 +119,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/drum.jpeg",
   technologies: ["HTML", "CSS", "JavaScript"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/drumkit",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/drumkit",
+  // },
 },
 {
   title: "Tindog",
@@ -134,10 +134,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/dog.jpeg",
   technologies: ["HTML", "CSS", "Bootstrap"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/tindog",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/tindog",
+  // },
 },
 
 

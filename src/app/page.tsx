@@ -38,6 +38,9 @@ export default function HomePage() {
           <Github />
 
           <Reveal>
+                    <h2 className="text-2xl ml-10 font-bold"> 
+                          Projects.
+                        </h2>
             <ProjectsPage
               showFilter={false}
               limit={2}

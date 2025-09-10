@@ -3,16 +3,15 @@ import type { Experience as ExperienceType } from "@/types";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site.config";
 import Container from "@/components/common/Container";
+import { Separator } from "@/components/ui/separator";
 
 export async function generateMetadata(): Promise<Metadata> {
   const description = `Hey, I'm ${
     siteConfig.creator.name
   }. I've worked with a variety of companies and have experience in different roles. I've also made a few projects on my own. Here's a list of my work experience.
     ${experiencesConfig
-      .map((exp) => {
-        return `${exp.title} at ${exp.company.name}.`;
-      })
-      .join("\n")}
+      .map((exp) => `${exp.title} at ${exp.company.name}`)
+      .join(", ")}
     `;
   const keywords = [
     ...siteConfig.keywords,
@@ -59,23 +58,48 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ExperienceSection() {
   return (
-    <div className=" min-h-screen mt-20 px-4 py-10">
-      {experiencesConfig.map((exp, i) => {
-        return <Experience key={i} experience={exp} />;
-      })}
+    <div className="min-h-screen mt-20 px-4 py-10">
+      <Container>
+        <h1 className="text-4xl font-bold tracking-tight lg:text-5xl text-center">
+          Experience
+        </h1>
+        {/* <p className="text-muted-foreground text-center mt-2 max-w-2xl mx-auto">
+          A snapshot of my professional journey, roles, and contributions.
+        </p> */}
+        <Separator className="my-8" />
+
+        <div className="space-y-10">
+          {experiencesConfig.map((exp, i) => (
+            <Experience key={i} experience={exp} />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 }
 
 const Experience = ({ experience }: { experience: ExperienceType }) => {
   return (
-    <Container>
-      <div className="flex justify-between flex-wrap dark:text-white">
-        <div className="font-semibold flex flex-wrap items-center gap-1 md:gap-2">
+    <div className="relative border-l-2 border-muted pl-6">
+      {/* Dot marker for timeline */}
+      <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary"></div>
+
+      <div className="space-y-2">
+        {/* Role & Company */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="text-lg font-semibold tracking-tight">
+            {experience.title}
+          </h2>
+          <p className="text-xs text-muted-foreground">
+            {experience.start} – {experience.end}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 text-sm">
           <a
             href={experience.company.url}
             target="_blank"
-            className="hover:underline font-heading text-lg"
+            className="hover:underline font-medium"
           >
             {experience.company.name}
           </a>
@@ -86,16 +110,14 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
             {experience.location.name}
           </span>
         </div>
-        <p className="text-muted-foreground text-xs">
-          {experience.start} - {experience.end}
-        </p>
+
+        {/* Description */}
+        <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+          {experience.description.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
       </div>
-      <p className="tracking-tight">{experience.title}</p>
-      <ul className="list-disc pl-5 text-sm text-muted-foreground">
-        {experience.description.map((exp, i) => {
-          return <li key={i}>{exp}</li>;
-        })}
-      </ul>
-    </Container>
+    </div>
   );
 };

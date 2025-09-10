@@ -20,4 +20,5 @@ export const experiencesConfig: Experience[] = [
       "Tech: Next.js, React, TypeScript, Node.js, Express.js, MongoDB, Tailwind CSS",
     ],
   },
+  
 ];

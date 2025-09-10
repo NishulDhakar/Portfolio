@@ -66,7 +66,7 @@ export const techSkills: Skill[] = [
 // Languages
 { name: "Java", icon: FaJava, color: "text-orange-600", variant: "secondary" },
 {name:"flutter" , icon: FaFlutter, color: "text-blue-600", variant: "outline" },
-{name:"dart" , icon: FaDartLang, color: "text-blue-600", variant: "outline" },    
+{name:"dart" , icon: FaDartLang, color: "text-blue-600", variant: "secondary"},    
 {name:"firebase" , icon: IoLogoFirebase , color: "text-yellow-500", variant: "outline" },
 
 

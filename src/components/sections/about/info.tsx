@@ -1,26 +1,31 @@
 import React from 'react'
-import Container from '@/components/common/Container'
 import { about } from '@/data/About'
-import {
-  MapPin,
-  Code2,
-  Briefcase,
-  Brain,
-  BookOpen
-} from 'lucide-react'
-import { Highlighter } from '@/components/magicui/highlighter'
+// import {
+//   MapPin,
+//   Code2,
+//   Briefcase,
+//   Brain,
+//   BookOpen
+// } from 'lucide-react'
+import { Separator } from '@/components/ui/separator'
 
 const Info = () => {
   return (
-    <Container className="py-2 md:py-12 mt-16">
-      <div className="space-y-6 text-neutral-800 dark:text-neutral-300">
-        <h2 className="text-3xl font-bold"> <Highlighter action="underline" color="#FF9800">
-                                🧑‍💻 About Me.
-                                </Highlighter></h2>
+    <section className=" flex items-center justify-center px-4 sm:px-6 py-16 mt-14">
+      <div className="w-full max-w-3xl space-y-10 text-center">
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+            About
+          </h1>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          {about.description}
+          </p>
+        </div>
 
-        <p className="text-lg leading-relaxed">{about.description}</p>
+        <Separator />
 
-        <div className="hidden md:block space-y-4">
+{/*   
+        <div className="hidden md:block space-y-4 text-muted-foreground">
           <div className="flex items-start gap-3 flex-wrap">
             <MapPin className="w-5 h-5 mt-0.5 text-yellow-500" />
             <span><strong>Lives in:</strong> Bhopal, India</span>
@@ -51,9 +56,9 @@ const Info = () => {
               Love reading books on psychology, behavioral science, and human nature
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
-    </Container>
+    </section>
   )
 }
 

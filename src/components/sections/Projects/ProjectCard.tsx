@@ -75,7 +75,7 @@ export default function ProjectCard({
           )}
 
           <div className="flex p-4 gap-2 flex-1 flex-col justify-between md:mt-">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between font-bold">
               {/* <SparklesText className="text-lg font-semibold"> */}
                 {title}
               {/* </SparklesText> */}
@@ -84,8 +84,7 @@ export default function ProjectCard({
                   className={cn(
                     "rounded-md px-2 py-0.5 text-xs font-medium text-white",
                     statusColors[status],
-                  )}
-                >
+                  )}>
                   {status.charAt(0).toUpperCase() + status.slice(1)}
                 </span>
               )}

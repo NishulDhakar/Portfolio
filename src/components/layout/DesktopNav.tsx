@@ -27,7 +27,7 @@ export default function DesktopNav() {
               onMouseEnter={() => setHover(idx)}
               onMouseLeave={() => setHover(null)}
               className={cn(
-                "relative px-4 py-2 text-md font-medium transition-colors cursor-pointer min-w-30 text-center",
+                "relative px-4 py-2 text-md font-medium transition-colors cursor-pointer min-w-32 text-center",
                 idx === 0 && "rounded-l-lg",
                 idx === navbarConfig.navItems.length - 1 && "rounded-r-lg",
                 active
