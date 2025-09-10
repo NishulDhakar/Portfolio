@@ -29,7 +29,7 @@ export default function ProjectsPage({
     : projectsData
   ).filter((project) => filter === "All" || project.type === filter);
 
-  const types = ["All", "Serious Projects",  "Fun Projects"];
+  const types = ["All", "Web", "Mobile"];
 
   return (
     <Container className={containerClassName}>

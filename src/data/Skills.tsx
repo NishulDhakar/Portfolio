@@ -5,6 +5,9 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 import {  SiExpress,  SiGithubactions,  SiKubernetes, SiMongodb, SiMysql,  SiPostgresql,  SiRedux, SiSocketdotio } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaDocker } from "react-icons/fa";
+import { FaDartLang } from "react-icons/fa6";
+import { FaFlutter } from "react-icons/fa6";
+import { IoLogoFirebase } from "react-icons/io5";
 
 type ButtonVariant = "outline" | "link" | "default" | "destructive" | "secondary" | "ghost";
 
@@ -62,6 +65,9 @@ export const techSkills: Skill[] = [
 
 // Languages
 { name: "Java", icon: FaJava, color: "text-orange-600", variant: "secondary" },
+{name:"flutter" , icon: FaFlutter, color: "text-blue-600", variant: "outline" },
+{name:"dart" , icon: FaDartLang, color: "text-blue-600", variant: "outline" },    
+{name:"firebase" , icon: IoLogoFirebase , color: "text-yellow-500", variant: "outline" },
 
 
 ];

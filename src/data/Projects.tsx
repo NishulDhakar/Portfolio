@@ -2,108 +2,144 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
 
-  {
-    title: "PlacementReady",
-    href: "https://placementprep.nishul.dev",
-    github: "https://github.com/NishulDhakar/PlacementPrep",
-    description:
-      "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
-    status: "building",
-    image: "/Projects/job1.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    type: "Serious Projects",
+{
+  title: "PlanYourMeal",
+  href: "https://github.com/NishulDhakar/PlanYourMeal",
+  github: "https://github.com/NishulDhakar/PlanYourMeal",
+  description:
+    "A cross-platform meal planning app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
+  status: "building",
+  image: "/Projects/planyourmeal.png", 
+  technologies: ["Flutter", "Dart", "Firebase"],
+  type: "Mobile",
+  viewDetails: {
+    type: "Details",
+    href: "/planyourmeal",
   },
-    {
-    title: "Cognitive Games",
-    href: "https://games.nishul.dev/",
-    github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
-    description:
-      "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
-    status: "running",
-    image: "/Projects/games.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL", ],
-    type: "Serious Projects",
+},
+
+
+{
+  title: "PlacementReady",
+  href: "https://placementprep.nishul.dev",
+  github: "https://github.com/NishulDhakar/PlacementPrep",
+  description:
+    "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
+  status: "building",
+  image: "/Projects/job1.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/placementready",
   },
-  {
-    title: "PostaVid",
-    href: "https://playavid.vercel.app/",
-    github: "https://github.com/NishulDhakar/playavid",
-    description:
-      "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
-    status: "running",
-    image: "/Projects/share.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    type: "Fun Projects",
+},
+{
+  title: "Cognitive Games",
+  href: "https://games.nishul.dev/",
+  github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
+  description:
+    "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
+  status: "running",
+  image: "/Projects/games.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/cognitivegames",
   },
-  {
-    title: "Quick Pay",
-    href: "https://pay.nishul.dev/",
-    github: "https://github.com/NishulDhakar/QuickPay",
-    description:
-      "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
-    status: "running",
-    image: "/Projects/pay.jpeg",
-    technologies: [
-      "React",
-      "Tailwind",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "REST API",
-    ],
-    type: "Fun Projects",
+},
+{
+  title: "PostaVid",
+  href: "https://playavid.vercel.app/",
+  github: "https://github.com/NishulDhakar/playavid",
+  description:
+    "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
+  status: "running",
+  image: "/Projects/share.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/postavid",
   },
-  {
-    title: "DropIthere",
-    href: "https://dropithere.nishul.dev/",
-    github: "https://github.com/NishulDhakar/dropithere",
-    description:
-      "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
-    status: "running",
-    image: "/Projects/drop.png",
-    technologies: [
-      "React",
-      "Tailwind",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "REST API",
-    ],
-    type: "Serious Projects",
+},
+{
+  title: "Quick Pay",
+  href: "https://pay.nishul.dev/",
+  github: "https://github.com/NishulDhakar/QuickPay",
+  description:
+    "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
+  status: "running",
+  image: "/Projects/pay.jpeg",
+  technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "REST API"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/quickpay",
   },
-  {
-    title: "Course Selling Web",
-    href: "https://github.com/NishulDhakar/Course-selling-backend",
-    github: "https://github.com/NishulDhakar/Course-selling-backend",
-    description:
-      "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
-    status: "abandoned",
-    image: "/Projects/CourseSelling.jpeg",
-    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
-    type: "Fun Projects",
+},
+{
+  title: "DropIthere",
+  href: "https://dropithere.nishul.dev/",
+  github: "https://github.com/NishulDhakar/dropithere",
+  description:
+    "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
+  status: "running",
+  image: "/Projects/drop.png",
+  technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "REST API"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/dropithere",
   },
-  {
-    title: "DrumKit",
-    href: "https://drum-kit-eight-eta.vercel.app/",
-    github:"https://github.com/NishulDhakar/DrumKit",
-    description:
-      "An interactive browser drum kit that plays sounds via keyboard input, ideal for fun and learning JavaScript event handling concepts.",
-    status: "running",
-    image: "/Projects/drum.jpeg",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    type: "Fun Projects",
+},
+{
+  title: "Course Selling Web",
+  href: "https://github.com/NishulDhakar/Course-selling-backend",
+  github: "https://github.com/NishulDhakar/Course-selling-backend",
+  description:
+    "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
+  status: "abandoned",
+  image: "/Projects/CourseSelling.jpeg",
+  technologies: ["Node.js", "Express", "MongoDB", "REST API"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/courseselling",
   },
-  {
-    title: "Tindog",
-    href: "https://tindog-six-ashy.vercel.app/",
-    github:"https://github.com/NishulDhakar/Tindog",
-    description:
-      "A clean, responsive frontend landing page for a fictional dog dating app, demonstrating Bootstrap design and layout skills effectively.",
-    status: "running",
-    image: "/Projects/dog.jpeg",
-    technologies: ["HTML", "CSS", "Bootstrap"],
-    type: "Fun Projects",
+},
+{
+  title: "DrumKit",
+  href: "https://drum-kit-eight-eta.vercel.app/",
+  github:"https://github.com/NishulDhakar/DrumKit",
+  description:
+    "An interactive browser drum kit that plays sounds via keyboard input, ideal for fun and learning JavaScript event handling concepts.",
+  status: "running",
+  image: "/Projects/drum.jpeg",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/drumkit",
   },
+},
+{
+  title: "Tindog",
+  href: "https://tindog-six-ashy.vercel.app/",
+  github:"https://github.com/NishulDhakar/Tindog",
+  description:
+    "A clean, responsive frontend landing page for a fictional dog dating app, demonstrating Bootstrap design and layout skills effectively.",
+  status: "running",
+  image: "/Projects/dog.jpeg",
+  technologies: ["HTML", "CSS", "Bootstrap"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/tindog",
+  },
+},
+
 
   // {
   //   title: "SmartEssay",

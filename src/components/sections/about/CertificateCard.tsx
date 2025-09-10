@@ -38,7 +38,7 @@ export default function CertificateCard({
     <Card
       variant="plus"
       className={cn(
-        "relative w-full max-w-sm rounded-xl shadow-sm hover:shadow-md transition-all border border-muted bg-background",
+        "relative w-full max-w-sm p-4 rounded-xl shadow-sm hover:shadow-md transition-all border border-muted bg-background",
         className
       )}
     >
@@ -51,7 +51,7 @@ export default function CertificateCard({
       />
 
       <div
-        className="rounded-lg overflow-hidden mb-4 cursor-pointer relative group"
+        className="rounded-lgoverflow-hidden mb-4 cursor-pointer relative group"
         onClick={openModal}>
         {!imageError ? (
           <img
