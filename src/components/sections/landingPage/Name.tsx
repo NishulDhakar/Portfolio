@@ -26,7 +26,7 @@ export default function Name() {
             rectangleClassName="bg-neutral-200 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600"
             pointerClassName="text-yellow-500"
           >
-            <span className="relative z-10">Full-Stack Developer</span>
+            <span className="relative z-10">Software Developer</span>
           </PointerHighlight>
 
           <p className="text-secondary mt-2 text-sm">Bhopal, India</p>
