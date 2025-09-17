@@ -1,5 +1,5 @@
 export const about = {
   name: "Nishul Dhakar",
   description:
-    "Hey I am Nishul, a full-stack developer currently in my final year of B.Tech. I build modern web applications with Nextjs React, TypeScript, Tailwind, Node.js, and MongoDB. Besides development, I am also skilled in Data Structures & Algorithms and practice daily LeetCode problems with Java",
+    "I’m Nishul, a final-year B.Tech Software Developer passionate about building modern web applications. My expertise includes Next.js, React, TypeScript, Tailwind CSS, along with backend development using Java, Spring Boot, and Express. I also have strong knowledge of databases (SQL, MongoDB) and practice Data Structures & Algorithms regularly on LeetCode with Java.",
 };

@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning={true}>
-        <body className="font-hanken-grotesk flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black">
+        <body suppressHydrationWarning className="font-hanken-grotesk flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black">
           <Providers>
             <div className="absolute inset-0 -z-10">
               {/* <ParticlesDemo /> */}
