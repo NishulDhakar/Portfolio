@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { techSkills } from "@/data/Skills";
 
 export default function TechSkills() {
@@ -15,20 +14,25 @@ export default function TechSkills() {
       </div>
 
       <div className="space-y-8">
-        {Object.entries(grouped).map(([category, skills], i, arr) => (
+        {Object.entries(grouped).map(([category, skills]) => (
           <div key={category}>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, index) => (
-                <Button
-                  key={index}
-                  variant={skill.variant || "default"}
-                  className="flex items-center gap-2">
-                  <skill.icon className={`w-4 h-4 ${skill.color}`} />
-                  {skill.name}
-                </Button>
+            <div className="flex flex-wrap gap-4">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center justify-center space-y-2"
+                >
+                  {/* Icon */}
+                  <skill.icon className={`${skill.size ?? "w-8 h-8"} ${skill.color}`} />
+
+                  {/* Label
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    {skill.name}
+                  </span> */}
+                </div>
               ))}
             </div>
-            {i < arr.length - 1 }
+            {/* {i < arr.length - 1 && <hr className="my-6 border-gray-300 dark:border-gray-700" />} */}
           </div>
         ))}
       </div>

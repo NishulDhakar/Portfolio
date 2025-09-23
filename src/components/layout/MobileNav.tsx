@@ -3,7 +3,7 @@
 
 import { Link } from "next-view-transitions";
 import { motion } from "framer-motion";
-import ThemeSwitch from "../Theam/ThemeSwitch";
+import { ThemeToggleButton } from "../Theam/ThemeSwitch";
 import { navbarConfig } from "@/data/Navbar";
 
 
@@ -61,7 +61,7 @@ export default function MobileNav({
         }}
         className="flex flex-col gap-6 items-center justify-center"
       >
-        <ThemeSwitch />
+        <ThemeToggleButton variant="circle" start="top-right" blur />
         {navbarConfig.navItems.map((item, idx) => (
           <motion.li
             key={idx}
