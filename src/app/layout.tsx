@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
-import Providers from "@/components/Theam/Providers";
+
 // import { ParticlesDemo } from "@/components/common/Particlesbg";
 import { createMetadata } from "@/lib/createMetadata";
 import Footer from "@/components/layout/Footer";
