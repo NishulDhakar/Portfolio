@@ -6,7 +6,8 @@ import { LayoutGroup, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { navbarConfig } from "@/data/Navbar";
-import ThemeSwitch from "../Theam/ThemeSwitch";
+import { ThemeToggleButton } from "../Theam/ThemeSwitch";
+
 
 export default function DesktopNav() {
   const [hover, setHover] = useState<number | null>(null);
@@ -49,7 +50,7 @@ export default function DesktopNav() {
         })}
       </LayoutGroup>
       <div className="pr-6">
-          <ThemeSwitch variant="circle" start="top-right" />
+<ThemeToggleButton variant="circle" start="top-right" blur />
 
       </div>
     </div>
