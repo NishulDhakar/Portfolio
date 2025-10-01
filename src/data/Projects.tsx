@@ -3,38 +3,6 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 export const projectsData: ProjectCardProps[] = [
 
 {
-  title: "PlanYourMeal",
-  href: "https://github.com/NishulDhakar/PlanYourMeal",
-  github: "https://github.com/NishulDhakar/PlanYourMeal",
-  description:
-    "A cross-platform meal planning app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
-  status: "building",
-  image: "/Projects/planyourmeal.png", 
-  technologies: ["Flutter", "Dart", "Firebase"],
-  type: "Mobile",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/planyourmeal",
-  // },
-},
-
-
-{
-  title: "PlacementReady",
-  href: "https://placementprep.nishul.dev",
-  github: "https://github.com/NishulDhakar/PlacementPrep",
-  description:
-    "A placement preparation platform where students can practice aptitude, coding, and interview skills through tests and mock interviews.",
-  status: "building",
-  image: "/Projects/job1.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/placementready",
-  // },
-},
-{
   title: "Cognitive Games",
   href: "https://games.nishul.dev/",
   github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
@@ -44,10 +12,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/games.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
   type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/cognitivegames",
-  // },
+  viewDetails: {
+    type: "Details",
+    href: "/cognitivegames",
+  },
 },
 {
   title: "PostaVid",
@@ -62,6 +30,21 @@ export const projectsData: ProjectCardProps[] = [
   // viewDetails: {
   //   type: "Details",
   //   href: "/postavid",
+  // },
+},
+{
+  title: "PlanYourMeal",
+  href: "https://github.com/NishulDhakar/PlanYourMeal",
+  github: "https://github.com/NishulDhakar/PlanYourMeal",
+  description:
+    "A cross-platform meal planning app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
+  status: "running",
+  image: "/Projects/planyourmeal.png", 
+  technologies: ["Flutter", "Dart", "Firebase"],
+  type: "Mobile",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/planyourmeal",
   // },
 },
 {
@@ -95,11 +78,26 @@ export const projectsData: ProjectCardProps[] = [
   // },
 },
 {
+  title: "GetEvent",
+  href: "https://get-event.vercel.app/",
+  github: "https://github.com/NishulDhakar/GetEvent",
+  description:
+    "A platform to discover and manage events easily. Users can explore upcoming events, view details, and stay updated, making event discovery more seamless and engaging.",
+  status: "abandoned",
+  image: "/Projects/event.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind" , "MongoDB" ],
+  type: "Web",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/getevent",
+  // },
+},
+{
   title: "Course Selling Web",
   href: "https://github.com/NishulDhakar/Course-selling-backend",
   github: "https://github.com/NishulDhakar/Course-selling-backend",
   description:
-    "A backend for a course selling platform where users explore and buy courses, while admins create, manage, and update course content easily.",
+    "A backend for a course selling platform with two roles admin and user with different permissions. where users explore and buy courses, while admins create, manage, update and delete course content easily. ",
   status: "abandoned",
   image: "/Projects/CourseSelling.jpeg",
   technologies: ["Node.js", "Express", "MongoDB", "REST API"],
@@ -109,6 +107,38 @@ export const projectsData: ProjectCardProps[] = [
   //   href: "/courseselling",
   // },
 },
+{
+  title: "Restaurant Website Template",
+  href: "https://restaurant-web-layout.netlify.app",
+  github: "https://github.com/NishulDhakar/Restaurant-website-template",
+  description:
+    "A modern and responsive restaurant website template designed to showcase menu items, special offers, meals, and contact details. Ideal for restaurants and cafes.",
+  status: "running",
+  image: "/Projects/restro.jpeg",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  type: "Web",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/restaurantwebsite",
+  // },
+},
+{
+  title: "Typing Practice Web",
+  href: "https://typing-game-lyart.vercel.app/",
+  github: "https://github.com/NishulDhakar/Typing-Practice-Web",
+  description:
+    "An interactive typing practice platform that helps users improve their typing speed and accuracy through engaging real-time exercises and progress tracking.",
+  status: "running",
+  image: "/Projects/typing.jpeg",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  type: "Web",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/typingpractice",
+  // },
+},
+
+
 {
   title: "DrumKit",
   href: "https://drum-kit-eight-eta.vercel.app/",
