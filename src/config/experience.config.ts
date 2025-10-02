@@ -16,8 +16,6 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Contributing to full-stack development using Next.js, React, Node.js, Express.js, and MongoDB",
       "Working on scalable applications in AI, cloud, and digital transformation projects",
-      "Collaborating with team members to deliver efficient solutions and enhance product features",
-      "Tech: Next.js, React, TypeScript, Node.js, Express.js, MongoDB, Tailwind CSS",
     ],
   },
   

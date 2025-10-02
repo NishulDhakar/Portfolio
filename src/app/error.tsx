@@ -50,9 +50,9 @@ export default function Error({ error, reset }: ErrorProps) {
             </summary>
             <div className="mt-3 p-4 bg-gray-900 rounded-lg border border-gray-800">
               <code className="text-xs text-red-400 break-all">
-                {error.message}
+                {error?.message || 'Unknown error'}
               </code>
-              {error.digest && (
+              {error?.digest && (
                 <p className="text-xs text-gray-500 mt-2">
                   ID: {error.digest}
                 </p>
