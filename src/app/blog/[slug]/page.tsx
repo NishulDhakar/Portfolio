@@ -1,7 +1,7 @@
 import { BlogContent } from '@/components/blog/BlogContent';
 import { BlogList } from '@/components/blog/BlogList';
 import Container from '@/components/common/Container';
-import FontSizeControls from '@/components/common/FontSizeControls';
+// import FontSizeControls from '@/components/common/FontSizeControls';
 
 import ArrowLeft from '@/components/svgs/ArrowLeft';
 import { Button } from '@/components/ui/button';

@@ -2,12 +2,12 @@
 
 import { BlogList } from '@/components/blog/BlogList';
 import Container from '@/components/common/Container';
-import { Badge } from '@/components/ui/badge';
+// import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { useHapticFeedback } from '@/hooks/use-haptic-feedback';
+// import { useHapticFeedback } from '@/hooks/use-haptic-feedback';
 import { BlogPostPreview } from '@/types/blog';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 interface BlogPageClientProps {
@@ -28,11 +28,11 @@ const getBlogPostsByTagClient = (
 
 export function BlogPageClient({
   initialPosts,
-  initialTags,
+
 }: BlogPageClientProps) {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const { triggerHaptic, isMobile } = useHapticFeedback();
+
+
 
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
@@ -51,30 +51,30 @@ export function BlogPageClient({
   }, [searchParams, initialPosts]);
 
   // Handle tag click
-  const handleTagClick = (tag: string) => {
-    if (isMobile()) {
-      triggerHaptic('light');
-    }
+  // const handleTagClick = (tag: string) => {
+  //   if (isMobile()) {
+  //     triggerHaptic('light');
+  //   }
 
-    if (selectedTag === tag) {
-      setSelectedTag(null);
-      setFilteredPosts(initialPosts);
-      router.replace('/blog');
-    } else {
-      setSelectedTag(tag);
-      const filtered = getBlogPostsByTagClient(initialPosts, tag);
-      setFilteredPosts(filtered);
-      router.replace(`/blog?tag=${encodeURIComponent(tag)}`);
-    }
-  };
+  //   if (selectedTag === tag) {
+  //     setSelectedTag(null);
+  //     setFilteredPosts(initialPosts);
+  //     router.replace('/blog');
+  //   } else {
+  //     setSelectedTag(tag);
+  //     const filtered = getBlogPostsByTagClient(initialPosts, tag);
+  //     setFilteredPosts(filtered);
+  //     router.replace(`/blog?tag=${encodeURIComponent(tag)}`);
+  //   }
+  // };
 
-  const getTagPostCount = (tag: string) => {
-    return initialPosts.filter((post) =>
-      post.frontmatter.tags.some(
-        (postTag) => postTag.toLowerCase() === tag.toLowerCase(),
-      ),
-    ).length;
-  };
+  // const getTagPostCount = (tag: string) => {
+  //   return initialPosts.filter((post) =>
+  //     post.frontmatter.tags.some(
+  //       (postTag) => postTag.toLowerCase() === tag.toLowerCase(),
+  //     ),
+  //   ).length;
+  // };
 
   return (
     <Container className="py-16 mt-14">

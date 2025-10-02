@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge';
+// import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { BlogFrontmatter } from '@/types/blog';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -13,7 +13,7 @@ interface BlogContentProps {
 }
 
 export function BlogContent({ frontmatter, content }: BlogContentProps) {
-  const { title, description, image, tags, date } = frontmatter;
+  const { title, description, image, date } = frontmatter;
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',

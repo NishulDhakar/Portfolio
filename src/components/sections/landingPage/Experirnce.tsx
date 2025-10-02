@@ -1,5 +1,4 @@
 import Container from '@/components/common/Container';
-import { Button } from '@/components/ui/button';
 import ExperienceCard from '@/components/ui/experienceCard';
 import { experiencesConfig } from '@/config/experience.config';
 import { type Experience } from '@/types';

@@ -14,7 +14,7 @@ import Reachout from "@/components/sections/landingPage/Reachout";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experirnce";
-import { experience } from "@/data/experience";
+// import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
 
 export default function HomePage() {
