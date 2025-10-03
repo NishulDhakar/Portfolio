@@ -1,6 +1,5 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 
 // import { ParticlesDemo } from "@/components/common/Particlesbg";
@@ -21,7 +20,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body suppressHydrationWarning className="font-hanken-grotesk flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black">
           <ThemeProvider
@@ -46,6 +44,5 @@ export default function RootLayout({
           
         </body>
       </html>
-    </ViewTransitions>
   );
 }

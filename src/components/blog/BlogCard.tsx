@@ -6,7 +6,7 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import { BlogPostPreview } from '@/types/blog';
-import { Link } from 'next-view-transitions';
+import Link from "next/link";
 import Image from 'next/image';
 
 import ArrowRight from '../svgs/ArrowRight';

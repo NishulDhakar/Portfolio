@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Briefcase, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 export default function HireMeButton() {
   // You can add hover effects or additional states if needed
