@@ -36,7 +36,7 @@ export default function QuickInfo() {
         </ul>
       </div>
 
-      <div>
+      {/* <div>
           <Link
                 href= "https://drive.google.com/file/d/1cgHicVE543FVpvgZwYiO4CsiDTxMPIG3/view?usp=sharing"
                 target="_blank"
@@ -54,7 +54,7 @@ export default function QuickInfo() {
         </Button>
               </Link>
 
-      </div>
+      </div> */}
 
       <div className="px-2 md:px-8 flex gap-4">
         {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (

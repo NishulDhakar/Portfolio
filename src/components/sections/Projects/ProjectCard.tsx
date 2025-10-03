@@ -70,6 +70,8 @@ export default function ProjectCard({
           {image && (
             <Image
               src={image}
+              width={400}        
+              height={150}       
               alt="project preview"
               className="mr-4 mb-6 h-36 w-full overflow-hidden rounded-md object-cover md:mb-1"
             />
