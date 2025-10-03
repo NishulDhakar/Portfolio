@@ -11,8 +11,8 @@ interface ProjectsPageProps {
   containerClassName?: string;
   gridClassName?: string;
   titleClassName?: string;
-  limit?: number;       // if passed, show limited projects (e.g. home page)
-  showFilter?: boolean; // toggle filters
+  limit?: number;      
+  showFilter?: boolean; 
 }
 
 export default function ProjectsPage({

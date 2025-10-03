@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/crazxy-ui/card";
 // import { InteractiveHoverButton } from "@/components/ui/magicui/interactive-hover-button";
 import { SparklesText } from "@/components/ui/magicui/sparkles-text";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import Image from "next/image";
 
 interface CertificateCardProps {
   title: string;
@@ -54,7 +55,7 @@ export default function CertificateCard({
         className="rounded-lgoverflow-hidden mb-4 cursor-pointer relative group"
         onClick={openModal}>
         {!imageError ? (
-          <img
+          <Image
             src={image}
             alt={title}
             onError={handleImageError}
@@ -89,9 +90,8 @@ export default function CertificateCard({
             backgroundColor: "rgba(0, 0, 0, 0.8)",
             zIndex: 9999,
           },
-        }}
-      >
-        <img
+        }} >
+        <Image
           src={image}
           alt="Fullscreen certificate"
           className="object-contain max-w-full max-h-full rounded-lg cursor-pointer"

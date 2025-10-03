@@ -11,6 +11,7 @@ import { Reveal } from "@/components/common/reveal";
 import { MdArrowOutward } from "react-icons/md";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { useState } from "react";
+import Image from "next/image";
 
 export interface ProjectCardProps {
   title?: React.ReactNode;
@@ -67,7 +68,7 @@ export default function ProjectCard({
 
         <div className="grid">
           {image && (
-            <img
+            <Image
               src={image}
               alt="project preview"
               className="mr-4 mb-6 h-36 w-full overflow-hidden rounded-md object-cover md:mb-1"
