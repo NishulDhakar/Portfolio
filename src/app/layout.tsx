@@ -8,6 +8,7 @@ import { createMetadata } from "@/lib/createMetadata";
 import Footer from "@/components/layout/Footer";
 import { Reveal } from "@/components/common/reveal";
 import { ThemeProvider } from "next-themes";
+import HireMeButton from "@/components/sections/landingPage/Hireme";
 
 export const metadata = createMetadata({
   description:
@@ -32,7 +33,9 @@ export default function RootLayout({
             <div className="absolute inset-0 -z-10">
               {/* <ParticlesDemo /> */}
             </div>
+
             <Navbar />
+            <HireMeButton />
             <main className="flex-grow">{children}</main>
             <Analytics />
                     <Reveal> <Footer /></Reveal>

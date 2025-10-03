@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Star, ChevronDown } from "lucide-react";
-import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
+import { Link } from "next-view-transitions";
 
 
 export default function GitHubStars() {

@@ -20,6 +20,7 @@ import Experience from "@/components/sections/landingPage/Experirnce";
 export default function HomePage() {
   return (
     <div>
+    
       <div className="flex min-h-screen items-start justify-start">
         <Container className="min-h-full p-4 md:pt-20 md:pb-10">
           <Reveal>
