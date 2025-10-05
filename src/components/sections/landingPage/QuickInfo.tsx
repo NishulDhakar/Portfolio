@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 import { socialLinks } from "@/data/socialLinks";
-import { Button } from "@/components/ui/button";
-import { FaRegFilePdf } from "react-icons/fa";
+// import { Button } from "@/components/ui/button";
+// import { FaRegFilePdf } from "react-icons/fa";
 
 export default function QuickInfo() {
 
