@@ -3,7 +3,7 @@ import About from "@/components/sections/landingPage/About";
 import Container from "@/components/common/Container";
 
 // import ContactForm from "@/components/landingPage/Contact";
-import ProjectsPage from "./(pages)/projects/page";
+import ProjectsPage from "./projects/page";
 // import { ParticlesDemo } from "@/components/common/Particlesbg";
 // import { ShinyButton } from "@/components/ui/magicui/shiny-button";
 import Link from "next/link";
