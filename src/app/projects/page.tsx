@@ -11,8 +11,8 @@ interface ProjectsPageProps {
   containerClassName?: string;
   gridClassName?: string;
   titleClassName?: string;
-  limit?: number;      
-  showFilter?: boolean; 
+  limit?: number;
+  showFilter?: boolean;
 }
 
 export default function ProjectsPage({
@@ -33,22 +33,19 @@ export default function ProjectsPage({
 
   return (
     <Container className={containerClassName}>
-      {/* Only show heading when NOT limited (full Projects page) */}
       {!limit && (
         <>
-        
           <div className="text-center space-y-4 mt-6">
             <h1 className={titleClassName}>Projects</h1>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            My projects and work across different technologies and domains.
-             <p className="opacity-50">(11 Projects)</p>  
-            </p>
+            <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              My projects and work across different technologies and domains.
+              <span className="opacity-50">(11 Projects)</span>
+            </div>
           </div>
           <Separator className="my-8" />
         </>
       )}
 
-      {/* Filters (also hide on home if you want) */}
       {showFilter && !limit && (
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {types.map((t) => (
@@ -63,7 +60,6 @@ export default function ProjectsPage({
         </div>
       )}
 
-      {/* Projects Grid */}
       <div className={gridClassName}>
         {displayedProjects.map((project, index) => (
           <ProjectCard key={index} {...project} />
