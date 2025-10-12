@@ -2,9 +2,11 @@ import Image from 'next/image';
 import React from 'react';
 
 import { CodeCopyButton } from './CodeCopyButton';
+import { Badge } from '../ui/badge';
 
 export const BlogComponents = {
   // Override default image component
+  Badge, 
   img: ({
     src,
     alt,

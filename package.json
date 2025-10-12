@@ -50,6 +50,7 @@
     "react-markdown": "^10.1.0",
     "react-modal": "^3.16.3",
     "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
     "resend": "^4.7.0",
     "rough-notation": "^0.5.1",
     "shiki": "^3.13.0",

@@ -16,7 +16,7 @@ interface ProjectsPageProps {
 }
 
 export default function ProjectsPage({
-  containerClassName = "mx-auto px-6 lg:px-12 max-w-3xl mt-20 py-4",
+  containerClassName = "mx-auto px-6 lg:px-12 max-w-[840px] mt-20 py-4",
   gridClassName = "grid md:grid-cols-2 lg:grid-cols-2 gap-8 py-12",
   titleClassName = "text-4xl font-bold tracking-tight lg:text-5xl text-center",
   limit,
@@ -39,10 +39,10 @@ export default function ProjectsPage({
         
           <div className="text-center space-y-4 mt-6">
             <h1 className={titleClassName}>Projects</h1>
-            {/* <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              A collection of applications and experiments showcasing my skills
-              in frontend, backend, and full-stack development.
-            </p> */}
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            My projects and work across different technologies and domains.
+             <p className="opacity-50">(11 Projects)</p>  
+            </p>
           </div>
           <Separator className="my-8" />
         </>

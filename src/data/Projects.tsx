@@ -14,7 +14,7 @@ export const projectsData: ProjectCardProps[] = [
   type: "Web",
   viewDetails: {
     type: "Details",
-    href: "/cognitivegames",
+    href: "/projects/blync",
   },
 },
 {
@@ -55,7 +55,7 @@ export const projectsData: ProjectCardProps[] = [
     "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
   status: "running",
   image: "/Projects/pay.jpeg",
-  technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "REST API"],
+  technologies: ["React", "Tailwind", "Node.js", "MongoDB", "REST API"],
   type: "Web",
   // viewDetails: {
   //   type: "Details",
@@ -97,7 +97,7 @@ export const projectsData: ProjectCardProps[] = [
   href: "https://github.com/NishulDhakar/Course-selling-backend",
   github: "https://github.com/NishulDhakar/Course-selling-backend",
   description:
-    "A backend for a course selling platform with two roles admin and user with different permissions. where users explore and buy courses, while admins create, manage, update and delete course content easily. ",
+    "A backend for a course selling platform with two roles admin and user with different permissions. while admins create, manage, update and delete course content easily. ",
   status: "abandoned",
   image: "/Projects/CourseSelling.jpeg",
   technologies: ["Node.js", "Express", "MongoDB", "REST API"],
@@ -144,7 +144,7 @@ export const projectsData: ProjectCardProps[] = [
   href: "https://drum-kit-eight-eta.vercel.app/",
   github:"https://github.com/NishulDhakar/DrumKit",
   description:
-    "An interactive browser drum kit that plays sounds via keyboard input, ideal for fun and learning JavaScript event handling concepts.",
+    "An interactive browser drum kit that plays sounds via keyboard key input, ideal for fun and learning JavaScript event handling for fun concepts.",
   status: "running",
   image: "/Projects/drum.jpeg",
   technologies: ["HTML", "CSS", "JavaScript"],

@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/crazxy-ui/card";
-// import { InteractiveHoverButton } from "@/components/ui/magicui/interactive-hover-button";
 import { SparklesText } from "@/components/ui/magicui/sparkles-text";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import Image from "next/image";
@@ -21,7 +20,6 @@ export default function CertificateCard({
   title,
   description,
   image,
-//   href,
   className,
 }: CertificateCardProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,14 +50,16 @@ export default function CertificateCard({
       />
 
       <div
-        className="rounded-lgoverflow-hidden mb-4 cursor-pointer relative group"
-        onClick={openModal}>
+        className="relative rounded-lg overflow-hidden mb-4 cursor-pointer group w-full h-64"
+        onClick={openModal}
+      >
         {!imageError ? (
           <Image
             src={image}
             alt={title}
             onError={handleImageError}
-            className="w-full h-full object-cover rounded-lg border"
+            fill
+            className="object-cover rounded-lg border"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-red-500 bg-gray-100 rounded border border-dashed border-red-400">
@@ -90,13 +90,17 @@ export default function CertificateCard({
             backgroundColor: "rgba(0, 0, 0, 0.8)",
             zIndex: 9999,
           },
-        }} >
-        <Image
-          src={image}
-          alt="Fullscreen certificate"
-          className="object-contain max-w-full max-h-full rounded-lg cursor-pointer"
-          onClick={closeModal}
-        />
+        }}
+      >
+        <div className="relative w-[90vw] h-[90vh]">
+          <Image
+            src={image}
+            alt="Fullscreen certificate"
+            fill
+            className="object-contain rounded-lg cursor-pointer"
+            onClick={closeModal}
+          />
+        </div>
       </Modal>
 
       <div className="flex items-center justify-between">
@@ -104,12 +108,6 @@ export default function CertificateCard({
       </div>
 
       <p className="text-sm text-muted-foreground mt-2">{description}</p>
-
-      {/* <div className="pt-6">
-        <InteractiveHoverButton onClick={openModal}>
-          View Certificate
-        </InteractiveHoverButton>
-      </div> */}
     </Card>
   );
 }

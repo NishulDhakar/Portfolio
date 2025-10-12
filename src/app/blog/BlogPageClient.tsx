@@ -50,32 +50,6 @@ export function BlogPageClient({
     }
   }, [searchParams, initialPosts]);
 
-  // Handle tag click
-  // const handleTagClick = (tag: string) => {
-  //   if (isMobile()) {
-  //     triggerHaptic('light');
-  //   }
-
-  //   if (selectedTag === tag) {
-  //     setSelectedTag(null);
-  //     setFilteredPosts(initialPosts);
-  //     router.replace('/blog');
-  //   } else {
-  //     setSelectedTag(tag);
-  //     const filtered = getBlogPostsByTagClient(initialPosts, tag);
-  //     setFilteredPosts(filtered);
-  //     router.replace(`/blog?tag=${encodeURIComponent(tag)}`);
-  //   }
-  // };
-
-  // const getTagPostCount = (tag: string) => {
-  //   return initialPosts.filter((post) =>
-  //     post.frontmatter.tags.some(
-  //       (postTag) => postTag.toLowerCase() === tag.toLowerCase(),
-  //     ),
-  //   ).length;
-  // };
-
   return (
     <Container className="py-16 mt-14">
       <div className="space-y-8">
@@ -90,43 +64,6 @@ export function BlogPageClient({
         </div>
 
         <Separator />
-
-        {/* Tags */}
-        {/* {initialTags.length > 0 && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Popular Tags</h2>
-              {selectedTag && (
-                <button
-                  onClick={() => handleTagClick(selectedTag)}
-                  className="text-sm text-muted-foreground hover:text-foreground underline"
-                >
-                  Clear filter
-                </button>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {initialTags.map((tag) => {
-                const postCount = getTagPostCount(tag);
-                const isSelected = selectedTag === tag;
-                return (
-                  <button
-                    key={tag}
-                    onClick={() => handleTagClick(tag)}
-                    className="transition-colors"
-                  >
-                    <Badge
-                      variant={isSelected ? 'default' : 'outline'}
-                      className="capitalize cursor-pointer hover:bg-accent hover:text-accent-foreground tag-inner-shadow"
-                    >
-                      {tag} ({postCount})
-                    </Badge>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )} */}
 
         {/* Blog Posts */}
         <div className="space-y-6">
