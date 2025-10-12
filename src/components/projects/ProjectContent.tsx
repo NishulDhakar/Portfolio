@@ -2,7 +2,6 @@ import { Separator } from '@/components/ui/separator';
 import { ProjectFrontmatter } from '@/types/project';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
-import Calender from '../svgs/Calender';
 import { BlogComponents } from '../blog/BlogComponents';
 
 interface ProjectContentProps {
