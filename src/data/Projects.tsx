@@ -12,10 +12,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/kithub1.png",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/projects/kithub",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/projects/kithub",
+  // },
 },
 
 
@@ -30,10 +30,10 @@ export const projectsData: ProjectCardProps[] = [
   image: "/Projects/invest.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB", ],
   type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/projects/simple-invest",
-  },
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/projects/simple-invest",
+  // },
 },
 
 
