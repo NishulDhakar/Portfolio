@@ -3,7 +3,7 @@ import About from "@/components/sections/landingPage/About";
 import Container from "@/components/common/Container";
 
 // import ContactForm from "@/components/landingPage/Contact";
-import ProjectsPage from "./projects/page";
+// import ProjectsPage from "./projects/page";
 // import { ParticlesDemo } from "@/components/common/Particlesbg";
 // import { ShinyButton } from "@/components/ui/magicui/shiny-button";
 import Link from "next/link";
@@ -17,6 +17,14 @@ import Experience from "@/components/sections/landingPage/Experirnce";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * HomePage is the main entry point for the website. It displays a hero section with the About component,
+ * a tech skills section, a projects section, and a call to action to view more projects.
+ *
+ * @returns {JSX.Element} The JSX element representing the HomePage.
+ */
+/*******  8bcfceab-0204-44c3-b5e5-a028e7219c1e  *******/
 export default function HomePage() {
   return (
     <div>
@@ -49,18 +57,9 @@ export default function HomePage() {
 
           <Github />
 
-          <Reveal>
-                    <h2 className="text-2xl ml-10 font-bold"> 
-                          Projects.
-                        </h2>
-            <ProjectsPage
-              showFilter={false}
-              limit={2}
-              containerClassName="mx-auto px-8 max-w-4xl "
-              gridClassName="grid md:grid-cols-2 gap-8 py-12"
-              titleClassName="text-2xl font-semibold text-gray-900 dark:text-white"
-            />{" "}
-          </Reveal>
+          {/* <Reveal>
+       <ProjectsPage />
+          </Reveal> */}
           <Reveal>
             <Link
               href="/projects"
