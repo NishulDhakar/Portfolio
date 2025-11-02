@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import Container from "@/components/common/Container";
+// import Container from "@/components/common/Container";
 import ProjectCard from "@/components/sections/Projects/ProjectCard";
 import { projectsData } from "@/data/Projects";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export default function ProjectsPage() {
-  const containerClassName = "mx-auto px-6 lg:px-12 max-w-[840px] mt-20 py-4";
-  const gridClassName = "grid md:grid-cols-2 lg:grid-cols-2 gap-8 py-12";
+  const containerClassName = "mx-auto px-6 lg:px-12 max-w-[1240px] mt-20 py-4";
+  const gridClassName = "grid md:grid-cols-3 lg:grid-cols-3 gap-8 py-12";
   const titleClassName =
     "text-4xl font-bold tracking-tight lg:text-5xl text-center";
 
@@ -22,7 +22,7 @@ export default function ProjectsPage() {
   const types = ["All", "Web", "Mobile"];
 
   return (
-    <Container className={containerClassName}>
+    <div className={containerClassName}>
       <div className="text-center space-y-4 mt-6">
         <h1
           className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
@@ -31,7 +31,6 @@ export default function ProjectsPage() {
         </h1>
         <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
           My projects and work across different technologies and domains.
-          <span className="opacity-50">(11 Projects)</span>
         </div>
       </div>
 
@@ -54,6 +53,6 @@ export default function ProjectsPage() {
           <ProjectCard key={index} {...project} />
         ))}
       </div>
-    </Container>
+    </div>
   );
 }

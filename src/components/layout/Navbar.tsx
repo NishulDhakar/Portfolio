@@ -12,6 +12,7 @@ import {
   MobileNavToggle,
   NavbarLogo,
 } from '../ui/resizable-navbar';
+// import { link } from 'fs';
 
 export default function ResizablePortfolioNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,13 +23,15 @@ export default function ResizablePortfolioNavigation() {
 
   const navItems = [
     { name: 'proof-of-work', link: '/projects' },
-    { name: 'blogs', link: '/blogs' },
+    // { name: 'blogs', link: '/blog' },
+    {name : 'contact' , link : '/contact' },
   ];
 
   const mobileNavItems = [
     { name: 'Home', link: '/' },
     { name: 'proof-of-work', link: '/projects' },
-    { name: 'blogs', link: '/blogs' },
+    // { name: 'blogs', link: '/blog' },
+    {name : 'contact' , link : '/contact' },
   ];
 
   return (

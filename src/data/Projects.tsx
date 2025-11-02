@@ -2,6 +2,41 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
 
+  {
+  title: "KitHub",
+  href: "https://kithub.nishul.dev/",
+  github: "https://github.com/NishulDhakar/KitHub",
+  description:
+    "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
+  status: "building",
+  image: "/Projects/kithub.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/projects/kithub",
+  },
+},
+
+
+
+  {
+  title: "Simple Invest",
+  href: "https://github.com/NishulDhakar/Simple-Invest",
+  github: "https://invest.nishul.dev/",
+  description:
+"A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
+  status: "building",
+  image: "/Projects/simpleinvest.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB", ],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/projects/simple-invest",
+  },
+},
+
+
 {
   title: "Cognitive Games",
   href: "https://games.nishul.dev/",

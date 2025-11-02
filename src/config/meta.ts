@@ -42,7 +42,7 @@ export const pageMetadata: Record<string, PageMeta> = {
       'web development',
       'technical writing',
     ],
-    ogImage: '/meta/blogs.png',
+    ogImage: '/meta/blog.png',
     twitterCard: 'summary_large_image',
   },
 

@@ -55,9 +55,11 @@ export function BlogPageClient({
       <div className="space-y-8">
         {/* Header */}
         <div className="space-y-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-            Blogs
-          </h1>
+         <h1
+          className={`font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
+        >
+          Blogs
+        </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Thoughts, tutorials, and insights on engineering, and programming.
           </p>

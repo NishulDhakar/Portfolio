@@ -62,7 +62,7 @@ const ContactForm = () => {
                   <FormItem>
                     <FormLabel>Phone *</FormLabel>
                     <FormControl>
-                      <Input placeholder="+91 -----" {...field} />
+                      <Input placeholder="+91 " {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

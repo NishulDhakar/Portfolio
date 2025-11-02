@@ -8,7 +8,7 @@ export default function TechSkills() {
   }, {} as Record<string, typeof techSkills>);
 
   return (
-    <section className="max-w-4xl mx-auto px-6 lg:px-6 py-12">
+    <section className="max-w-4xl mx-auto px-6 px-8 mb-16 lg:px-6">
       <div className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
         Tech Stack.
       </div>

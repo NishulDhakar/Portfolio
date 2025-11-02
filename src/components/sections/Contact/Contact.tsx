@@ -13,9 +13,11 @@ const Contact = () => {
       <div className="w-full max-w-3xl space-y-10 text-center">
         {/* Page Header */}
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-            Contact
-          </h1>
+       <h1
+          className={`font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
+        >
+          Contact
+        </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Get in touch with me. I will get back to you as soon as possible.
           </p>

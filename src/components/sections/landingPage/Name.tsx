@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { PointerHighlight } from "../../ui/pointer-highlight";
+import Link from "next/link";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
+import { socialLinks } from "@/data/socialLinks";
 
 export default function Name() {
   return (
@@ -11,8 +14,8 @@ export default function Name() {
           <Image
             src="/nishul.jpg"
             alt="Nishul Dhakar"
-            width={100}
-            height={100}
+            width={120}
+            height={120}
             className="rounded-2xl shadow-sm ring-1 ring-gray-100 dark:ring-gray-800"
           />
           <span className="border-primary absolute -right-1 -bottom-1 h-4 w-4 rounded-full border-2 bg-green-500" />
@@ -30,6 +33,25 @@ export default function Name() {
           </PointerHighlight>
 
           <p className="text-secondary mt-2 text-sm">Bhopal, India</p>
+
+              <div className="mt-4 flex gap-4">
+        {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
+          <Tooltip key={name} delayDuration={6} >
+            <TooltipTrigger asChild>
+              <Link
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500">
+                <Icon className="w-[20px] h-[20px] " />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent >
+              <p>{name}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
         </div>
       </div>
     </>

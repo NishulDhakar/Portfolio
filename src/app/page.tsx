@@ -6,25 +6,17 @@ import Container from "@/components/common/Container";
 // import ProjectsPage from "./projects/page";
 // import { ParticlesDemo } from "@/components/common/Particlesbg";
 // import { ShinyButton } from "@/components/ui/magicui/shiny-button";
-import Link from "next/link";
-import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
+// import Link from "next/link";
+// import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
 import Github from "@/components/sections/landingPage/Github";
 
 import Reachout from "@/components/sections/landingPage/Reachout";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experirnce";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * HomePage is the main entry point for the website. It displays a hero section with the About component,
- * a tech skills section, a projects section, and a call to action to view more projects.
- *
- * @returns {JSX.Element} The JSX element representing the HomePage.
- */
-/*******  8bcfceab-0204-44c3-b5e5-a028e7219c1e  *******/
 export default function HomePage() {
   return (
     <div>
@@ -60,7 +52,7 @@ export default function HomePage() {
           {/* <Reveal>
        <ProjectsPage />
           </Reveal> */}
-          <Reveal>
+          {/* <Reveal>
             <Link
               href="/projects"
               className="group flex items-center gap-2 font-bold transition-all hover:text-gray-300"
@@ -71,7 +63,8 @@ export default function HomePage() {
                 <FaArrowCircleRight className="hidden transition-all duration-200 group-hover:inline" />
               </Button>
             </Link>
-          </Reveal>
+          </Reveal> */}
+
           <Reachout />
         </Container>
 

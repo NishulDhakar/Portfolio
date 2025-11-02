@@ -3,9 +3,9 @@
 import { about } from "@/data/About";
 import QuickInfo from "./QuickInfo";
 import Name from "./Name";
-import Link from "next/link";
-import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
-import { Highlighter } from "@/components/magicui/highlighter";
+// import Link from "next/link";
+// import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
+// import { Highlighter } from "@/components/magicui/highlighter";
 
 export default function About() {
   return (
@@ -19,7 +19,7 @@ export default function About() {
               </div>
             <div className="text-secondary space-y-4 leading-relaxed">
               <p>{about.description}</p>
-              <Link
+              {/* <Link
                 href="/about"
                 className="group flex items-center gap-2 font-bold transition-all hover:text-gray-300">
                   <Highlighter action="underline" color="#D1D5DB">
@@ -28,7 +28,7 @@ export default function About() {
       
                 <FaArrowRight className="transition-all duration-200 group-hover:hidden" />
                 <FaArrowCircleRight className="hidden transition-all duration-200 group-hover:inline" />
-              </Link>
+              </Link> */}
             </div>
           </div>
           <QuickInfo />

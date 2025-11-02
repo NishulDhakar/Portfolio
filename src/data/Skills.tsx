@@ -9,6 +9,7 @@ import { FaDartLang } from "react-icons/fa6";
 import { FaFlutter } from "react-icons/fa6";
 import { IoLogoFirebase } from "react-icons/io5";
 import { BiLogoSpringBoot } from "react-icons/bi";
+import { GiArtificialHive } from "react-icons/gi";
 
 type ButtonVariant = "outline" | "link" | "default" | "destructive" | "secondary" | "ghost";
 
@@ -61,5 +62,7 @@ export const techSkills: Skill[] = [
 
 { name: "Git", icon: FaGitAlt, color: "text-red-600", variant: "ghost", category: "web", size: "w-6 h-6" },
 { name: "GitHub", icon: FaGithub, color: "text-gray-900 dark:text-white", variant: "ghost", category: "web", size: "w-6 h-6" },
+
+{ name: "Inngest" , icon: GiArtificialHive, color: "text-gray-900 dark:text-white", variant: "ghost", category: "web", size: "w-6 h-6" },
 ]
 

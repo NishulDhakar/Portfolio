@@ -1,15 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
-import { socialLinks } from "@/data/socialLinks";
 // import { Button } from "@/components/ui/button";
 // import { FaRegFilePdf } from "react-icons/fa";
 
 export default function QuickInfo() {
 
   return (
-    <aside className="space-y-4">
+    <aside className="space-y-4 mt-6">
       <div>
         <h3 className="text-xs font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">
           Status
@@ -55,25 +52,6 @@ export default function QuickInfo() {
               </Link>
 
       </div> */}
-
-      <div className="px-2 md:px-8 flex gap-4">
-        {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
-          <Tooltip key={name} delayDuration={6} >
-            <TooltipTrigger asChild>
-              <Link
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-500">
-                <Icon className="w-[20px] h-[20px] " />
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent >
-              <p>{name}</p>
-            </TooltipContent>
-          </Tooltip>
-        ))}
-      </div>
     </aside>
   );
 }

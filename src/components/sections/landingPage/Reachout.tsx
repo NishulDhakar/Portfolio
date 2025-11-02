@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Highlighter } from "@/components/magicui/highlighter";
+// import { Highlighter } from "@/components/magicui/highlighter";
 import { Reveal } from "@/components/common/reveal";
 
 const Reachout = () => {
@@ -9,9 +9,9 @@ const Reachout = () => {
       {/* Heading */}
       <Reveal>
       <div className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-        <Highlighter action="underline" color="#FF9800">
+  
           Reach Out.
-        </Highlighter>
+
       </div>
 
       {/* Description */}
