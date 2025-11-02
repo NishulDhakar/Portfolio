@@ -36,7 +36,11 @@ export default function ProjectsPage({
       {!limit && (
         <>
           <div className="text-center space-y-4 mt-6">
-            <h1 className={titleClassName}>Projects</h1>
+          <h1
+  className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
+>
+  Proof of Work
+</h1>
             <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
               My projects and work across different technologies and domains.
               <span className="opacity-50">(11 Projects)</span>

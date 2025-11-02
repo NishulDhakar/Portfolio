@@ -1,8 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/next";
-
-// import { ParticlesDemo } from "@/components/common/Particlesbg";
+import { Instrument_Serif, Geist as GeistSans } from "next/font/google";
 import { createMetadata } from "@/lib/createMetadata";
 import Footer from "@/components/layout/Footer";
 import { Reveal } from "@/components/common/reveal";
@@ -14,6 +13,21 @@ export const metadata = createMetadata({
     "A perfect portfolio website that showcases skills and projects. Minimal and smooth microinteractions. Perfect for developers and designers.",
 });
 
+const geistSans = GeistSans({
+  weight: '400',
+  style: 'normal',
+  subsets: ['latin'],
+  variable: '--font-geist-sans'
+})
+
+const instrumentSerif = Instrument_Serif({
+  weight: ['400'],
+  style: 'normal',
+  subsets: ['latin'],
+  variable: '--font-instrument-serif'
+})
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +35,10 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en" suppressHydrationWarning>
-        <body suppressHydrationWarning className="font-hanken-grotesk flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black">
+<body
+  className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
+  suppressHydrationWarning
+>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

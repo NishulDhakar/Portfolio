@@ -11,13 +11,18 @@ export default function HireMeButton() {
         href="https://drive.google.com/file/d/1UybppwwtUHWW6SorFZlNCbWNvvQQHk9h/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="View Nishul Dhakar's Resume">
+        aria-label="View Nishul Dhakar's Resume"
+      >
         <Button
           variant="outline"
           className="gap-2 px-4 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 transition text-sm font-medium text-black dark:text-white"
         >
           <Briefcase className="w-4 h-4 stroke-black dark:stroke-white" />
-          <span>Hire Me</span>
+
+          <span className="font-[family-name:var(--font-instrument-serif)] tracking-wide leading-tight">
+            Hire Me
+          </span>
+
           <ChevronDown className="w-3 h-3 stroke-black dark:stroke-white" />
         </Button>
       </Link>

@@ -18,9 +18,9 @@ export default function Name() {
           <span className="border-primary absolute -right-1 -bottom-1 h-4 w-4 rounded-full border-2 bg-green-500" />
         </div>
         <div className="flex-1">
-          <h1 className="mb-4 text-4xl font-bold tracking-tighter md:text-5xl lg:text-5xl">
-            Nishul Dhakar
-          </h1>
+   <h1 className="mb-4 font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tighthire md:text-5xl lg:text-5xl">
+  Nishul Dhakar
+</h1>
 
           <PointerHighlight
             rectangleClassName="bg-neutral-200 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600"

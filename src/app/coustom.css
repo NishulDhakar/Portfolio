@@ -7,7 +7,7 @@
 /* -------------------------------------------------------------------------- */
 /* Custom Fonts */
 /* -------------------------------------------------------------------------- */
-@font-face {
+/* @font-face {
   font-family: 'Hanken Grotesk';
   src: url('/fonts/HankenGrotesk-Variable.ttf') format('truetype');
 }
@@ -20,7 +20,7 @@
 }
 .font-hanken-grotesk-italic {
   font-family: 'Hanken Grotesk Italic', sans-serif;
-}
+} */
 
 /* -------------------------------------------------------------------------- */
 /* Global Styles & Scrollbars */
