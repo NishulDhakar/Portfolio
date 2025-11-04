@@ -22,8 +22,8 @@ export const projectsData: ProjectCardProps[] = [
 
   {
   title: "Simple Invest",
-  href: "https://github.com/NishulDhakar/Simple-Invest",
-  github: "https://invest.nishul.dev/",
+  href: "https://invest.nishul.dev/",
+  github: "https://github.com/NishulDhakar/Simple-Invest",
   description:
 "A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
   status: "building",
