@@ -1,4 +1,9 @@
 import { techSkills } from "@/data/Skills";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 
 export default function TechSkills() {
   const grouped = techSkills.reduce((acc, skill) => {
@@ -18,21 +23,21 @@ export default function TechSkills() {
           <div key={category}>
             <div className="flex flex-wrap gap-4">
               {skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex flex-col items-center justify-center space-y-2"
-                >
-                  {/* Icon */}
-                  <skill.icon className={`${skill.size ?? "w-8 h-8"} ${skill.color}`} />
+                <Tooltip key={skill.name} delayDuration={50}>
+                  <TooltipTrigger asChild>
+                    <div className="flex flex-col items-center justify-center space-y-2 cursor-default">
+                      <skill.icon
+                        className={`${skill.size ?? "w-8 h-8"} ${skill.color}`}
+                      />
+                    </div>
+                  </TooltipTrigger>
 
-                  {/* Label
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {skill.name}
-                  </span> */}
-                </div>
+                  <TooltipContent>
+                    <p>{skill.name}</p>
+                  </TooltipContent>
+                </Tooltip>
               ))}
             </div>
-            {/* {i < arr.length - 1 && <hr className="my-6 border-gray-300 dark:border-gray-700" />} */}
           </div>
         ))}
       </div>

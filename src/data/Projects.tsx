@@ -9,7 +9,7 @@ export const projectsData: ProjectCardProps[] = [
   description:
     "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
   status: "building",
-  image: "/Projects/kithub1.png",
+  image: "/Projects/kithub.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
   type: "Web",
   // viewDetails: {
@@ -26,7 +26,7 @@ export const projectsData: ProjectCardProps[] = [
   github: "https://github.com/NishulDhakar/Simple-Invest",
   description:
 "A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
-  status: "building",
+  status: "running",
   image: "/Projects/invest.jpeg",
   technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB", ],
   type: "Web",
