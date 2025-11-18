@@ -104,7 +104,7 @@ export const projectsData: ProjectCardProps[] = [
   description:
     "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
   status: "running",
-  image: "/Projects/drop.png",
+  image: "/Projects/drop1.jpeg",
   technologies: ["React", "Tailwind", "Node.js", "MongoDB", "REST API"],
   type: "Web",
   // viewDetails: {
