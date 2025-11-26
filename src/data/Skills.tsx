@@ -1,4 +1,4 @@
-import { FaBootstrap, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaReact } from "react-icons/fa";
+import { FaBootstrap, FaGitAlt, FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaReact } from "react-icons/fa";
 import { PiFileCssFill } from "react-icons/pi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
@@ -10,6 +10,7 @@ import { FaFlutter } from "react-icons/fa6";
 import { IoLogoFirebase } from "react-icons/io5";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { GiArtificialHive } from "react-icons/gi";
+import { BsFiletypeMdx } from "react-icons/bs";
 
 type ButtonVariant = "outline" | "link" | "default" | "destructive" | "secondary" | "ghost";
 
@@ -61,7 +62,7 @@ export const techSkills: Skill[] = [
 { name: "CI/CD", icon: SiGithubactions, color: "text-gray-800", variant: "ghost", category: "web", size: "w-6 h-6" },
 
 { name: "Git", icon: FaGitAlt, color: "text-red-600", variant: "ghost", category: "web", size: "w-6 h-6" },
-{ name: "GitHub", icon: FaGithub, color: "text-gray-900 dark:text-white", variant: "ghost", category: "web", size: "w-6 h-6" },
+{name : "MDX" , icon: BsFiletypeMdx, color: "text-gray-900 dark:text-white", variant: "ghost", category: "web", size: "w-6 h-6" },
 
 { name: "Inngest" , icon: GiArtificialHive, color: "text-gray-900 dark:text-white", variant: "ghost", category: "web", size: "w-6 h-6" },
 ]
