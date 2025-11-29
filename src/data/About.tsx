@@ -1,5 +1,5 @@
 export const about = {
   name: "Nishul Dhakar",
   description:
-    "I build cool, interactive web apps with TypeScript, React, Next.js, Bun, and PostgreSQL. I am all about clean UI, smooth vibes, and making the web feel alive. Lately, I have been geeking out on GenAI to add some next-level smart features and creative twists to my projects."
+    "I build things for the web and mobile — whatever idea pops into my head, I try turning it into something real. I work across the stack, jumping between UI, APIs, and databases without overthinking it. Lately, I’ve been getting into GenAI, adding smart features to the things I build. If it’s creative, useful, or just fun to experiment with, I’m probably working on it"
 }

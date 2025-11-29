@@ -249,3 +249,8 @@ html {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+
+
+.highlight {
+  @apply bg-primary/10 text-primary px-1.5 py-0.5 rounded-md font-medium;
+}

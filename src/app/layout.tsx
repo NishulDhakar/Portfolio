@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+
 import { Analytics } from "@vercel/analytics/next";
 import { Instrument_Serif, Geist as GeistSans } from "next/font/google";
 import { createMetadata } from "@/lib/createMetadata";
@@ -34,32 +34,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en" suppressHydrationWarning>
-<body
-  className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
-  suppressHydrationWarning
->
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="absolute inset-0 -z-10">
-              {/* <ParticlesDemo /> */}
-            </div>
-
-            <Navbar />
-            <HireMeButton />
-            <main className="flex-grow">{children}</main>
-            <Analytics />
-                    <Reveal> <Footer /></Reveal>
-            {/* <div className="pointer-events-none fixed bottom-0 z-30 h-3/5 w-full bg-gradient-to-t from-white via-transparent to-transparent dark:from-black dark:via-transparent dark:to-transparent" />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
+        suppressHydrationWarning
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="absolute inset-0 -z-10">
+            {/* <ParticlesDemo /> */}
+          </div>
+          <HireMeButton />
+          <main className="flex-grow">{children}</main>
+          <Analytics />
+          <Reveal> <Footer /></Reveal>
+          {/* <div className="pointer-events-none fixed bottom-0 z-30 h-3/5 w-full bg-gradient-to-t from-white via-transparent to-transparent dark:from-black dark:via-transparent dark:to-transparent" />
      */}
 
-     </ThemeProvider>
-          
-        </body>
-      </html>
+        </ThemeProvider>
+
+      </body>
+    </html>
   );
 }

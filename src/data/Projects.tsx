@@ -7,7 +7,7 @@ export const projectsData: ProjectCardProps[] = [
   href: "https://rgpvnotes.nishul.dev/", 
   github: "https://github.com/NishulDhakar/Uni-notes",
   description:
-    "University notes and study platform with MDX-based content, secure reading mode, and a Notion-style interface for courses, subjects, syllabus, and PYQs.",
+    "University notes and study platform with MDX-based content and a Notion-style interface for courses, subjects, syllabus, and PYQs.",
   status: "building", 
   image: "/Projects/notes.jpeg", 
   technologies: ["Next.js", "TypeScript", "Tailwind", "MDX", "Framer Motion"],

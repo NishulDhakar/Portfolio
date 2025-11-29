@@ -1,39 +1,63 @@
 "use client";
 
-import { about } from "@/data/About";
-import QuickInfo from "./QuickInfo";
 import Name from "./Name";
-// import Link from "next/link";
-// import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
-// import { Highlighter } from "@/components/magicui/highlighter";
+import { SoftButton } from "./SoftButton";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className=" mt-12 flex items-center transition-colors duration-300">
-      <div className="lg:px- mx-auto w-full max-w-4xl px-6">
+    <section className="max-w-4xl mx-auto px-6 lg:px-6 mt-20">
+      <div className="mx-auto max-w-4xl px-6 lg:px-0">
         <Name />
-        <div className="grid gap-14 lg:grid-cols-3">
-          <div className="space-y-6 lg:col-span-2">
-            <div className="text-primary text-2xl font-semibold">        
-                About.
-              </div>
-            <div className="text-secondary space-y-4 leading-relaxed">
-              <p>{about.description}</p>
-              {/* <Link
-                href="/about"
-                className="group flex items-center gap-2 font-bold transition-all hover:text-gray-300">
-                  <Highlighter action="underline" color="#D1D5DB">
-                      More about me.
-              </Highlighter>
-      
-                <FaArrowRight className="transition-all duration-200 group-hover:hidden" />
-                <FaArrowCircleRight className="hidden transition-all duration-200 group-hover:inline" />
-              </Link> */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="space-y-8">
+            <div className="space-y-6 text-secondary leading-relaxed text-md md:text-md font-light tracking-wide">
+              <p>
+                I’m a{" "}
+                <span className="highlight font-normal text-primary">
+                  full-stack developer
+                </span>{" "}
+                who builds{" "}
+                <span className="highlight font-normal text-primary">
+                  web and mobile applications
+                </span>
+                . I work with{" "}
+                <span className="highlight font-normal text-primary">
+                  TypeScript, React, Next.js, Bun, PostgreSQL
+                </span>{" "}
+                and I’m actively exploring{" "}
+                <span className="highlight font-normal text-primary">
+                  GenAI, RAG, and AI Agents
+                </span>{" "}
+                to bring smarter features into my projects.
+              </p>
+
+              <p>
+                I love creating{" "}
+                <span className="highlight font-normal text-primary">clean</span>,{" "}
+                <span className="highlight font-normal text-primary">smooth</span>, and{" "}
+                <span className="highlight font-normal text-primary">interactive</span> experiences,
+                solving problems until they make sense, and constantly pushing
+                myself to learn and build better.
+              </p>
             </div>
           </div>
-          <QuickInfo />
-        </div>
+        </motion.div>
       </div>
+
+      <motion.div
+        className="mt-10"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <SoftButton />
+      </motion.div>
     </section>
   );
 }

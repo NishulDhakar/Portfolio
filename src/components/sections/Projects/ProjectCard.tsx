@@ -14,7 +14,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export interface ProjectCardProps {
-  title?: React.ReactNode;
+  title: string;
   description: string;
   href: string;
   github?: string;
@@ -70,8 +70,8 @@ export default function ProjectCard({
           {image && (
             <Image
               src={image}
-              width={400}        
-              height={150}       
+              width={400}
+              height={150}
               alt="project preview"
               className="mr-4 mb-6 h-36 w-full overflow-hidden rounded-md object-cover md:mb-1"
             />
@@ -80,7 +80,7 @@ export default function ProjectCard({
           <div className="flex p-4 gap-2 flex-1 flex-col justify-between md:mt-">
             <div className="flex items-center justify-between font-bold">
               {/* <SparklesText className="text-lg font-semibold"> */}
-                {title}
+              {title}
               {/* </SparklesText> */}
               {status && (
                 <span

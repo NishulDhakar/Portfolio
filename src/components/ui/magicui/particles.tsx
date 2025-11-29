@@ -167,13 +167,7 @@ export const Particles: React.FC<ParticlesProps> = ({
     };
   }, [color]);
 
-  useEffect(() => {
-    onMouseMove();
-  }, [mousePosition.x, mousePosition.y]);
 
-  useEffect(() => {
-    initCanvas();
-  }, [refresh]);
 
   const initCanvas = () => {
     resizeCanvas();
@@ -338,6 +332,16 @@ export const Particles: React.FC<ParticlesProps> = ({
     });
     rafID.current = window.requestAnimationFrame(animate);
   };
+
+  useEffect(() => {
+    onMouseMove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mousePosition.x, mousePosition.y]);
+
+  useEffect(() => {
+    initCanvas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refresh]);
 
   return (
     <div

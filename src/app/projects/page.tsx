@@ -1,15 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-// import Container from "@/components/common/Container";
 import ProjectCard from "@/components/sections/Projects/ProjectCard";
 import { projectsData } from "@/data/Projects";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ProjectsPage() {
   const containerClassName = "mx-auto px-6 lg:px-12 max-w-[1240px] mt-20 py-4";
-  const gridClassName = "grid md:grid-cols-3 lg:grid-cols-3 gap-8 py-12";
+  const gridClassName = "grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-12";
   const titleClassName =
     "text-4xl font-bold tracking-tight lg:text-5xl text-center";
 
@@ -23,7 +25,22 @@ export default function ProjectsPage() {
 
   return (
     <div className={containerClassName}>
-      <div className="text-center space-y-4 mt-6">
+      <div className="mb-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Home
+        </Link>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center space-y-4 mt-6"
+      >
         <h1
           className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
         >
@@ -32,7 +49,7 @@ export default function ProjectsPage() {
         <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
           My projects and work across different technologies and domains.
         </div>
-      </div>
+      </motion.div>
 
       <Separator className="my-8" />
 
@@ -42,17 +59,29 @@ export default function ProjectsPage() {
             key={t}
             variant={t === filter ? "default" : "outline"}
             onClick={() => setFilter(t)}
+            className="rounded-full"
           >
             {t}
           </Button>
         ))}
       </div>
 
-      <div className={gridClassName}>
+      <motion.div
+        layout
+        className={gridClassName}
+      >
         {displayedProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <motion.div
+            key={project.title}
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

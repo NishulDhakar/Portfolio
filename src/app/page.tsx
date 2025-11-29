@@ -1,4 +1,4 @@
-import TechSkills from "@/components/sections/landingPage/Skills";
+
 import About from "@/components/sections/landingPage/About";
 import Container from "@/components/common/Container";
 
@@ -20,9 +20,9 @@ import Experience from "@/components/sections/landingPage/Experirnce";
 export default function HomePage() {
   return (
     <div>
-    
+
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-full p-4 md:pt-20 md:pb-10">
+        <Container className="min-h-full md:pb-10">
           <Reveal>
             <About />
           </Reveal>
@@ -34,18 +34,18 @@ export default function HomePage() {
             </div>
           </Reveal> */}
 
-                  <Reveal>
+          <Reveal>
 
-                  <Experience />
-
-
-                  </Reveal>
+            <Experience />
 
 
+          </Reveal>
+
+          {/* 
           <Reveal>
             {" "}
             <TechSkills />
-          </Reveal>
+          </Reveal> */}
 
           <Github />
 

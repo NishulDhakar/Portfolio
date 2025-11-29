@@ -1,88 +1,58 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-
-interface ExperienceItem {
-  company: string;
-  position: string;
-  duration: string;
-  description: string;
-  href?: string;
-  logoUrl?: string;
-}
+import { experience } from "@/data/experience";
+import { motion } from "framer-motion";
 
 export default function ExperienceContent() {
-  const experiences: ExperienceItem[] = [
-  {
-    company: "Averoft",
-    position: "Software Developer Intern",          // from title
-    duration: "August 2025 – Present",              // from start + end
-    description:
-      "Contributing to full-stack development using Next.js, React, Node.js, Express.js, and MongoDB. Working on scalable applications in AI, cloud, and digital transformation projects.",
-    href: "https://averoft.com",                     // from company.url
-    logoUrl: "/averoft.jpeg",                         // OPTIONAL → add if you have logo
-  },
-];
-
   return (
+    <section className="max-w-4xl mx-auto px-6 lg:px-6 mt-20">
+      <div className="mx-auto max-w-4xl px-6 lg:px-0">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 font-[family-name:var(--font-instrument-serif)] text-2xl font-bold tracking-tight text-foreground"
+        >
+          Experience
+        </motion.h2>
 
-       <section className="max-w-4xl mx-auto px-6 lg:px-6 py-12">
-      <div className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-        Experience.
-      </div>
-    <div className="space-y-4 dark:text-white/70 text-black/70 pb-4">
-      {experiences.map((exp) => (
-        <div key={exp.company} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-          {/* Left side - Logo, Company & Position */}
-          <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-            {/* Company Logo */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden flex-shrink-0">
-              {exp.logoUrl ? (
-                <Image 
-                  src={exp.logoUrl} 
-                  alt={exp.company}
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <span className="text-sm sm:text-lg font-medium dark:text-white text-black">
-                  {exp.company.charAt(0)}
+        <div className="relative space-y-12">
+          {/* Vertical line */}
+          <div className="absolute left-0 top-2 bottom-2 w-px bg-border md:left-0" />
+
+          {experience.map((item, index) => (
+            <motion.div
+              key={item.company}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative pl-8 md:pl-12"
+            >
+              {/* Dot on the line */}
+              <div className="absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background" />
+
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-medium text-foreground">
+                  {item.company}
+                </h3>
+                <span className="text-sm text-muted-foreground font-mono">
+                  {item.startDate} — {item.endDate}
                 </span>
-              )}
-            </div>
-            
-            {/* Company Info */}
-            <div className="flex-1 min-w-0">
-              <h3 className="font-medium dark:text-white text-black text-sm sm:text-lg">
-                {exp.href ? (
-                  <Link 
-                    href={exp.href} 
-                    target="_blank" 
-                    className="hover:text-[#006FEE] transition-colors"
-                  >
-                    {exp.company}
-                  </Link>
-                ) : (
-                  exp.company
-                )}
-              </h3>
-              <p className="text-[10px] sm:text-sm opacity-70">
-                {exp.position}
-              </p>
-            </div>
-          </div>
-          
-          {/* Right side - Duration */}
-          <div className="pl-13 sm:pl-0 sm:text-right flex-shrink-0">
-            <p className="text-[10px] sm:text-sm opacity-50">
-              {exp.duration}
-            </p>
-          </div>
+              </div>
+
+              <div className="mt-1 text-base font-medium text-primary/80">
+                {item.title}
+              </div>
+
+              <div className="mt-4 text-base text-muted-foreground leading-relaxed">
+                <p className="whitespace-pre-line">{item.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
     </section>
-  )
+  );
 }
