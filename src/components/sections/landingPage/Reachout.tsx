@@ -66,7 +66,7 @@ const Reachout = () => {
             </div>
 
             {/* Social Links */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <p className="text-xs font-medium text-muted-foreground/50 uppercase tracking-widest">
                 Socials
               </p>
@@ -96,7 +96,7 @@ const Reachout = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

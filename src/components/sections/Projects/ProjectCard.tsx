@@ -2,16 +2,11 @@
 
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/crazxy-ui/card";
-// import { SparklesText } from "@/components/ui/magicui/sparkles-text";
-// import { GlowingEffect } from "../../ui/glowing-effect";
 import { techSkills } from "@/data/Skills";
-import { Github } from "lucide-react";
-import { ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/common/reveal";
-import { MdArrowOutward } from "react-icons/md";
-import { IoArrowForwardOutline } from "react-icons/io5";
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ProjectCardProps {
   title: string;
@@ -30,9 +25,9 @@ export interface ProjectCardProps {
 }
 
 const statusColors: Record<string, string> = {
-  running: "bg-green-600",
-  building: "bg-yellow-500",
-  abandoned: "bg-gray-500",
+  running: "bg-emerald-500",
+  building: "bg-amber-500",
+  abandoned: "bg-red-500",
 };
 
 export default function ProjectCard({
@@ -44,67 +39,86 @@ export default function ProjectCard({
   image,
   status = "running",
   technologies,
-  type,
   viewDetails,
 }: ProjectCardProps) {
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
     <Reveal>
       <Card
-        variant="inner"
         className={cn(
-          "border-muted bg-background flex w-full rounded-xl border shadow-sm transition-all hover:shadow-md",
-          className,
+          "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-background/50 transition-all duration-300 hover:border-border hover:shadow-lg dark:bg-zinc-900/30",
+          className
         )}
       >
-        {/* <GlowingEffect
-          spread={40}
-          glow={true}
-          disabled={false}
-          proximity={64}
-          inactiveZone={0.01}
-        /> */}
-
-        <div className="grid">
-          {image && (
+        {/* Image Section */}
+        {image && (
+          <div className="relative aspect-video w-full overflow-hidden bg-muted">
             <Image
               src={image}
-              width={400}
-              height={150}
-              alt="project preview"
-              className="mr-4 mb-6 h-36 w-full overflow-hidden rounded-md object-cover md:mb-1"
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          )}
 
-          <div className="flex p-4 gap-2 flex-1 flex-col justify-between md:mt-">
-            <div className="flex items-center justify-between font-bold">
-              {/* <SparklesText className="text-lg font-semibold"> */}
-              {title}
-              {/* </SparklesText> */}
-              {status && (
-                <span
-                  className={cn(
-                    "rounded-md px-2 py-0.5 text-xs font-medium text-white",
-                    statusColors[status],
-                  )}>
-                  {status.charAt(0).toUpperCase() + status.slice(1)}
-                </span>
+            {/* Overlay Actions */}
+            <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+              {viewDetails && (
+                <Link
+                  href={viewDetails.href}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  title="View Details"
+                >
+                  <ArrowUpRight size={20} />
+                </Link>
+              )}
+              {href && (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  title="Live Demo"
+                >
+                  <ExternalLink size={20} />
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  title="Source Code"
+                >
+                  <Github size={20} />
+                </a>
               )}
             </div>
+          </div>
+        )}
 
-            {type && (
-              <span className="mb-2 hidden rounded-full bg-purple-100 px-2 py-1 text-xs text-purple-800 dark:bg-purple-800 dark:text-purple-100">
-                {type}
-              </span>
+        {/* Content Section */}
+        <div className="flex flex-1 flex-col p-5">
+          <div className="mb-3 flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-lg tracking-tight text-foreground">
+              {title}
+            </h3>
+            {status && (
+              <div className="flex items-center gap-1.5 rounded-full border border-border/50 bg-background/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground backdrop-blur-sm">
+                <span className={cn("h-1.5 w-1.5 rounded-full animate-pulse", statusColors[status])} />
+                {status.charAt(0).toUpperCase() + status.slice(1)}
+              </div>
             )}
+          </div>
 
-            <p className="text-muted-foreground mt-1 text-sm">{description}</p>
+          <p className="mb-6 line-clamp-2 text-sm text-muted-foreground leading-relaxed">
+            {description}
+          </p>
 
-            <div className="mt-4 flex flex-wrap gap-1">
-              {technologies?.map((tech) => {
+          <div className="mt-auto">
+            <div className="flex flex-wrap gap-1.5">
+              {technologies?.slice(0, 4).map((tech) => {
                 const skill = techSkills.find(
-                  (s) => s.name.toLowerCase() === tech.toLowerCase(),
+                  (s) => s.name.toLowerCase() === tech.toLowerCase()
                 );
                 if (!skill) return null;
 
@@ -112,62 +126,18 @@ export default function ProjectCard({
                 return (
                   <div
                     key={tech}
-                    className={cn(
-                      "flex items-center gap-1 rounded border px-1.5 py-0.5 text-[10px]",
-                      skill.color,
-                      "bg-muted",
-                    )}
+                    className="flex items-center gap-1.5 rounded-md border border-border/50 bg-secondary/30 px-2 py-1 text-[10px] font-medium text-secondary-foreground transition-colors hover:bg-secondary/50"
                   >
-                    <Icon className="h-3 w-3" />
+                    <Icon className={cn("h-3 w-3", skill.color)} />
                     {skill.name}
                   </div>
                 );
               })}
-            </div>
-            <div className="flex justify-between">
-              <div className="mt-4">
-                {viewDetails && (
-                  <a
-                    href={viewDetails.href}
-                    rel="noopener noreferrer"
-                    onMouseOver={() => setIsHovering(true)}
-                    onMouseOut={() => setIsHovering(false)}
-                  >
-                    <span className="text-secondary text-sm flex items-center gap-2 hover:text-primary hover:underline">
-                      View Details{" "}
-                      {isHovering ? (
-                        <MdArrowOutward size={16} />
-                      ) : (
-                        <IoArrowForwardOutline size={16} />
-                      )}{" "}
-                    </span>
-                  </a>
-                )}
-              </div>
-
-              <div className="bottom-0 flex justify-end gap-4">
-                <div className="pt-4">
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm hover:text-blue-500 hover:underline"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+              {technologies && technologies.length > 4 && (
+                <div className="flex items-center justify-center rounded-md border border-border/50 bg-secondary/30 px-2 py-1 text-[10px] font-medium text-muted-foreground">
+                  +{technologies.length - 4}
                 </div>
-
-                <div className="pt-4">
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm hover:text-blue-500 hover:underline"
-                  >
-                    <Github size={20} />
-                  </a>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
