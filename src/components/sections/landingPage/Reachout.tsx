@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { socialLinks } from "@/data/socialLinks";
-import { ArrowUpRight, Copy, Check, Mail } from "lucide-react";
+import { Copy, Check, Mail } from "lucide-react";
 
 
 const Reachout = () => {
