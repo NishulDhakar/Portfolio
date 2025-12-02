@@ -3,6 +3,22 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 export const projectsData: ProjectCardProps[] = [
 
   {
+  title: "Cognitive Games",
+  href: "https://games.nishul.dev/",
+  github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
+  description:
+    "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
+  status: "running",
+  image: "/Projects/games.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
+  type: "Web",
+  viewDetails: {
+    type: "Details",
+    href: "/projects/blync",
+  },
+},
+
+  {
   title: "Uni Notes",
   href: "https://rgpvnotes.nishul.dev/", 
   github: "https://github.com/NishulDhakar/Uni-notes",
@@ -29,9 +45,6 @@ export const projectsData: ProjectCardProps[] = [
   //   href: "/projects/kithub",
   // },
 },
-
-
-
   {
   title: "Simple Invest",
   href: "https://invest.nishul.dev/",
@@ -48,22 +61,6 @@ export const projectsData: ProjectCardProps[] = [
   // },
 },
 
-
-{
-  title: "Cognitive Games",
-  href: "https://games.nishul.dev/",
-  github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
-  description:
-    "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
-  status: "running",
-  image: "/Projects/games.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
-  type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/projects/blync",
-  },
-},
 {
   title: "PostaVid",
   href: "https://playavid.vercel.app/",
@@ -79,12 +76,29 @@ export const projectsData: ProjectCardProps[] = [
   //   href: "/postavid",
   // },
 },
+
+{
+  title: "TransNova",
+  href: "https://trans-nova.vercel.app/", 
+  github: "https://github.com/NishulDhakar/TransNova",
+  description:
+    "A project focused on advanced translation or language solutions. Built to assist users with multilingual text processing. (Update the description to reflect TransNova’s actual purpose.)",
+  status: "running", 
+  image: "/Projects/transnova.jpeg", 
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"], 
+  type: "Web",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/projects/transnova",
+  // },
+},
+
 {
   title: "PlanYourMeal",
   href: "https://github.com/NishulDhakar/PlanYourMeal",
   github: "https://github.com/NishulDhakar/PlanYourMeal",
   description:
-    "A cross-platform meal planning app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
+    "A cross-platform meal planning Mobile app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
   status: "running",
   image: "/Projects/planyourmeal.png", 
   technologies: ["Flutter", "Dart", "Firebase"],
@@ -102,7 +116,7 @@ export const projectsData: ProjectCardProps[] = [
     "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
   status: "running",
   image: "/Projects/pay.jpeg",
-  technologies: ["React", "Tailwind", "Node.js", "MongoDB", "REST API"],
+  technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
   type: "Web",
   // viewDetails: {
   //   type: "Details",
@@ -117,7 +131,7 @@ export const projectsData: ProjectCardProps[] = [
     "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
   status: "running",
   image: "/Projects/drop1.jpeg",
-  technologies: ["React", "Tailwind", "Node.js", "MongoDB", "REST API"],
+  technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
   type: "Web",
   // viewDetails: {
   //   type: "Details",
@@ -132,7 +146,7 @@ export const projectsData: ProjectCardProps[] = [
     "A platform to discover and manage events easily. Users can explore upcoming events, view details, and stay updated, making event discovery more seamless and engaging.",
   status: "abandoned",
   image: "/Projects/event.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind" , "MongoDB" ],
+  technologies: ["Next.js", "TypeScript", "MongoDB" ],
   type: "Web",
   // viewDetails: {
   //   type: "Details",

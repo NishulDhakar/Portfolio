@@ -44,7 +44,7 @@ export default function ProjectsPage() {
         <h1
           className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
         >
-          Proof of Work
+          Proof of Work <span className="text-2xl text-muted-foreground font-sans">({projectsData.length})</span>
         </h1>
         <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
           My projects and work across different technologies and domains.

@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 export function SoftButton() {
     return (
@@ -30,6 +31,7 @@ export function SoftButton() {
 
             {/* Shine effect */}
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+            <BorderBeam size={70} duration={3} delay={0} borderWidth={1.5} colorFrom="rgba(255, 255, 255, 0.5)" colorTo="rgba(255, 255, 255, 0)" />
         </Link>
     );
 }
