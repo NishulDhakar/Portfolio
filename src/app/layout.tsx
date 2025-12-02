@@ -7,7 +7,6 @@ import Footer from "@/components/layout/Footer";
 import { Reveal } from "@/components/common/reveal";
 import { ThemeProvider } from "next-themes";
 import FloatingActions from "@/components/layout/FloatingActions";
-import { LightRays } from "@/components/ui/light-rays";
 
 export const metadata = createMetadata({
   description:
