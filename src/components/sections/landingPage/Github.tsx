@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import Container from "@/components/common/Container";
 import GithubIcon from "@/components/svgs/Github";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -102,20 +101,19 @@ export default function Github() {
   }, []);
 
   return (
-        <section className="max-w-4xl mx-auto px-6 lg:px-6 mt-20">
-    <Container className="mt-20">
+    <section className="mt-20">
       <div className="space-y-6">
         {/* Header */}
         <div>
-               <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className=" font-[family-name:var(--font-instrument-serif)] text-2xl font-bold tracking-tight text-foreground"
-        >
-         {githubConfig.title}
-        </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className=" font-[family-name:var(--font-instrument-serif)] text-2xl font-bold tracking-tight text-foreground"
+          >
+            {githubConfig.title}
+          </motion.h2>
           {/* <h2 className="text-2xl font-[family-name:var(--font-instrument-serif)] font-bold"></h2> */}
           {/* <p className="text-sm text-muted-foreground">
             <b>{githubConfig.username}</b>&apos;s {githubConfig.subtitle}
@@ -192,7 +190,6 @@ export default function Github() {
           </div>
         )}
       </div>
-    </Container>
-    </section>
+    </section >
   );
 }

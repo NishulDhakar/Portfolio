@@ -13,7 +13,8 @@ import Github from "@/components/sections/landingPage/Github";
 import Reachout from "@/components/sections/landingPage/Reachout";
 // import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
-import Experience from "@/components/sections/landingPage/Experirnce";
+import Experience from "@/components/sections/landingPage/Experience";
+import TechSkills from "@/components/sections/landingPage/Skills";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
 
@@ -41,7 +42,7 @@ export default function HomePage() {
 
           </Reveal>
 
-          {/* 
+{/*           
           <Reveal>
             {" "}
             <TechSkills />

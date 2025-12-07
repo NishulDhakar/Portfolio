@@ -8,7 +8,7 @@ export default function Name() {
   const [hover, setHover] = useState(false);
 
   return (
-    <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8 mb-8">
+    <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8 mb-8 stick ">
       {/* Profile Image */}
       <div
         className="relative h-24 w-24 shrink-0 transition-transform duration-300 ease-in-out lg:h-28 lg:w-28"
@@ -16,13 +16,13 @@ export default function Name() {
         onMouseLeave={() => setHover(false)}
       >
         <Image
-          src="/nishul3.jpg"
+          src="/nishul4.jpg"
           alt="Nishul Dhakar"
           fill
           className="rounded-full object-cover shadow-sm ring-2 ring-gray-100 dark:ring-gray-800 transition-opacity duration-700 ease-in-out opacity-100"
         />
         <Image
-          src="/nishul3.jpg"
+          src="/nishul4.jpg"
           alt="Nishul Dhakar"
           fill
           className={`rounded-full object-cover shadow-sm ring-2 ring-gray-100 dark:ring-gray-800 absolute top-0 left-0 transition-opacity duration-700 ease-in-out ${hover ? "opacity-100" : "opacity-0"

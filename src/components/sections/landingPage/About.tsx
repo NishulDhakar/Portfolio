@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="max-w-4xl mx-auto px-6 lg:px-6 mt-20">
-      <div className="mx-auto max-w-4xl px-6 lg:px-0">
+    <section className="mt-20">
+      <div className="space-y-8">
         <Name />
 
         <motion.div
@@ -16,7 +16,7 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="space-y-8">
-            <div className="space-y-6 text-secondary leading-relaxed text-md md:text-md font-light tracking-wide">
+            <div className="space-y-6 text-secondary leading-relaxed text-base md:text-md font-light tracking-wide">
               <p>
                 I’m a{" "}
                 <span className="highlight font-normal text-primary">
