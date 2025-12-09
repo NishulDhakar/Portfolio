@@ -24,10 +24,25 @@ export interface ProjectCardProps {
   };
 }
 
-const statusColors: Record<string, string> = {
-  running: "bg-emerald-500",
-  building: "bg-amber-500",
-  abandoned: "bg-red-500",
+const statusConfig: Record<
+  string,
+  { color: string; label: string; dotColor: string }
+> = {
+  running: {
+    color: "text-emerald-400",
+    label: "Live",
+    dotColor: "bg-emerald-400",
+  },
+  building: {
+    color: "text-amber-400",
+    label: "Building",
+    dotColor: "bg-amber-400",
+  },
+  abandoned: {
+    color: "text-red-400",
+    label: "Stopped",
+    dotColor: "bg-red-400",
+  },
 };
 
 export default function ProjectCard({
@@ -41,33 +56,38 @@ export default function ProjectCard({
   technologies,
   viewDetails,
 }: ProjectCardProps) {
+  const currentStatus = statusConfig[status];
+
   return (
     <Reveal>
       <Card
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-background/50 transition-all duration-300 hover:border-border hover:shadow-lg dark:bg-zinc-900/30",
+          "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/40 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-primary/5",
           className
         )}
       >
         {/* Image Section */}
         {image && (
-          <div className="relative aspect-video w-full overflow-hidden bg-muted">
+          <div className="relative aspect-video w-full overflow-hidden bg-black/40">
             <Image
               src={image}
               alt={title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
+
             {/* Overlay Actions */}
-            <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               {viewDetails && (
                 <Link
                   href={viewDetails.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-white text-black shadow-lg transition-all duration-300 hover:scale-110 hover:bg-zinc-200 group-hover:translate-y-0"
                   title="View Details"
                 >
-                  <ArrowUpRight size={20} />
+                  <ArrowUpRight size={20} className="stroke-[2.5]" />
                 </Link>
               )}
               {href && (
@@ -75,10 +95,10 @@ export default function ProjectCard({
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-white text-black shadow-lg delay-75 transition-all duration-300 hover:scale-110 hover:bg-zinc-200 group-hover:translate-y-0"
                   title="Live Demo"
                 >
-                  <ExternalLink size={20} />
+                  <ExternalLink size={20} className="stroke-[2.5]" />
                 </a>
               )}
               {github && (
@@ -86,55 +106,67 @@ export default function ProjectCard({
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-transform duration-200 hover:scale-110 active:scale-95"
+                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-black/90 text-white shadow-lg delay-150 transition-all duration-300 hover:scale-110 hover:bg-black group-hover:translate-y-0"
                   title="Source Code"
                 >
                   <Github size={20} />
                 </a>
               )}
             </div>
+
+            {/* Status Badge */}
+            {status && (
+              <div className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md">
+                <span
+                  className={cn(
+                    "h-1.5 w-1.5 rounded-full shadow-[0_0_8px]",
+                    currentStatus.dotColor,
+                    `shadow-${currentStatus.dotColor.replace("bg-", "")}`
+                  )}
+                />
+                {currentStatus.label}
+              </div>
+            )}
           </div>
         )}
 
         {/* Content Section */}
-        <div className="flex flex-1 flex-col p-5">
-          <div className="mb-3 flex items-start justify-between gap-2">
-            <h3 className="font-semibold text-lg tracking-tight text-foreground">
+        <div className="flex flex-1 flex-col p-6">
+          <div className="mb-2 flex items-start justify-between gap-4">
+            <h3 className="text-xl font-bold tracking-tight text-zinc-100 transition-colors group-hover:text-primary">
               {title}
             </h3>
-            {status && (
-              <div className="flex items-center gap-1.5 rounded-full border border-border/50 bg-background/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground backdrop-blur-sm">
-                <span className={cn("h-1.5 w-1.5 rounded-full animate-pulse", statusColors[status])} />
-                {status.charAt(0).toUpperCase() + status.slice(1)}
-              </div>
-            )}
           </div>
 
-          <p className="mb-6 line-clamp-2 text-sm text-muted-foreground leading-relaxed">
+          <p className="mb-6 line-clamp-2 text-sm leading-relaxed text-zinc-400">
             {description}
           </p>
 
           <div className="mt-auto">
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {technologies?.slice(0, 4).map((tech) => {
                 const skill = techSkills.find(
                   (s) => s.name.toLowerCase() === tech.toLowerCase()
                 );
-                if (!skill) return null;
 
-                const Icon = skill.icon;
+                // Fallback if skill not found
+                const Icon = skill?.icon;
+                const skillColor = skill?.color;
+
                 return (
                   <div
                     key={tech}
-                    className="flex items-center gap-1.5 rounded-md border border-border/50 bg-secondary/30 px-2 py-1 text-[10px] font-medium text-secondary-foreground transition-colors hover:bg-secondary/50"
+                    className="flex items-center gap-1.5 rounded-full border border-white/5 bg-zinc-800/50 px-3 py-1 text-xs font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white"
                   >
-                    <Icon className={cn("h-3 w-3", skill.color)} />
-                    {skill.name}
+                    {Icon && (
+                      <Icon className={cn("h-3.5 w-3.5", skillColor)} />
+                    )}
+                    {skill ? skill.name : tech}
                   </div>
                 );
               })}
               {technologies && technologies.length > 4 && (
-                <div className="flex items-center justify-center rounded-md border border-border/50 bg-secondary/30 px-2 py-1 text-[10px] font-medium text-muted-foreground">
+                <div className="flex items-center justify-center rounded-full border border-white/5 bg-zinc-800/50 px-3 py-1 text-xs font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white">
                   +{technologies.length - 4}
                 </div>
               )}

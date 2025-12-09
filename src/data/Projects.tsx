@@ -45,6 +45,23 @@ export const projectsData: ProjectCardProps[] = [
   //   href: "/projects/kithub",
   // },
 },
+
+{
+  title: "Business Buddy",
+  href: "https://businessbuddy-jade.vercel.app/",
+  github: "https://github.com/NishulDhakar/Business-Buddy-landing",
+  description:
+    "A modern landing page for Business Buddy designed to showcase features, benefits, and product value with smooth animations and a clean UI.",
+  image: "/Projects/bb.jpeg",
+  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+  type: "Web",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/projects/business-buddy",
+  // },
+},
+
+
   {
   title: "Simple Invest",
   href: "https://invest.nishul.dev/",

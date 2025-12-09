@@ -16,7 +16,7 @@ export default function Name() {
         onMouseLeave={() => setHover(false)}
       >
         <Image
-          src="/nishul4.jpg"
+          src="/image.png"
           alt="Nishul Dhakar"
           fill
           className="rounded-full object-cover shadow-sm ring-2 ring-gray-100 dark:ring-gray-800 transition-opacity duration-700 ease-in-out opacity-100"
