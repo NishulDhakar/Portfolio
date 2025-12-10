@@ -15,6 +15,7 @@ import Reachout from "@/components/sections/landingPage/Reachout";
 // import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
+import { socialLinks } from "@/data/socialLinks";
 // import TechSkills from "@/components/sections/landingPage/Skills";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
@@ -29,7 +30,25 @@ export default function HomePage() {
             <About />
           </Reveal>
 
-          <SoftButton />
+<div className="flex justify-between gap-4 mt-2">
+      <SoftButton />
+                         <div className="flex items-center gap-6 pr-8">
+                    {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
+                      <a
+                        key={name}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-200 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+                        aria-label={name}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </a>
+                    ))}
+                  </div>
+
+</div>
+      
 
           {/* <Reveal>
             {" "}
