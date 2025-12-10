@@ -7,6 +7,8 @@ import Footer from "@/components/layout/Footer";
 import { Reveal } from "@/components/common/reveal";
 import { ThemeProvider } from "next-themes";
 import FloatingActions from "@/components/layout/FloatingActions";
+import { ParticlesDemo } from "@/components/common/Particlesbg";
+import ResizablePortfolioNavigation from "@/components/layout/Navbar";
 
 export const metadata = createMetadata({
   description:

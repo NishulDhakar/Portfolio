@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function ExperienceContent() {
   return (
-    <section className="mt-24">
+    <section className="mt-20">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -1,5 +1,6 @@
 
 import About from "@/components/sections/landingPage/About";
+import { SoftButton } from "@/components/sections/landingPage/SoftButton";
 import Container from "@/components/common/Container";
 
 // import ContactForm from "@/components/landingPage/Contact";
@@ -27,6 +28,8 @@ export default function HomePage() {
           <Reveal>
             <About />
           </Reveal>
+
+          <SoftButton />
 
           {/* <Reveal>
             {" "}

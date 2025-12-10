@@ -1,3 +1,37 @@
+// import Link from "next/link";
+// import { Folder, Lightbulb, FileText } from "lucide-react";
+
+// export function SoftButton() {
+//   const navItems = [
+//     { name: "Work", icon: Folder, href: "/projects" },
+//     // { name: "Bookmarks", icon: Lightbulb, href: "/bookmarks" },
+//     // { name: "Notes", icon: FileText, href: "#" },
+//   ];
+
+//   return (
+//     <div className="sticky top-0 z-50 w-full pointer-events-none mt-10 mb-10">
+//       <div className="pointer-events-auto pt-6 pb-6 flex items-center gap-2 bg-neutral-100 dark:bg-black">
+//         {navItems.map((item) => (
+//           <Link
+//             key={item.name}
+//             href={item.href}
+//             className={`
+//               relative flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium transition-all duration-300
+//               ${item.name === "Work"
+//                 ? "bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white shadow-sm"
+//                 : "text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50"}
+//             `}
+//           >
+//             <item.icon size={16} />
+//             {item.name}
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { BorderBeam } from "@/components/magicui/border-beam";

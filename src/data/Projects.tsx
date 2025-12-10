@@ -3,250 +3,250 @@ import { ProjectCardProps } from "@/components/sections/Projects/ProjectCard";
 export const projectsData: ProjectCardProps[] = [
 
   {
-  title: "Cognitive Games",
-  href: "https://games.nishul.dev/",
-  github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
-  description:
-    "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
-  status: "running",
-  image: "/Projects/games.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
-  type: "Web",
-  viewDetails: {
-    type: "Details",
-    href: "/projects/blync",
+    title: "Cognitive Games",
+    href: "https://games.nishul.dev/",
+    github: "https://github.com/NishulDhakar/CognitiveGamesWeb",
+    description:
+      "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
+    status: "running",
+    image: "/Projects/games.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
+    type: "Web",
+    viewDetails: {
+      type: "Details",
+      href: "/projects/blync",
+    },
   },
-},
 
   {
-  title: "Uni Notes",
-  href: "https://rgpvnotes.nishul.dev/", 
-  github: "https://github.com/NishulDhakar/Uni-notes",
-  description:
-    "University notes and study platform with MDX-based content and a Notion-style interface for courses, subjects, syllabus, and PYQs.",
-  status: "building", 
-  image: "/Projects/notes.jpeg", 
-  technologies: ["Next.js", "TypeScript", "Tailwind", "MDX", "Framer Motion"],
-  type: "Web",
-},
+    title: "Uni Notes",
+    href: "https://rgpvnotes.nishul.dev/",
+    github: "https://github.com/NishulDhakar/Uni-notes",
+    description:
+      "University notes and study platform with MDX-based content and a Notion-style interface for courses, subjects, syllabus, and PYQs.",
+    status: "building",
+    image: "/Projects/notes.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "MDX", "Framer Motion"],
+    type: "Web",
+  },
 
   {
-  title: "KitHub",
-  href: "https://kithub.nishul.dev/",
-  github: "https://github.com/NishulDhakar/KitHub",
-  description:
-    "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
-  status: "building",
-  image: "/Projects/kithub.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/projects/kithub",
-  // },
-},
+    title: "KitHub",
+    href: "https://kithub.nishul.dev/",
+    github: "https://github.com/NishulDhakar/KitHub",
+    description:
+      "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
+    status: "building",
+    image: "/Projects/kithub.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/kithub",
+    // },
+  },
 
-{
-  title: "Business Buddy",
-  href: "https://businessbuddy-jade.vercel.app/",
-  github: "https://github.com/NishulDhakar/Business-Buddy-landing",
-  description:
-    "A modern landing page for Business Buddy designed to showcase features, benefits, and product value with smooth animations and a clean UI.",
-  image: "/Projects/bb.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/projects/business-buddy",
-  // },
-},
+  {
+    title: "Business Buddy",
+    href: "https://businessbuddy-jade.vercel.app/",
+    github: "https://github.com/NishulDhakar/Business-Buddy-landing",
+    description:
+      "A modern landing page for Business Buddy designed to showcase features, benefits, and product value with smooth animations and a clean UI.",
+    image: "/Projects/bb.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/business-buddy",
+    // },
+  },
 
 
   {
-  title: "Simple Invest",
-  href: "https://invest.nishul.dev/",
-  github: "https://github.com/NishulDhakar/Simple-Invest",
-  description:
-"A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
-  status: "running",
-  image: "/Projects/invest.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB", ],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/projects/simple-invest",
-  // },
-},
+    title: "Simple Invest",
+    href: "https://invest.nishul.dev/",
+    github: "https://github.com/NishulDhakar/Simple-Invest",
+    description:
+      "A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
+    status: "running",
+    image: "/Projects/invest.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB",],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/simple-invest",
+    // },
+  },
 
-{
-  title: "PostaVid",
-  href: "https://playavid.vercel.app/",
-  github: "https://github.com/NishulDhakar/playavid",
-  description:
-    "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
-  status: "running",
-  image: "/Projects/share.jpeg",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/postavid",
-  // },
-},
+  {
+    title: "PostaVid",
+    href: "https://playavid.vercel.app/",
+    github: "https://github.com/NishulDhakar/playavid",
+    description:
+      "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
+    status: "running",
+    image: "/Projects/share.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/postavid",
+    // },
+  },
 
-{
-  title: "TransNova",
-  href: "https://trans-nova.vercel.app/", 
-  github: "https://github.com/NishulDhakar/TransNova",
-  description:
-    "A project focused on advanced translation or language solutions. Built to assist users with multilingual text processing. (Update the description to reflect TransNova’s actual purpose.)",
-  status: "running", 
-  image: "/Projects/transnova.jpeg", 
-  technologies: ["Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"], 
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/projects/transnova",
-  // },
-},
+  {
+    title: "TransNova",
+    href: "https://trans-nova.vercel.app/",
+    github: "https://github.com/NishulDhakar/TransNova",
+    description:
+      "A project focused on advanced translation or language solutions. Built to assist users with multilingual text processing. (Update the description to reflect TransNova’s actual purpose.)",
+    status: "running",
+    image: "/Projects/transnova.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/transnova",
+    // },
+  },
 
-{
-  title: "PlanYourMeal",
-  href: "https://github.com/NishulDhakar/PlanYourMeal",
-  github: "https://github.com/NishulDhakar/PlanYourMeal",
-  description:
-    "A cross-platform meal planning Mobile app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
-  status: "running",
-  image: "/Projects/planyourmeal.png", 
-  technologies: ["Flutter", "Dart", "Firebase"],
-  type: "Mobile",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/planyourmeal",
-  // },
-},
-{
-  title: "Quick Pay",
-  href: "https://pay.nishul.dev/",
-  github: "https://github.com/NishulDhakar/QuickPay",
-  description:
-    "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
-  status: "running",
-  image: "/Projects/pay.jpeg",
-  technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/quickpay",
-  // },
-},
-{
-  title: "DropIthere",
-  href: "https://dropithere.nishul.dev/",
-  github: "https://github.com/NishulDhakar/dropithere",
-  description:
-    "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
-  status: "running",
-  image: "/Projects/drop1.jpeg",
-  technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/dropithere",
-  // },
-},
-{
-  title: "GetEvent",
-  href: "https://get-event.vercel.app/",
-  github: "https://github.com/NishulDhakar/GetEvent",
-  description:
-    "A platform to discover and manage events easily. Users can explore upcoming events, view details, and stay updated, making event discovery more seamless and engaging.",
-  status: "abandoned",
-  image: "/Projects/event.jpeg",
-  technologies: ["Next.js", "TypeScript", "MongoDB" ],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/getevent",
-  // },
-},
-{
-  title: "Course Selling Web",
-  href: "https://github.com/NishulDhakar/Course-selling-backend",
-  github: "https://github.com/NishulDhakar/Course-selling-backend",
-  description:
-    "A backend for a course selling platform with two roles admin and user with different permissions. while admins create, manage, update and delete course content easily. ",
-  status: "abandoned",
-  image: "/Projects/CourseSelling.jpeg",
-  technologies: ["Node.js", "Express", "MongoDB", "REST API"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/courseselling",
-  // },
-},
-{
-  title: "Restaurant Website Template",
-  href: "https://restaurant-web-layout.netlify.app",
-  github: "https://github.com/NishulDhakar/Restaurant-website-template",
-  description:
-    "A modern and responsive restaurant website template designed to showcase menu items, special offers, meals, and contact details. Ideal for restaurants and cafes.",
-  status: "running",
-  image: "/Projects/restro.jpeg",
-  technologies: ["HTML", "CSS", "JavaScript"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/restaurantwebsite",
-  // },
-},
-{
-  title: "Typing Practice Web",
-  href: "https://typing-game-lyart.vercel.app/",
-  github: "https://github.com/NishulDhakar/Typing-Practice-Web",
-  description:
-    "An interactive typing practice platform that helps users improve their typing speed and accuracy through engaging real-time exercises and progress tracking.",
-  status: "running",
-  image: "/Projects/typing.jpeg",
-  technologies: ["HTML", "CSS", "JavaScript"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/typingpractice",
-  // },
-},
+  {
+    title: "PlanYourMeal",
+    href: "https://github.com/NishulDhakar/PlanYourMeal",
+    github: "https://github.com/NishulDhakar/PlanYourMeal",
+    description:
+      "A cross-platform meal planning Mobile app built with Flutter. It helps users organize meals, generate shopping lists, and maintain a balanced diet with recipe suggestions and nutritional insights.",
+    status: "running",
+    image: "/Projects/planyourmeal.png",
+    technologies: ["Flutter", "Dart", "Firebase"],
+    type: "Mobile",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/planyourmeal",
+    // },
+  },
+  {
+    title: "Quick Pay",
+    href: "https://pay.nishul.dev/",
+    github: "https://github.com/NishulDhakar/QuickPay",
+    description:
+      "A responsive mock payment app that simulates smooth, secure transactions for demos. Built with Next.js, TypeScript, Tailwind, Node.js, Express, and MongoDB.",
+    status: "running",
+    image: "/Projects/pay.jpeg",
+    technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/quickpay",
+    // },
+  },
+  {
+    title: "DropIthere",
+    href: "https://dropithere.nishul.dev/",
+    github: "https://github.com/NishulDhakar/dropithere",
+    description:
+      "Created a platform to organize content like Twitter threads and YouTube videos into custom playlists, with shareable links for easy and structured dashboard sharing.",
+    status: "running",
+    image: "/Projects/drop1.jpeg",
+    technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/dropithere",
+    // },
+  },
+  {
+    title: "GetEvent",
+    href: "https://get-event.vercel.app/",
+    github: "https://github.com/NishulDhakar/GetEvent",
+    description:
+      "A platform to discover and manage events easily. Users can explore upcoming events, view details, and stay updated, making event discovery more seamless and engaging.",
+    status: "abandoned",
+    image: "/Projects/event.jpeg",
+    technologies: ["Next.js", "TypeScript", "MongoDB"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/getevent",
+    // },
+  },
+  {
+    title: "Course Selling Web",
+    href: "https://github.com/NishulDhakar/Course-selling-backend",
+    github: "https://github.com/NishulDhakar/Course-selling-backend",
+    description:
+      "A backend for a course selling platform with two roles admin and user with different permissions. while admins create, manage, update and delete course content easily. ",
+    status: "abandoned",
+    image: "/Projects/CourseSelling.jpeg",
+    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/courseselling",
+    // },
+  },
+  {
+    title: "Restaurant Website Template",
+    href: "https://restaurant-web-layout.netlify.app",
+    github: "https://github.com/NishulDhakar/Restaurant-website-template",
+    description:
+      "A modern and responsive restaurant website template designed to showcase menu items, special offers, meals, and contact details. Ideal for restaurants and cafes.",
+    status: "running",
+    image: "/Projects/restro.jpeg",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/restaurantwebsite",
+    // },
+  },
+  {
+    title: "Typing Practice Web",
+    href: "https://typing-game-lyart.vercel.app/",
+    github: "https://github.com/NishulDhakar/Typing-Practice-Web",
+    description:
+      "An interactive typing practice platform that helps users improve their typing speed and accuracy through engaging real-time exercises and progress tracking.",
+    status: "running",
+    image: "/Projects/typing.jpeg",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/typingpractice",
+    // },
+  },
 
 
-{
-  title: "DrumKit",
-  href: "https://drum-kit-eight-eta.vercel.app/",
-  github:"https://github.com/NishulDhakar/DrumKit",
-  description:
-    "An interactive browser drum kit that plays sounds via keyboard key input, ideal for fun and learning JavaScript event handling for fun concepts.",
-  status: "running",
-  image: "/Projects/drum.jpeg",
-  technologies: ["HTML", "CSS", "JavaScript"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/drumkit",
-  // },
-},
-{
-  title: "Tindog",
-  href: "https://tindog-six-ashy.vercel.app/",
-  github:"https://github.com/NishulDhakar/Tindog",
-  description:
-    "A clean, responsive frontend landing page for a fictional dog dating app, demonstrating Bootstrap design and layout skills effectively.",
-  status: "running",
-  image: "/Projects/dog.jpeg",
-  technologies: ["HTML", "CSS", "Bootstrap"],
-  type: "Web",
-  // viewDetails: {
-  //   type: "Details",
-  //   href: "/tindog",
-  // },
-},
+  {
+    title: "DrumKit",
+    href: "https://drum-kit-eight-eta.vercel.app/",
+    github: "https://github.com/NishulDhakar/DrumKit",
+    description:
+      "An interactive browser drum kit that plays sounds via keyboard key input, ideal for fun and learning JavaScript event handling for fun concepts.",
+    status: "running",
+    image: "/Projects/drum.jpeg",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/drumkit",
+    // },
+  },
+  {
+    title: "Tindog",
+    href: "https://tindog-six-ashy.vercel.app/",
+    github: "https://github.com/NishulDhakar/Tindog",
+    description:
+      "A clean, responsive frontend landing page for a fictional dog dating app, demonstrating Bootstrap design and layout skills effectively.",
+    status: "running",
+    image: "/Projects/dog.jpeg",
+    technologies: ["HTML", "CSS", "Bootstrap"],
+    type: "Web",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/tindog",
+    // },
+  },
 
 
   // {
@@ -308,7 +308,7 @@ export const projectsData: ProjectCardProps[] = [
 //         icon: <Icons.github className="size-3" />,
 //       },
 //     ],
-//     image: "/anime.jpeg",
+//     image: "/image.png",
 //     viewDetails: {
 //       type: "Details",
 //       href: "/smartessay",

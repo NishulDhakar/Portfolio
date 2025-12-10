@@ -1,12 +1,12 @@
 "use client";
 
 import Name from "./Name";
-import { SoftButton } from "./SoftButton";
+
 import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="mt-20">
+    <section className="mt-20 mb-8">
       <div className="space-y-8">
         <Name />
 
@@ -50,14 +50,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      <motion.div
-        className="mt-10"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <SoftButton />
-      </motion.div>
+
     </section>
   );
 }
