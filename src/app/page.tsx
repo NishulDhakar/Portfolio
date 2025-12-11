@@ -30,9 +30,9 @@ export default function HomePage() {
             <About />
           </Reveal>
 
-<div className="flex justify-between gap-4 mt-2">
+<div className="md:flex lg:justify-between gap-4 mt-2">
       <SoftButton />
-                         <div className="flex items-center gap-6 pr-8">
+                         <div className="flex p-2 md:mt-0 mt-8 lg:pr-8 items-center gap-6">
                     {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
                       <a
                         key={name}
