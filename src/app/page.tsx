@@ -30,25 +30,27 @@ export default function HomePage() {
             <About />
           </Reveal>
 
-<div className="md:flex lg:justify-between gap-4 mt-2">
-      <SoftButton />
-                         <div className="flex p-2 md:mt-0 mt-8 lg:pr-8 items-center gap-6">
-                    {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
-                      <a
-                        key={name}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-200 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
-                        aria-label={name}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </a>
-                    ))}
-                  </div>
+          <Reveal>
+            <div className="md:flex lg:justify-between gap-4 mt-2">
+              <SoftButton />
+              <div className="flex p-2 md:mt-0 mt-8 lg:pr-8 items-center gap-6">
+                {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-200 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+                    aria-label={name}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                ))}
+              </div>
 
-</div>
-      
+            </div>
+          </Reveal>
+
 
           {/* <Reveal>
             {" "}
@@ -70,7 +72,9 @@ export default function HomePage() {
             <TechSkills />
           </Reveal> */}
 
-          <Github />
+          <Reveal>
+            <Github />
+          </Reveal>
 
           {/* <Reveal>
        <ProjectsPage />
