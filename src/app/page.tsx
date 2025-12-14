@@ -16,6 +16,7 @@ import Reachout from "@/components/sections/landingPage/Reachout";
 import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
 import { socialLinks } from "@/data/socialLinks";
+import TechSkills from "@/components/sections/landingPage/Skills";
 // import TechSkills from "@/components/sections/landingPage/Skills";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
@@ -40,7 +41,7 @@ export default function HomePage() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-200 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+                    className="text-foreground dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
                     aria-label={name}
                   >
                     <Icon className="w-5 h-5" />
@@ -66,11 +67,11 @@ export default function HomePage() {
 
           </Reveal>
 
-          {/*           
+                    
           <Reveal>
             {" "}
             <TechSkills />
-          </Reveal> */}
+          </Reveal>
 
           <Reveal>
             <Github />
