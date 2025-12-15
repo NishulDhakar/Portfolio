@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Target, Brain, Code2, Globe, Cloud, Database, FileCode } from "lucide-react";
 import { SiApachespark } from "react-icons/si";
-import { buttonVariants } from "@/components/ui/button";
 
 // Category metadata with icons
 const categoryMetadata: Record<Category | "all", { icon: React.ElementType; label: string; emoji: string }> = {
@@ -36,7 +35,7 @@ export default function TechSkills() {
   const categories: (Category | "all")[] = ["all", "language", "Web", "database", "mobile", "tools", "Cloud"];
 
   return (
-    <section className="mt-24 mb-24">
+    <section className="mt-24">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -123,12 +122,12 @@ export default function TechSkills() {
             </div>
 
             {/* Count Text */}
-            <p className="text-center text-sm text-muted-foreground">
+            {/* <p className="text-center text-sm text-muted-foreground">
               Showing {activeSkills.length} skill{activeSkills.length !== 1 ? "s" : ""} in{" "}
               <span className="font-semibold text-foreground">
                 {categoryMetadata[activeCategory].label}
               </span>
-            </p>
+            </p> */}
           </motion.div>
         </AnimatePresence>
       </div>

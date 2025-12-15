@@ -101,7 +101,7 @@ export default function Github() {
   }, []);
 
   return (
-    <section className="mt-20">
+    <section className="mt-">
       <div className="space-y-6">
         {/* Header */}
         <div>
