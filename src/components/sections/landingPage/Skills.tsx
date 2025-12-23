@@ -56,34 +56,37 @@ export default function TechSkills() {
             const label = categoryMetadata[category].label;
 
             return (
-              <motion.button
-                key={category}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.2, delay: index * 0.03 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "relative px-4 py-2 rounded-full font-medium text-sm transition-all duration-200 flex items-center gap-2",
-                  isActive
-                    ? "bg-foreground text-background shadow-md"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                )}
-              >
-                <CategoryIcon className="w-4 h-4" />
-                <span>{label}</span>
-                <span
-                  className={cn(
-                    "ml-1 px-2 py-0.5 rounded-full text-xs font-semibold",
-                    isActive
-                      ? "bg-background/20 text-background"
-                      : "bg-background/50 text-foreground/60"
-                  )}
-                >
-                  {count}
-                </span>
-              </motion.button>
+  <motion.button
+  key={category}
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.2, delay: index * 0.03 }}
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  onClick={() => setActiveCategory(category)}
+  className={cn(
+    "group relative inline-flex items-center gap-2 overflow-hidden rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200",
+    isActive
+      ? "border-foreground/30 bg-secondary/60 text-foreground"
+      : "border-border/50 bg-background text-muted-foreground hover:border-foreground/20 hover:bg-secondary/50 hover:text-foreground"
+  )}
+>
+  <CategoryIcon className="h-4 w-4 transition-colors group-hover:text-foreground" />
+
+  <span>{label}</span>
+
+  <span
+    className={cn(
+      "ml-1 rounded-full px-2 py-0.5 text-xs font-semibold transition-colors",
+      isActive
+        ? "bg-foreground/10 text-foreground"
+        : "bg-muted text-muted-foreground group-hover:text-foreground"
+    )}
+  >
+    {count}
+  </span>
+</motion.button>
+
             );
           })}
         </div>

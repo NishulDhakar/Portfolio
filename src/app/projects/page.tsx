@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { Particles } from "@/components/ui/magicui/particles";
 
 export default function ProjectsPage() {
   const containerClassName = "mx-auto px-6 lg:px-12 max-w-7xl mt-20 py-4";
@@ -21,10 +22,17 @@ export default function ProjectsPage() {
     (project) => filter === "All" || project.type === filter
   );
 
-  const types = ["All", "Web", "Mobile"];
+const types = ["All", "Frontend", "Fullstack", "Fin-Fullstack", "System"];
+
 
   return (
     <div className={containerClassName}>
+         <Particles
+                      className="absolute inset-0 z-0"
+                      quantity={100}
+                      staticity={50}
+                      color="#ffffff"
+                  />
       <div className="mb-8">
         <Link
           href="/"
@@ -42,7 +50,7 @@ export default function ProjectsPage() {
         className="text-center space-y-4 mt-6"
       >
         <h1
-          className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
+          className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-7xl font-bold tracking-wide leading-tight`}
         >
           Proof of Work <span className="text-2xl text-muted-foreground font-sans">({projectsData.length})</span>
         </h1>

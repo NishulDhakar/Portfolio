@@ -10,25 +10,36 @@ export default function Name() {
   return (
     <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8 mb-8 stick ">
       {/* Profile Image */}
-      <div
-        className="relative h-24 w-24 shrink-0 transition-transform duration-300 ease-in-out lg:h-28 lg:w-28"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
+<div
+  className="relative h-24 w-24 lg:h-28 lg:w-28 shrink-0"
+  onMouseEnter={() => setHover(true)}
+  onMouseLeave={() => setHover(false)}
+>
+  {/* INSTAGRAM RING */}
+  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neutral-500 via-neutral-500 to-neutral-500 p-[3px] animate-spin-slow">
+    <div className="h-full w-full rounded-full bg-white dark:bg-black p-[2px]">
+      <div className="relative h-full w-full rounded-full overflow-hidden">
         <Image
-          src="/image.png"
+          src="/image1.png"
           alt="Nishul Dhakar"
           fill
-          className="rounded-full object-cover shadow-sm ring-2 ring-gray-100 dark:ring-gray-800 transition-opacity duration-700 ease-in-out opacity-100"
+          className={`object-cover transition-opacity duration-700 ${
+            hover ? "opacity-0" : "opacity-100"
+          }`}
         />
         <Image
           src="/nishul4.jpg"
           alt="Nishul Dhakar"
           fill
-          className={`rounded-full object-cover shadow-sm ring-2 ring-gray-100 dark:ring-gray-800 absolute top-0 left-0 transition-opacity duration-700 ease-in-out ${hover ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 object-cover transition-opacity duration-700 ${
+            hover ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Text Content */}
       <div className="flex flex-col gap-2">

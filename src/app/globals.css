@@ -281,3 +281,21 @@ html {
 .highlight {
   @apply bg-primary/10 text-primary px-1.5 py-0.5 rounded-md font-medium;
 }
+
+/* Light mode dot matrix */
+.bg-dot-light {
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(circle at 25% 25%, #d1d5db 0.5px, transparent 1px),
+    radial-gradient(circle at 75% 75%, #e5e7eb 0.5px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* Dark mode dot matrix */
+.bg-dot-dark {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(circle at 25% 25%, #222222 0.5px, transparent 1px),
+    radial-gradient(circle at 75% 75%, #111111 0.5px, transparent 1px);
+  background-size: 10px 10px;
+}

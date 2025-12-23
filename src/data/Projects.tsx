@@ -11,7 +11,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/games.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
-    type: "Web",
+    type: "Fullstack",
     viewDetails: {
       type: "Details",
       href: "/projects/blync",
@@ -27,7 +27,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "building",
     image: "/Projects/notes.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "MDX", "Framer Motion"],
-    type: "Web",
+    type: "Frontend",
   },
 
   {
@@ -39,7 +39,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "building",
     image: "/Projects/kithub.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    type: "Web",
+    type: "Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/kithub",
@@ -54,13 +54,46 @@ export const projectsData: ProjectCardProps[] = [
       "A modern landing page for Business Buddy designed to showcase features, benefits, and product value with smooth animations and a clean UI.",
     image: "/Projects/bb.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/business-buddy",
     // },
   },
 
+  {
+  title: "Arc Logistics",
+  href: "https://arc-logistics.vercel.app/",
+  github: "https://github.com/NishulDhakar/ARC-logistics",
+  description:
+    "A modern logistics management platform designed to streamline shipment tracking, fleet visibility, and operational workflows. Built with a focus on clarity, speed, and real-time insights for logistics teams.",
+  status: "running",
+  image: "/Projects/arc-logistics.jpeg",
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+
+  ],
+  type: "Frontend",
+  // viewDetails: {
+  //   type: "Details",
+  //   href: "/projects/arc-logistics",
+  // },
+},
+
+ {
+  title: "SchoolOS",
+  href: "https://github.com/NishulDhakar/SchoolOS",
+  github: "https://github.com/NishulDhakar/SchoolOS",
+  description:
+    "A comprehensive school management system that centralizes administrative and academic workflows. Manage student data, attendance, class schedules, user roles, and communications through a unified dashboard to streamline daily operations.",
+  status: "building",
+  image: "/Projects/schoolos.jpeg",
+  technologies: ["React", "laravel", "php", "mysql"],
+  type: "System",
+},
 
   {
     title: "Simple Invest",
@@ -71,7 +104,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/invest.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB",],
-    type: "Web",
+    type: "Fin-Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/simple-invest",
@@ -87,7 +120,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/share.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    type: "Web",
+    type: "Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/postavid",
@@ -103,7 +136,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/transnova.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/transnova",
@@ -134,7 +167,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/pay.jpeg",
     technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
-    type: "Web",
+    type: "Fin-Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/quickpay",
@@ -149,7 +182,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/drop1.jpeg",
     technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
-    type: "Web",
+    type: "Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/dropithere",
@@ -164,7 +197,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "abandoned",
     image: "/Projects/event.jpeg",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/getevent",
@@ -179,7 +212,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "abandoned",
     image: "/Projects/CourseSelling.jpeg",
     technologies: ["Node.js", "Express", "MongoDB", "REST API"],
-    type: "Web",
+    type: "All",
     // viewDetails: {
     //   type: "Details",
     //   href: "/courseselling",
@@ -194,7 +227,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/restro.jpeg",
     technologies: ["HTML", "CSS", "JavaScript"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/restaurantwebsite",
@@ -209,7 +242,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/typing.jpeg",
     technologies: ["HTML", "CSS", "JavaScript"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/typingpractice",
@@ -226,7 +259,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/drum.jpeg",
     technologies: ["HTML", "CSS", "JavaScript"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/drumkit",
@@ -241,7 +274,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/dog.jpeg",
     technologies: ["HTML", "CSS", "Bootstrap"],
-    type: "Web",
+    type: "Frontend",
     // viewDetails: {
     //   type: "Details",
     //   href: "/tindog",

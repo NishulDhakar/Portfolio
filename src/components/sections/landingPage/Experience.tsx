@@ -29,13 +29,14 @@ export default function ExperienceContent() {
           >
             {/* ✅ Company Logo as Minimal Dot */}
             <div className="absolute left-0 top-1.5">
-              <Image
-                src="/averoft.jpeg"
-                alt={`${item.company} logo`}
-                width={40}
-                height={40}
-                className="rounded-full object-cover"
-              />
+<Image
+  src={item.logo}
+  alt={`${item.company} logo`}
+  width={40}
+  height={40}
+  className="rounded-full object-cover"
+/>
+
             </div>
 
             <div className="flex pl-3 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">

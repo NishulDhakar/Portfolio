@@ -2,6 +2,8 @@
 import About from "@/components/sections/landingPage/About";
 import { SoftButton } from "@/components/sections/landingPage/SoftButton";
 import Container from "@/components/common/Container";
+import { ArrowUpRight } from "lucide-react";
+import { FaRegFolderOpen } from "react-icons/fa";
 
 // import ContactForm from "@/components/landingPage/Contact";
 // import ProjectsPage from "./projects/page";
@@ -33,7 +35,6 @@ export default function HomePage() {
 
           <Reveal>
             <div className="md:flex lg:justify-between gap-4 mt-2">
-              <SoftButton />
               <div className="flex p-2 md:mt-0 mt-8 lg:pr-8 items-center gap-6">
                 {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
                   <a
@@ -50,6 +51,28 @@ export default function HomePage() {
               </div>
 
             </div>
+          </Reveal>
+
+                <Reveal>
+          
+          <div className="flex justify-between mt-10 gap-4">
+<SoftButton
+  href="/what-can-i-do"
+  label="What Can I Do"
+  leftIcon={<FaRegFolderOpen size={18} />}
+  rightIcon={<ArrowUpRight size={16} />}
+/>
+
+<SoftButton
+  href="/projects"
+  label="See The Things I've Built"
+  leftIcon={<FaRegFolderOpen size={18} />}
+  rightIcon={<ArrowUpRight size={16} />}
+/>
+
+     
+          </div>
+
           </Reveal>
 
 
