@@ -111,7 +111,7 @@ export default function CapabilitiesPage() {
 
 
                          {/* Top Navigation Actions */}
-<div className="relative z-10 flex flex-wrap justify-between items-center gap-4">
+<div className="relative z-10 hidden md:flex flex-wrap justify-between items-center gap-4">
   <Link href="/">
     <Button
       variant="ghost"

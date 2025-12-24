@@ -30,21 +30,17 @@ export const projectsData: ProjectCardProps[] = [
     type: "Frontend",
   },
 
-  {
-    title: "KitHub",
-    href: "https://kithub.nishul.dev/",
-    github: "https://github.com/NishulDhakar/KitHub",
-    description:
-      "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
-    status: "building",
-    image: "/Projects/kithub.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    type: "Fullstack",
-    // viewDetails: {
-    //   type: "Details",
-    //   href: "/projects/kithub",
-    // },
-  },
+ {
+  title: "SchoolOS",
+  href: "https://github.com/NishulDhakar/SchoolOS",
+  github: "https://github.com/NishulDhakar/SchoolOS",
+  description:
+    "A comprehensive school management system that centralizes administrative and academic workflows. Manage student data, attendance, class schedules, user roles, and communications through a unified dashboard to streamline daily operations.",
+  status: "running",
+  image: "/Projects/schoolos.jpeg",
+  technologies: ["React", "laravel", "php", "mysql"],
+  type: "System",
+},
 
   {
     title: "Business Buddy",
@@ -83,17 +79,7 @@ export const projectsData: ProjectCardProps[] = [
   // },
 },
 
- {
-  title: "SchoolOS",
-  href: "https://github.com/NishulDhakar/SchoolOS",
-  github: "https://github.com/NishulDhakar/SchoolOS",
-  description:
-    "A comprehensive school management system that centralizes administrative and academic workflows. Manage student data, attendance, class schedules, user roles, and communications through a unified dashboard to streamline daily operations.",
-  status: "building",
-  image: "/Projects/schoolos.jpeg",
-  technologies: ["React", "laravel", "php", "mysql"],
-  type: "System",
-},
+
 
   {
     title: "Simple Invest",
@@ -127,6 +113,8 @@ export const projectsData: ProjectCardProps[] = [
     // },
   },
 
+
+
   {
     title: "TransNova",
     href: "https://trans-nova.vercel.app/",
@@ -140,6 +128,22 @@ export const projectsData: ProjectCardProps[] = [
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/transnova",
+    // },
+  },
+
+    {
+    title: "KitHub",
+    href: "https://kithub.nishul.dev/",
+    github: "https://github.com/NishulDhakar/KitHub",
+    description:
+      "This platform helps developers save time and boost creativity with curated resources for design, development, and deployment.",
+    status: "abandoned",
+    image: "/Projects/kithub.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    type: "Fullstack",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/kithub",
     // },
   },
 

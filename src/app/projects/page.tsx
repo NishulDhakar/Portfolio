@@ -50,11 +50,11 @@ const types = ["All", "Frontend", "Fullstack", "Fin-Fullstack", "System"];
         className="text-center space-y-4 mt-6"
       >
         <h1
-          className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-7xl font-bold tracking-wide leading-tight`}
+          className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-5xl lg:text-7xl font-bold tracking-wide leading-tight`}
         >
           Proof of Work <span className="text-2xl text-muted-foreground font-sans">({projectsData.length})</span>
         </h1>
-        <div className="text-muted-foreground mx-auto max-w-2xl text-lg">
+        <div className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           My projects and work across different technologies and domains.
         </div>
       </motion.div>

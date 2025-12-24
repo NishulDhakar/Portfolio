@@ -5,7 +5,7 @@ import { socialLinks } from "@/data/socialLinks";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-12 mt-20">
+    <footer className="w-full mb-10">
       <Container className="max-w-4xl mx-auto w-full">
         <div className="flex flex-col items-center space-y-6">
 

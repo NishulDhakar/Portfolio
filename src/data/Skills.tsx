@@ -9,6 +9,13 @@ import {
   FaReact,
 } from "react-icons/fa";
 
+import {
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+} from "react-icons/si";
+
+
 import { FaDartLang, FaFlutter } from "react-icons/fa6";
 
 import { PiFileCssFill } from "react-icons/pi";
@@ -52,7 +59,9 @@ export type Category =
   | "database"
   | "mobile"
   | "Cloud"
-  | "tools";
+  | "tools"
+  | "AI/ML"
+  | "data";
 
 export interface Skill {
   name: string;
@@ -95,6 +104,13 @@ export const techSkills: Skill[] = [
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-700", variant: "ghost", category: "database" },
   { name: "MySQL", icon: SiMysql, color: "text-blue-700", variant: "ghost", category: "database" },
 
+    // 📊 Data & ML (Python Ecosystem)
+{ name: "NumPy", icon: SiNumpy, color: "text-blue-500", variant: "ghost", category: "data" },
+{ name: "Pandas", icon: SiPandas, color: "text-indigo-500", variant: "ghost", category: "data" },
+{ name: "scikit-learn", icon: SiScikitlearn, color: "text-orange-500", variant: "ghost", category: "AI/ML" },
+{ name: "yfinance", icon: SiPython, color: "text-green-500", variant: "ghost", category: "data" },
+
+
   // 🤖 AI
   // { name: "OpenAI / Gemini API", icon: SiOpenai, color: "text-black dark:text-white", variant: "ghost", category: "ai" },
 
@@ -115,4 +131,6 @@ export const techSkills: Skill[] = [
   { name: "Git", icon: FaGitAlt, color: "text-red-600", variant: "ghost", category: "tools" },
   { name: "MDX", icon: SiMdx, color: "text-gray-900 dark:text-white", variant: "ghost", category: "tools" },
   { name: "Inngest", icon: GiArtificialHive, color: "text-gray-900 dark:text-white", variant: "ghost", category: "tools" },
+
+
 ];

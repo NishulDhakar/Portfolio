@@ -7,6 +7,7 @@ import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/common/reveal";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export interface ProjectCardProps {
   title: string;
@@ -26,22 +27,25 @@ export interface ProjectCardProps {
 
 const statusConfig: Record<
   string,
-  { color: string; label: string; dotColor: string }
+  { color: string; label: string; dotColor: string; shadowColor: string }
 > = {
   running: {
-    color: "text-emerald-400",
+    color: "text-emerald-500 dark:text-emerald-400",
     label: "Live",
-    dotColor: "bg-emerald-400",
+    dotColor: "bg-emerald-500 dark:bg-emerald-400",
+    shadowColor: "shadow-emerald-500/50",
   },
   building: {
-    color: "text-amber-400",
+    color: "text-amber-500 dark:text-amber-400",
     label: "Building",
-    dotColor: "bg-amber-400",
+    dotColor: "bg-amber-500 dark:bg-amber-400",
+    shadowColor: "shadow-amber-500/50",
   },
   abandoned: {
-    color: "text-red-400",
+    color: "text-red-500 dark:text-red-400",
     label: "Stopped",
-    dotColor: "bg-red-400",
+    dotColor: "bg-red-500 dark:bg-red-400",
+    shadowColor: "shadow-red-500/50",
   },
 };
 
@@ -62,13 +66,13 @@ export default function ProjectCard({
     <Reveal>
       <Card
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/40 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-primary/5",
+          "group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl transition-all duration-500 hover:border-black/10 dark:hover:border-white/20 hover:shadow-2xl hover:shadow-primary/5",
           className
         )}
       >
         {/* Image Section */}
         {image && (
-          <div className="relative aspect-video w-full overflow-hidden bg-black/40">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 dark:bg-black/40">
             <Image
               src={image}
               alt={title}
@@ -77,51 +81,47 @@ export default function ProjectCard({
             />
 
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:opacity-0" />
 
-            {/* Overlay Actions */}
-            <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              {viewDetails && (
-                <Link
-                  href={viewDetails.href}
-                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-white text-black shadow-lg transition-all duration-300 hover:scale-110 hover:bg-zinc-200 group-hover:translate-y-0"
-                  title="View Details"
-                >
-                  <ArrowUpRight size={20} className="stroke-[2.5]" />
-                </Link>
-              )}
+            {/* Quick Actions (Always visible on mobile, hover on desktop) */}
+            <div className="absolute right-4 top-4 z-10 flex flex-col gap-2 translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:opacity-0">
               {href && (
-                <a
+                <motion.a
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-white text-black shadow-lg delay-75 transition-all duration-300 hover:scale-110 hover:bg-zinc-200 group-hover:translate-y-0"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 dark:bg-black/80 text-black dark:text-white shadow-lg backdrop-blur-md transition-all"
                   title="Live Demo"
                 >
-                  <ExternalLink size={20} className="stroke-[2.5]" />
-                </a>
+                  <ExternalLink size={16} />
+                </motion.a>
               )}
               {github && (
-                <a
+                <motion.a
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full bg-black/90 text-white shadow-lg delay-150 transition-all duration-300 hover:scale-110 hover:bg-black group-hover:translate-y-0"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 dark:bg-black/80 text-black dark:text-white shadow-lg backdrop-blur-md transition-all"
                   title="Source Code"
                 >
-                  <Github size={20} />
-                </a>
+                  <Github size={16} />
+                </motion.a>
               )}
             </div>
 
             {/* Status Badge */}
             {status && (
-              <div className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md">
+              <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full border border-black/5 dark:border-white/10 bg-white/80 dark:bg-black/50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-zinc-900 dark:text-white backdrop-blur-md">
                 <span
                   className={cn(
-                    "h-1.5 w-1.5 rounded-full shadow-[0_0_8px]",
+                    "h-1.5 w-1.5 rounded-full",
                     currentStatus.dotColor,
-                    `shadow-${currentStatus.dotColor.replace("bg-", "")}`
+                    "animate-pulse shadow-[0_0_8px]",
+                    currentStatus.shadowColor
                   )}
                 />
                 {currentStatus.label}
@@ -131,44 +131,76 @@ export default function ProjectCard({
         )}
 
         {/* Content Section */}
-        <div className="flex flex-1 flex-col p-6">
-          <div className="mb-2 flex items-start justify-between gap-4">
-            <h3 className="text-xl font-bold tracking-tight text-zinc-100 transition-colors group-hover:text-primary">
+        <div className="flex flex-1 flex-col p-6 lg:p-7">
+          <div className="mb-3 flex items-start justify-between gap-4">
+            <h3 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-colors group-hover:text-primary">
               {title}
             </h3>
+            {viewDetails && (
+              <Link
+                href={viewDetails.href}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-black/5 dark:border-white/10 text-zinc-400 transition-colors hover:bg-black/5 dark:hover:bg-white/5 hover:text-zinc-900 dark:hover:text-white"
+              >
+                <ArrowUpRight size={18} />
+              </Link>
+            )}
           </div>
 
-          <p className="mb-6 line-clamp-2 text-sm leading-relaxed text-zinc-400">
+          <p className="mb-6 line-clamp-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
             {description}
           </p>
 
-          <div className="mt-auto">
+          <div className="mt-auto space-y-6">
             <div className="flex flex-wrap gap-2">
-              {technologies?.slice(0, 4).map((tech) => {
+              {technologies?.slice(0, 5).map((tech) => {
                 const skill = techSkills.find(
                   (s) => s.name.toLowerCase() === tech.toLowerCase()
                 );
 
-                // Fallback if skill not found
                 const Icon = skill?.icon;
                 const skillColor = skill?.color;
 
                 return (
                   <div
                     key={tech}
-                    className="flex items-center gap-1.5 rounded-full border border-white/5 bg-zinc-800/50 px-3 py-1 text-xs font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-full border border-black/[0.03] dark:border-white/[0.03] bg-black/[0.02] dark:bg-white/[0.02] px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 transition-all hover:bg-black/[0.05] dark:hover:bg-white/[0.05] hover:text-zinc-900 dark:hover:text-white"
                   >
                     {Icon && (
-                      <Icon className={cn("h-3.5 w-3.5", skillColor)} />
+                      <Icon className={cn("h-3.5 w-3.5 opacity-70", skillColor)} />
                     )}
                     {skill ? skill.name : tech}
                   </div>
                 );
               })}
-              {technologies && technologies.length > 4 && (
-                <div className="flex items-center justify-center rounded-full border border-white/5 bg-zinc-800/50 px-3 py-1 text-xs font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white">
-                  +{technologies.length - 4}
+              {technologies && technologies.length > 5 && (
+                <div className="flex items-center justify-center rounded-full border border-black/[0.03] dark:border-white/[0.03] bg-black/[0.02] dark:bg-white/[0.02] px-3 py-1 text-xs font-medium text-zinc-400">
+                  +{technologies.length - 5}
                 </div>
+              )}
+            </div>
+
+            {/* Card Footer Actions - Visible on mobile/tablet, subtle on desktop */}
+            <div className="flex items-center gap-3 pt-2 md:hidden">
+              {href && (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-zinc-900 py-2.5 text-sm font-semibold text-white transition-all active:scale-95 dark:bg-white dark:text-zinc-900"
+                >
+                  <ExternalLink size={16} />
+                  Live Preview
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-white text-zinc-900 transition-all active:scale-95 dark:border-white/10 dark:bg-zinc-800 dark:text-white"
+                >
+                  <Github size={18} />
+                </a>
               )}
             </div>
           </div>

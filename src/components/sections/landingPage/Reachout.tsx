@@ -16,7 +16,7 @@ const Reachout = () => {
   };
 
   return (
-    <section className="mt-20">
+    <section className="mt-14">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

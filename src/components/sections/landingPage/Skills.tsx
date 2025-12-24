@@ -16,6 +16,8 @@ const categoryMetadata: Record<Category | "all", { icon: React.ElementType; labe
   mobile: { icon: Globe, label: "Mobile", emoji: "📱" },
   tools: { icon: SiApachespark, label: "Tools", emoji: "🧰" },
   Cloud: { icon: Cloud, label: "Cloud", emoji: "☁️" },
+  "AI/ML": { icon: Brain, label: "AI/ML", emoji: "🤖" },
+  data: { icon: Code2, label: "Data", emoji: "📊" },
 };
 
 export default function TechSkills() {
@@ -32,10 +34,10 @@ export default function TechSkills() {
     return techSkills.filter((s) => s.category === category).length;
   };
 
-  const categories: (Category | "all")[] = ["all", "language", "Web", "database", "mobile", "tools", "Cloud"];
+  const categories: (Category | "all")[] = ["all", "language", "Web", "database", "mobile", "tools", "Cloud", "AI/ML", "data"];
 
   return (
-    <section className="mt-24">
+    <section className="mt-20">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

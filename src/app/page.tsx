@@ -19,6 +19,7 @@ import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
 import { socialLinks } from "@/data/socialLinks";
 import TechSkills from "@/components/sections/landingPage/Skills";
+import { Separator } from "@/components/ui/separator";
 // import TechSkills from "@/components/sections/landingPage/Skills";
 // import { experience } from "@/data/experience";
 // import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
@@ -32,6 +33,8 @@ export default function HomePage() {
           <Reveal>
             <About />
           </Reveal>
+
+               
 
           <Reveal>
             <div className="md:flex lg:justify-between gap-4 mt-2">
@@ -54,25 +57,53 @@ export default function HomePage() {
           </Reveal>
 
                 <Reveal>
-          
-          <div className="flex justify-between mt-10 gap-4">
-<SoftButton
-  href="/what-can-i-do"
-  label="What Can I Do"
-  leftIcon={<FaRegFolderOpen size={18} />}
-  rightIcon={<ArrowUpRight size={16} />}
-/>
 
-<SoftButton
-  href="/projects"
-  label="See The Things I've Built"
-  leftIcon={<FaRegFolderOpen size={18} />}
-  rightIcon={<ArrowUpRight size={16} />}
-/>
+<div className="sticky top-0 z-50 mt-10">
+  <div
+    className="
+      flex justify-between gap-3
+      py-3 px-2
+    "
+  >
+    {/* Capabilities */}
+    <SoftButton
+      href="/what-can-i-do"
+      leftIcon={<FaRegFolderOpen size={18} />}
+      rightIcon={<ArrowUpRight size={16} />}
+      label={
+        <>
+          {/* Mobile */}
+          <span className="sm:hidden">Capabilities</span>
+          {/* Desktop */}
+          <span className="hidden sm:inline">What Can I Do</span>
+        </>
+      }
+    />
 
-     
-          </div>
+    {/* Work */}
+    <SoftButton
+      href="/projects"
+      leftIcon={<FaRegFolderOpen size={18} />}
+      rightIcon={<ArrowUpRight size={16} />}
+      label={
+        <>
+          {/* Mobile */}
+          <span className="sm:hidden">See Work</span>
+          {/* Desktop */}
+          <span className="hidden sm:inline">See The Things I've Built</span>
+        </>
+      }
+    />
+  </div>
+</div>
 
+
+
+
+          </Reveal>
+
+          <Reveal>
+          <Separator className="my-8" />
           </Reveal>
 
 
@@ -117,6 +148,11 @@ export default function HomePage() {
           </Reveal> */}
 
           <Reachout />
+
+             <Reveal>
+          <Separator className="my-8" />
+          </Reveal>
+
         </Container>
 
       </div>

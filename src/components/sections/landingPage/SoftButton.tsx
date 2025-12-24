@@ -52,7 +52,7 @@ export function SoftButton({
       )}
 
       {/* Border Beam (light mode only) */}
-      <div className="absolute inset-0 dark:hidden">
+      {/* <div className="absolute inset-0 dark:hidden">
         <BorderBeam
           size={70}
           duration={3}
@@ -61,7 +61,7 @@ export function SoftButton({
           colorFrom="rgba(0,0,0,0.35)"
           colorTo="rgba(0,0,0,0)"
         />
-      </div>
+      </div> */}
     </Link>
   );
 }
