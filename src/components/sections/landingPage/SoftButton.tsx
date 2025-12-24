@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 
 type SoftButtonProps = {
   href: string;
-  label: string;
+  label: ReactNode; 
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   className?: string;
