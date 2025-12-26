@@ -9,7 +9,7 @@ export const projectsData: ProjectCardProps[] = [
     description:
       "A brain games platform, designed to help students prepare for placement game rounds. Built with Next.js, TypeScript, and Tailwind CSS.",
     status: "running",
-    image: "/Projects/games.jpeg",
+    image: "/Projects/game.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
     type: "Fullstack",
     viewDetails: {
