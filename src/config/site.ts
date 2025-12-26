@@ -3,6 +3,6 @@ export const siteConfig = {
   description:
     "Explore more about Nishul Dhakar, including his projects, education, and certifications.",
   url: "https://nishul.dev",
-  ogImage: "/image.png",
+  ogImage: "/image1.png",
   icons: "/favicon.ico",
 };

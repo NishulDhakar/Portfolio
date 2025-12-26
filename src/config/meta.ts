@@ -11,7 +11,7 @@ export const siteConfig = {
   title: 'Nishul Dhakar',
   description: 'Sleek Portfolio Template by @NishulDhakar',
   url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
-  ogImage: '/meta/opengraph-image.png',
+  ogImage: '/meta/opengraph-image1.png',
   author: {
     name: "Nishul Dhakar",
     twitter: '@NishulDhakar',
