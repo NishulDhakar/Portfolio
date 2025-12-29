@@ -7,10 +7,10 @@ import { Suspense } from 'react';
 import { BlogPageClient } from './BlogPageClient';
 import { getAllTags, getPublishedBlogPosts } from '@/lib/blog';
 import { Skeleton } from '@/components/ui/skeleton';
-import { pageMetadata, siteConfig } from '@/config/meta';
+import { siteConfig } from '@/config/site';
 
 export const generateMetadata = (): Metadata => {
-  const metadata = pageMetadata['/blog'];
+  const metadata = siteConfig.pageMetadata.blog;
   return {
     title: metadata.title,
     description: metadata.description,
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       type: 'website',
     },
     twitter: {
-      card: metadata.twitterCard || 'summary_large_image',
+      card: 'summary_large_image',
       title: metadata.title,
       description: metadata.description,
       images: [metadata.ogImage || siteConfig.ogImage],

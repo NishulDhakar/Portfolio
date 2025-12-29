@@ -12,10 +12,10 @@ export const projectsData: ProjectCardProps[] = [
     image: "/Projects/game.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "PostgreSQL"],
     type: "Fullstack",
-    viewDetails: {
-      type: "Details",
-      href: "/projects/blync",
-    },
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/blync",
+    // },
   },
 
   {

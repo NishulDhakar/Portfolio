@@ -44,6 +44,8 @@ function filterLastYear(contributions: ContributionItem[]) {
   return contributions.filter((item) => new Date(item.date) >= oneYearAgo);
 }
 
+import Container from "@/components/common/Container";
+
 export default function Github() {
   const [contributions, setContributions] = useState<ContributionItem[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
@@ -190,6 +192,6 @@ export default function Github() {
           </div>
         )}
       </div>
-    </section >
+    </section>
   );
 }

@@ -20,10 +20,10 @@ const educationData = [
 
 const Education = () => {
   return (
-    <Container className="mb-20">
-      <h2 className="text-2xl font-bold mb-8"> 
-                                      🎓 Education
-                                      </h2>
+    <Container className="my-16">
+      <h2 className="text-2xl font-bold mb-8 font-[family-name:var(--font-instrument-serif)]">
+        🎓 Education
+      </h2>
       <div className="space-y-6">
         {educationData.map((edu, index) => (
           <div

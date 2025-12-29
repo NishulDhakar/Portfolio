@@ -1,161 +1,70 @@
-
 import About from "@/components/sections/landingPage/About";
-import { SoftButton } from "@/components/sections/landingPage/SoftButton";
-import Container from "@/components/common/Container";
-import { ArrowUpRight } from "lucide-react";
-import { FaRegFolderOpen } from "react-icons/fa";
-
-// import ContactForm from "@/components/landingPage/Contact";
-// import ProjectsPage from "./projects/page";
-// import { ParticlesDemo } from "@/components/common/Particlesbg";
-// import { ShinyButton } from "@/components/ui/magicui/shiny-button";
-// import Link from "next/link";
-// import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
 import Github from "@/components/sections/landingPage/Github";
-
 import Reachout from "@/components/sections/landingPage/Reachout";
-// import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
-import { socialLinks } from "@/data/socialLinks";
 import TechSkills from "@/components/sections/landingPage/Skills";
 import { Separator } from "@/components/ui/separator";
-// import TechSkills from "@/components/sections/landingPage/Skills";
-// import { experience } from "@/data/experience";
-// import TextHoverEffectDemo from "@/components/sections/landingPage/BottomText";
+import Footer from "@/components/layout/Footer";
+import DetailedBio from "@/components/sections/landingPage/DetailedBio";
+import HowCanIHelp from "@/components/sections/landingPage/HowCanIHelp";
+import Container from "@/components/common/Container";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="flex flex-col gap-12">
 
-      <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-full md:pb-10">
-          <Reveal>
-            <About />
-          </Reveal>
+      {/* Intro Section */}
+      <Reveal>
+        <About />
+      </Reveal>
 
-               
+      {/* Services / How Can I Help Section */}
+      {/* <Reveal>
+        <HowCanIHelp />
+      </Reveal> */}
 
-          <Reveal>
-            <div className="md:flex lg:justify-between gap-4 mt-2">
-              <div className="flex p-2 md:mt-0 mt-8 lg:pr-8 items-center gap-6">
-                {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
-                    aria-label={name}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-
-            </div>
-          </Reveal>
-
-                <Reveal>
-
-<div className="sticky top-0 z-50 mt-10">
-  <div
-    className="
-      flex justify-between gap-3
-      py-3 px-2
-    "
-  >
-    {/* Capabilities */}
-    <SoftButton
-      href="/what-can-i-do"
-      leftIcon={<FaRegFolderOpen size={18} />}
-      rightIcon={<ArrowUpRight size={16} />}
-      label={
-        <>
-          {/* Mobile */}
-          <span className="sm:hidden">Capabilities</span>
-          {/* Desktop */}
-          <span className="hidden sm:inline">What Can I Do</span>
-        </>
-      }
-    />
-
-    {/* Work */}
-    <SoftButton
-      href="/projects"
-      leftIcon={<FaRegFolderOpen size={18} />}
-      rightIcon={<ArrowUpRight size={16} />}
-      label={
-        <>
-          {/* Mobile */}
-          <span className="sm:hidden">See Work</span>
-          {/* Desktop */}
-          <span className="hidden sm:inline">See The Things I've Built</span>
-        </>
-      }
-    />
-  </div>
-</div>
+      <Reveal>
+        <Separator className="my-4" />
+      </Reveal>
 
 
+      {/* Experience Section */}
+      <Reveal>
+        <Experience />
+      </Reveal>
 
+      <Reveal>
+        <Separator className="my-4" />
+      </Reveal>
 
-          </Reveal>
+      {/* Skills Section */}
+      <Reveal>
+        <TechSkills />
+      </Reveal>
 
-          <Reveal>
-          <Separator className="my-8" />
-          </Reveal>
+      <Reveal>
+        <Separator className="my-4" />
+      </Reveal>
 
+      {/* Github Contributions */}
+      <Reveal>
+        <Github />
+      </Reveal>
 
-          {/* <Reveal>
-            {" "}
-            <div className="mt-12 hidden justify-center md:flex">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-600" />
-            </div>
-          </Reveal> */}
+      <Reveal>
+        <Separator className="my-4" />
+      </Reveal>
 
-          <Reveal>
+      {/* Contact / Reachout */}
+      <Reachout />
 
-            <Experience />
+      <Reveal>
+        <Separator className="my-4" />
+      </Reveal>
 
+      <Footer />
 
-          </Reveal>
-
-                    
-          <Reveal>
-            {" "}
-            <TechSkills />
-          </Reveal>
-
-          <Reveal>
-            <Github />
-          </Reveal>
-
-          {/* <Reveal>
-       <ProjectsPage />
-          </Reveal> */}
-          {/* <Reveal>
-            <Link
-              href="/projects"
-              className="group flex items-center gap-2 font-bold transition-all hover:text-gray-300"
-            >
-              <Button variant={"outline"} className="ml-4 md:ml-8 md:w-2xl">
-                More Projects
-                <FaArrowRight className="transition-all duration-200 group-hover:hidden" />
-                <FaArrowCircleRight className="hidden transition-all duration-200 group-hover:inline" />
-              </Button>
-            </Link>
-          </Reveal> */}
-
-          <Reachout />
-
-             <Reveal>
-          <Separator className="my-8" />
-          </Reveal>
-
-        </Container>
-
-      </div>
     </div>
   );
 }

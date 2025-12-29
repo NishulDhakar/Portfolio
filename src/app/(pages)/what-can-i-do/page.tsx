@@ -50,19 +50,19 @@ const capabilities = [
         color: "#eab308", // yellow-500
     },
     {
-  title: "FinTech & Trading Systems",
-  description:
-    "Building finance-focused systems such as paper trading platforms, market data pipelines, and analytics dashboards. I focus on clean data flow, explainable logic, and scalable architecture for financial applications.",
-  icon: Layers,
-  tags: [
-    "FinTech",
-    "Paper Trading",
-    "Market Data",
-    "Trading Logic",
-    "Financial APIs"
-  ],
-  color: "#0ea5e9", // sky-500
-},
+        title: "FinTech & Trading Systems",
+        description:
+            "Building finance-focused systems such as paper trading platforms, market data pipelines, and analytics dashboards. I focus on clean data flow, explainable logic, and scalable architecture for financial applications.",
+        icon: Layers,
+        tags: [
+            "FinTech",
+            "Paper Trading",
+            "Market Data",
+            "Trading Logic",
+            "Financial APIs"
+        ],
+        color: "#0ea5e9", // sky-500
+    },
 
     {
         title: "Backend & API Systems",
@@ -87,6 +87,8 @@ const capabilities = [
     }
 ];
 
+import Container from "@/components/common/Container";
+
 export default function CapabilitiesPage() {
     return (
         <div className="relative min-h-screen pt-24 pb-20 overflow-hidden font-[family-name:var(--font-geist-sans)]">
@@ -97,7 +99,7 @@ export default function CapabilitiesPage() {
                 color="#ffffff"
             />
 
-            <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
+            <Container className="relative z-10">
                 {/* Hero Section */}
                 <div className="text-center mb-16 space-y-6">
                     <motion.div
@@ -105,13 +107,13 @@ export default function CapabilitiesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm rounded-full bg-blue-500/10 text-blue-500 border-blue-500/20">
+                        {/* <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm rounded-full bg-blue-500/10 text-blue-500 border-blue-500/20">
                             Capabilities
-                        </Badge>
+                        </Badge> */}
 
 
-                         {/* Top Navigation Actions */}
-<div className="relative z-10 hidden md:flex flex-wrap justify-between items-center gap-4">
+                        {/* Top Navigation Actions */}
+                        {/* <div className="relative z-10 hidden md:flex flex-wrap justify-between items-center gap-4">
   <Link href="/">
     <Button
       variant="ghost"
@@ -131,8 +133,8 @@ export default function CapabilitiesPage() {
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
     </Button>
   </Link>
-</div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 font-[family-name:var(--font-instrument-serif)]">
+</div> */}
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-[family-name:var(--font-instrument-serif)]">
                             What I Can Do
                         </h1>
 
@@ -142,9 +144,9 @@ export default function CapabilitiesPage() {
                         </p>
                     </motion.div>
                 </div>
-      <Separator className="my-8" />
+                <Separator className="my-4 mb-20" />
                 {/* Capabilities Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {capabilities.map((cap, index) => (
                         <motion.div
                             key={cap.title}
@@ -204,7 +206,7 @@ export default function CapabilitiesPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Link href="/contact">
+                        <Link href="/#reachout">
                             <Button size="lg" className="rounded-full px-12 py-4 h-auto text-lg group gap-4">
                                 Get in Touch
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -218,7 +220,7 @@ export default function CapabilitiesPage() {
                         </Link>
                     </div>
                 </motion.div>
-            </div>
-        </div>
+            </Container>
+        </div >
     );
 }

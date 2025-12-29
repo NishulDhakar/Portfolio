@@ -6,7 +6,7 @@ import Container from '@/components/common/Container';
 import ArrowLeft from '@/components/svgs/ArrowLeft';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { siteConfig } from '@/config/meta';
+import { siteConfig } from '@/config/site';
 import {
   getBlogPostBySlug,
   getBlogPostSlugs,

@@ -7,17 +7,19 @@ export function createMetadata({
   image = siteConfig.ogImage,
   icons = siteConfig.icons,
 }: {
-  title?: string;
+  title?: any;
   description?: string;
   image?: string;
   icons?: string;
 } = {}): Metadata {
+  const titleString = typeof title === "object" ? (title.default || siteConfig.name) : title;
+
   return {
     metadataBase: new URL(siteConfig.url),
     title,
     description,
     openGraph: {
-      title,
+      title: titleString,
       description,
       url: siteConfig.url,
       siteName: siteConfig.name,
@@ -34,7 +36,7 @@ export function createMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: titleString,
       description,
       images: [image ?? siteConfig.ogImage],
     },
