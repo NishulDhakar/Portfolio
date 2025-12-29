@@ -44,7 +44,7 @@ export default function About() {
                 .
               </p>
 
-              <p>
+              {/* <p>
                 I’m obsessed with{" "}
                 <span className="highlight font-normal text-primary">
                   clarity
@@ -58,7 +58,7 @@ export default function About() {
                   shipping things that actually work
                 </span>
                 .
-              </p>
+              </p> */}
             </div>
           </div>
         </motion.div>
