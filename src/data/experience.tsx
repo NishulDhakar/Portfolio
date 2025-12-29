@@ -17,15 +17,14 @@ export const experience: Experience[] = [
     companyUrl: "https://averoft.com",
     location: "Bhopal, Madhya Pradesh, India",
     startDate: "Aug 2025",
-    endDate: "Present",
+    endDate: "Dec 2025",
     logo: "/averoft.jpeg",
     employmentType: "Internship",
     points: [
       "Contributing to full-stack development using Next.js, React, Node.js, Express.js, and MongoDB.",
-      "Collaborated in a 5-member team to build Skaio, a student social platform.",
+      "Collaborated in a 5-member team to work on Skaio, a student social platform.",
       "Developed SchoolOS, a school management system.",
       "Built production features using React, Next.js, and Laravel.",
-      "Working on scalable applications in AI, cloud, and digital transformation projects."
     ],
   },
   {
@@ -33,7 +32,7 @@ export const experience: Experience[] = [
     company: "Freelancing",
     location: "Remote",
     startDate: "Jan 2025",
-    endDate: "Aug 2025",
+    endDate: "Present",
     logo: "/image.png",
     employmentType: "Self-employed",
     points: [
