@@ -25,13 +25,8 @@ export default function ProjectsPageClient() {
 
     return (
         <div className={containerClassName}>
-            <Container>
-                <Particles
-                    className="absolute inset-0 z-0"
-                    quantity={100}
-                    staticity={50}
-                    color="#ffffff"
-                />
+           
+           
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -77,7 +72,7 @@ export default function ProjectsPageClient() {
                         </motion.div>
                     ))}
                 </motion.div>
-            </Container>
+
         </div>
     );
 }

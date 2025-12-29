@@ -10,7 +10,7 @@ export default function Container({
 }) {
   return (
     <div
-      className={`mx-auto  max-w-4xl px-6 md:px-10 ${className}`}
+      className={`mx-auto border max-w-3xl px-6 md:px-10 ${className}`}
       {...props}>
       {children}
     </div>

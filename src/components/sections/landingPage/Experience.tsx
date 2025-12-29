@@ -12,7 +12,7 @@ export default function ExperienceContent() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section className="mt-4 ">
+    <section className="">
       <div>
         <motion.h2
           initial={{ opacity: 0, y: 12 }}

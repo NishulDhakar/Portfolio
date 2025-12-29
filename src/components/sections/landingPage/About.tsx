@@ -6,7 +6,7 @@ import Container from "@/components/common/Container";
 
 export default function About() {
   return (
-    <section className="mt-20 mb-8">
+    <section className="mt-16">
       <div className="space-y-8">
         <Name />
 

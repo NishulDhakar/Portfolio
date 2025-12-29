@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="mt-12 mb-8">
+    <footer className="mb-12">
       <div className="mx-auto max-w-5xl px-4">
         <div className="flex items-center justify-between text-xs text-secondary opacity-70">
           {/* Left */}

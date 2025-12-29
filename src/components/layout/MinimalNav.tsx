@@ -11,7 +11,7 @@ export default function MinimalHeader() {
     { name: "Home", href: "/" },
     // { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Capabilities", href: "/what-can-i-do" },
+    // { name: "Capabilities", href: "/what-can-i-do" },
     // { name: "Blog", href: "/blog" },
     // { name: "Bookmarks", href: "/bookmarks" },
   ];

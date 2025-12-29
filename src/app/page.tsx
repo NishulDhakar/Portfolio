@@ -6,13 +6,13 @@ import Experience from "@/components/sections/landingPage/Experience";
 import TechSkills from "@/components/sections/landingPage/Skills";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/layout/Footer";
-import DetailedBio from "@/components/sections/landingPage/DetailedBio";
-import HowCanIHelp from "@/components/sections/landingPage/HowCanIHelp";
-import Container from "@/components/common/Container";
+// import DetailedBio from "@/components/sections/landingPage/DetailedBio";
+// import HowCanIHelp from "@/components/sections/landingPage/HowCanIHelp";
+// import Container from "@/components/common/Container";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col  gap-2">
 
       {/* Intro Section */}
       <Reveal>
@@ -25,7 +25,7 @@ export default function HomePage() {
       </Reveal> */}
 
       <Reveal>
-        <Separator className="my-4" />
+        <Separator className="my-8" />
       </Reveal>
 
 
@@ -35,7 +35,7 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-4" />
+        <Separator className="my-8" />
       </Reveal>
 
       {/* Skills Section */}
@@ -44,7 +44,7 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-4" />
+        <Separator className="my-8" />
       </Reveal>
 
       {/* Github Contributions */}
@@ -53,14 +53,14 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-4" />
+        <Separator className="my-8" />
       </Reveal>
 
       {/* Contact / Reachout */}
       <Reachout />
 
       <Reveal>
-        <Separator className="my-4" />
+        <Separator className="my-8" />
       </Reveal>
 
       <Footer />
