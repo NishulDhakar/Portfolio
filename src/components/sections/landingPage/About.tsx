@@ -14,11 +14,10 @@ export default function About() {
           <div className="space-y-8">
             <div className="space-y-6 text-secondary leading-relaxed text-base md:text-md font-light tracking-wide">
               <p>
-                I’m a{" "}
-                <span className="highlight font-normal text-primary">
+                I build{" "}
+                {/* <span className="highlight font-normal text-primary">
                   full-stack developer
-                </span>{" "}
-                building{" "}
+                </span>{" "} */}
                 <span className="highlight font-normal text-primary">
                   clean, fast web systems
                 </span>{" "}
