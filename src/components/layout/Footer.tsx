@@ -2,9 +2,9 @@
 
 export default function Footer() {
   return (
-    <footer className="mb-12">
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="flex items-center justify-between text-xs text-secondary opacity-70">
+    <footer className="mb-8 sm:mb-10 md:mb-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 text-xs text-secondary opacity-70">
           {/* Left */}
           <div>
             Designed & Developed by{" "}
@@ -14,10 +14,10 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="text-right">
+          <div className="sm:text-right">
             {/* Visitors{" "}
             <span className="text-primary">#736</span> */}
-            <br />
+            <br className="hidden sm:block" />
             Bhopal, India ·{" "}
             {new Date().toLocaleTimeString("en-IN", {
               hour: "2-digit",

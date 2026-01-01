@@ -51,16 +51,16 @@ export function BlogPageClient({
   }, [searchParams, initialPosts]);
 
   return (
-    <Container className="py-16 mt-14">
-      <div className="space-y-8">
+    <Container className="py-8 sm:py-12 md:py-16 mt-8 sm:mt-10 md:mt-14">
+      <div className="space-y-6 sm:space-y-8">
         {/* Header */}
-        <div className="space-y-4 text-center">
-         <h1
-          className={`font-[family-name:var(--font-instrument-serif)] text-4xl font-bold tracking-wide leading-tight`}
-        >
-          Blogs
-        </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+        <div className="space-y-3 sm:space-y-4 text-center">
+          <h1
+            className={`font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide leading-tight`}
+          >
+            Blogs
+          </h1>
+          <p className="mx-auto max-w-2xl text-sm sm:text-base md:text-lg text-muted-foreground px-4">
             Thoughts, tutorials, and insights on engineering, and programming.
           </p>
         </div>
@@ -68,12 +68,12 @@ export function BlogPageClient({
         <Separator />
 
         {/* Blog Posts */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
               {selectedTag ? `Posts tagged "${selectedTag}"` : 'Latest Posts'}
               {filteredPosts.length > 0 && (
-                <span className="ml-2 text-sm font-normal text-muted-foreground">
+                <span className="ml-2 text-xs sm:text-sm font-normal text-muted-foreground">
                   ({filteredPosts.length}{' '}
                   {filteredPosts.length === 1 ? 'post' : 'posts'})
                 </span>

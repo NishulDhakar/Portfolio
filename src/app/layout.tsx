@@ -56,11 +56,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Container>
-          <div className="flex min-h-screen flex-col">
-            <MinimalHeader />
-            <main className="flex-grow">{children}</main>
-            <Analytics />
-          </div>
+            <div className="flex min-h-screen flex-col">
+              <MinimalHeader />
+              <main className="flex-grow">{children}</main>
+              <Analytics />
+            </div>
           </Container>
         </ThemeProvider>
 

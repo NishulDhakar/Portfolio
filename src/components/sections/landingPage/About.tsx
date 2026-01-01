@@ -6,13 +6,13 @@ import Container from "@/components/common/Container";
 
 export default function About() {
   return (
-    <section className="mt-16">
-      <div className="space-y-8">
+    <section className="mt-8 sm:mt-12 md:mt-16">
+      <div className="space-y-6 sm:space-y-8">
         <Name />
 
         <motion.div>
-          <div className="space-y-8">
-            <div className="space-y-6 text-secondary leading-relaxed text-base md:text-md font-light tracking-wide">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-6 text-secondary leading-relaxed text-sm sm:text-base md:text-md font-light tracking-wide">
               <p>
                 I build{" "}
                 {/* <span className="highlight font-normal text-primary">
@@ -29,7 +29,7 @@ export default function About() {
               </p>
 
               <p>
-                I’m currently exploring{" "}
+                I'm currently exploring{" "}
                 <span className="highlight font-normal text-primary">
                   Applied AI
                 </span>{" "}
@@ -45,7 +45,7 @@ export default function About() {
               </p>
 
               {/* <p>
-                I’m obsessed with{" "}
+                I'm obsessed with{" "}
                 <span className="highlight font-normal text-primary">
                   clarity
                 </span>

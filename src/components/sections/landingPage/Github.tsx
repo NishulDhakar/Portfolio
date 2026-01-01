@@ -112,7 +112,7 @@ export default function Github() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className=" font-[family-name:var(--font-instrument-serif)] text-2xl font-bold tracking-tight text-foreground"
+            className="font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-bold tracking-tight text-foreground"
           >
             {githubConfig.title}
           </motion.h2>
@@ -122,7 +122,7 @@ export default function Github() {
           </p> */}
 
           {!isLoading && !hasError && totalContributions > 0 && (
-            <p className="text-sm text-primary font-medium mt-1">
+            <p className="text-xs sm:text-sm text-primary font-medium mt-1">
               Total:{" "}
               <span className="font-black">
                 {totalContributions.toLocaleString()}
@@ -168,26 +168,31 @@ export default function Github() {
 
         {/* Heatmap */}
         {!isLoading && !hasError && contributions.length > 0 && (
-          <div className="relative overflow-hidden">
-            <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-6">
-              <div className="w-full overflow-x-auto">
-                <ActivityCalendar
-                  data={contributions}
-                  blockSize={12}
-                  blockMargin={4}
-                  fontSize={githubConfig.fontSize}
-                  colorScheme={theme === "dark" ? "dark" : "light"}
-                  maxLevel={githubConfig.maxLevel}
-                  showMonthLabels
-                  showColorLegend
-                  theme={githubConfig.theme}
-                  labels={{
-                    months: githubConfig.months,
-                    weekdays: githubConfig.weekdays,
-                    totalCount: githubConfig.totalCountLabel,
-                  }}
-                />
+          <div className="relative overflow-hidden w-full">
+            <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-4 md:p-6">
+              <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
+                <div className="min-w-[700px] md:min-w-0">
+                  <ActivityCalendar
+                    data={contributions}
+                    blockSize={12}
+                    blockMargin={4}
+                    fontSize={githubConfig.fontSize}
+                    colorScheme={theme === "dark" ? "dark" : "light"}
+                    maxLevel={githubConfig.maxLevel}
+                    showMonthLabels
+                    showColorLegend
+                    theme={githubConfig.theme}
+                    labels={{
+                      months: githubConfig.months,
+                      weekdays: githubConfig.weekdays,
+                      totalCount: githubConfig.totalCountLabel,
+                    }}
+                  />
+                </div>
               </div>
+              <p className="text-[10px] text-muted-foreground mt-2 md:hidden italic">
+                Scroll horizontally to see full activity →
+              </p>
             </div>
           </div>
         )}

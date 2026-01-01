@@ -69,7 +69,7 @@ export default function ProjectCard({
       "
     >
       {/* Preview Image */}
-      <div className="h-52 rounded-xl overflow-hidden relative border border-gray-100 dark:border-white/5 mb-6 bg-gray-50 dark:bg-zinc-950">
+      <div className="h-44 sm:h-48 md:h-52 rounded-xl overflow-hidden relative border border-gray-100 dark:border-white/5 mb-4 sm:mb-6 bg-gray-50 dark:bg-zinc-950">
         <div className="relative w-full h-full">
           {image ? (
             <Image
@@ -95,15 +95,15 @@ export default function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="px-4 pb-4 flex flex-col flex-1">
+      <div className="px-3 sm:px-4 pb-3 sm:pb-4 flex flex-col flex-1">
         {/* Technology Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {technologies?.slice(0, 3).map((tech) => (
             <span
               key={tech}
               className="
-                text-[10px] font-bold uppercase tracking-wider 
-                px-2 py-1
+                text-[9px] sm:text-[10px] font-bold uppercase tracking-wider 
+                px-1.5 sm:px-2 py-0.5 sm:py-1
                 bg-gray-50 dark:bg-zinc-800/50 
                 text-gray-500 dark:text-zinc-400 
                 rounded-md 
@@ -115,7 +115,7 @@ export default function ProjectCard({
           ))}
 
           {technologies && technologies.length > 3 && (
-            <span className="text-[10px] font-bold text-gray-400 dark:text-zinc-500">
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-400 dark:text-zinc-500">
               +{technologies.length - 3}
             </span>
           )}
@@ -124,9 +124,9 @@ export default function ProjectCard({
         {/* Title */}
         <h3
           className="
-            font-heading text-xl font-bold 
+            font-heading text-lg sm:text-xl font-bold 
             text-gray-900 dark:text-zinc-100 
-            mb-2 truncate
+            mb-2 line-clamp-1
             group-hover:text-blue-500 dark:group-hover:text-blue-400
             transition-colors
           "
@@ -135,26 +135,28 @@ export default function ProjectCard({
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-6">
+        <p className="text-xs sm:text-sm text-gray-500 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-4 sm:mb-6">
           {description}
         </p>
 
         {/* Footer Links */}
-        <div className="flex items-center justify-between mt-auto">
+        <div className="flex items-center justify-between mt-auto gap-2">
           {href && (
             <Link
               href={href}
               target="_blank"
               className="
-                inline-flex items-center gap-2 
-                text-sm font-semibold 
+                inline-flex items-center gap-1.5 sm:gap-2 
+                text-xs sm:text-sm font-semibold 
                 text-gray-900 dark:text-zinc-100 
                 hover:text-blue-600 dark:hover:text-blue-400 
                 transition-colors group/link
+                line-clamp-1
               "
             >
-              View Project Live
-              <HiArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              <span className="hidden sm:inline">View Project Live</span>
+              <span className="sm:hidden">View Live</span>
+              <HiArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
             </Link>
           )}
 
@@ -164,7 +166,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="
-                flex h-10 w-10 items-center justify-center 
+                flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center 
                 rounded-xl 
                 border border-black/10 dark:border-white/10 
                 bg-white dark:bg-zinc-800 
@@ -172,7 +174,7 @@ export default function ProjectCard({
                 transition-all hover:scale-105 active:scale-95
               "
             >
-              <Github size={18} />
+              <Github size={16} className="sm:w-[18px] sm:h-[18px]" />
             </a>
           )}
         </div>

@@ -12,7 +12,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col  gap-2">
+    <div className="flex flex-col gap-1 sm:gap-2">
 
       {/* Intro Section */}
       <Reveal>
@@ -25,7 +25,7 @@ export default function HomePage() {
       </Reveal> */}
 
       <Reveal>
-        <Separator className="my-8" />
+        <Separator className="my-6 sm:my-8" />
       </Reveal>
 
 
@@ -35,7 +35,7 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-8" />
+        <Separator className="my-6 sm:my-8" />
       </Reveal>
 
       {/* Skills Section */}
@@ -44,7 +44,7 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-8" />
+        <Separator className="my-6 sm:my-8" />
       </Reveal>
 
       {/* Github Contributions */}
@@ -53,14 +53,14 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
-        <Separator className="my-8" />
+        <Separator className="my-6 sm:my-8" />
       </Reveal>
 
       {/* Contact / Reachout */}
       <Reachout />
 
       <Reveal>
-        <Separator className="my-8" />
+        <Separator className="my-6 sm:my-8" />
       </Reveal>
 
       <Footer />

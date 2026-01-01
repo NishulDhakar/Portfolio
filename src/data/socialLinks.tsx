@@ -1,7 +1,7 @@
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-import { SiHuggingface, SiTelegram } from "react-icons/si";
+import { SiHuggingface, SiInstagram, SiTelegram } from "react-icons/si";
 
 export const socialLinks = {
   Twitter: {
@@ -15,6 +15,10 @@ export const socialLinks = {
   LinkedIn: {
     href: "https://linkedin.com/in/nishuldhakar",
     icon: FaLinkedinIn,
+  },
+  Instagram: {
+    href: "https://instagram.com/nishul.dev",
+    icon: SiInstagram,
   },
   Telegram: {
     href: "https://t.me/nishuldev",
