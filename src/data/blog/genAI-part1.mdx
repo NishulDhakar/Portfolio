@@ -2,7 +2,7 @@
 title: "GenAI Explained (Without Ruining Your Mental Health)"
 description: "GenAI Part 1: All important jargons explained in very simple words with examples. If you're new to GenAI, this is the best place to start."
 tags: ["genai", "ai", "transformers", "llm", "beginners", "jargons"]
-image: "/blog/genAi1.png"
+image: '/blog/jargons.png'
 date: "2026-01-03"
 isPublished: true
 ---
@@ -28,28 +28,24 @@ Here's the complete flow of how GenAI works. Keep this mental model in mind as w
 ```mermaid
 Text
  ↓
-Tokenization
-(vocab size decides how text is split)
+Tokenization (vocab size decides how text is split)
  ↓
 Tokens → IDs
  ↓
-Embeddings (vectors)
- + Positional Encoding
+Embeddings (vectors) + Positional Encoding
  ↓
 Transformer
  ├─ Encoder (understanding)
  │    └─ Self-Attention
  │        └─ Multi-Head Attention
  ↓
-Contextual Vectors
-(Semantic Meaning)
+Contextual Vectors (Semantic Meaning)
  ↓
 Decoder (generation)
  ↓
 Linear Layer
  ↓
-Softmax
- + Temperature (temp)
+Softmax + Temperature (temp)
  ↓
 Next Token Prediction
  ↓

@@ -60,7 +60,7 @@ export function BlogContent({ frontmatter, content }: BlogContentProps) {
       </header>
 
       {/* Content */}
-      <div className="prose prose-neutral max-w-none dark:prose-invert">
+      <div className="prose prose-neutral max-w-none dark:prose-invert mb-80">
         <MDXRemote
           source={content}
           components={BlogComponents}
