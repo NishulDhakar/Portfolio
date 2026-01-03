@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <Container className="py-16 mt-14">
+      <div className='mt-10'>
         <div className="space-y-12">
           {/* Back Button */}
           <div>
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </Button>
           </div> */}
         </div>
-      </Container>
+      </div>
       {/* <FontSizeControls /> */}
     </>
   );

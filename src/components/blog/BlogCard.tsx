@@ -31,12 +31,12 @@ export function BlogCard({ post }: BlogCardProps) {
       <CardHeader className="p-0">
         <div className="relative aspect-video overflow-hidden">
           <Link href={`/blog/${slug}`}>
-            <Image src={image} alt={title} fill className="object-cover" />
+            <Image src={image} alt={title} fill className="" />
           </Link>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="space-y-3">
+        <div className="space-y-3 mt-6">
           <Link href={`/blog/${slug}`}>
             <h3 className="line-clamp-2 text-xl font-semibold leading-tight group-hover:text-primary">
               {title}

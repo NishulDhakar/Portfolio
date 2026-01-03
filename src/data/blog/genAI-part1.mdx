@@ -1,0 +1,343 @@
+---
+title: "GenAI Explained (Without Ruining Your Mental Health)"
+description: "GenAI Part 1: All important jargons explained in very simple words with examples. If you're new to GenAI, this is the best place to start."
+tags: ["genai", "ai", "transformers", "llm", "beginners", "jargons"]
+image: "/blog/genAi1.png"
+date: "2026-01-03"
+isPublished: true
+---
+
+# GenAI Part 1: Understanding the Jargon
+
+GenAI sounds intimidating because of the **terminology**, not because it's inherently complex.
+
+Words like:
+
+> transformer, embeddings, attention, softmax
+
+make people think this is PhD-level material.
+
+**It's not.** Let's break down each term with simple definitions and examples.
+
+---
+
+## The Big Picture Flow
+
+Here's the complete flow of how GenAI works. Keep this mental model in mind as we explore each component:
+
+```mermaid
+Text
+ ↓
+Tokenization
+(vocab size decides how text is split)
+ ↓
+Tokens → IDs
+ ↓
+Embeddings (vectors)
+ + Positional Encoding
+ ↓
+Transformer
+ ├─ Encoder (understanding)
+ │    └─ Self-Attention
+ │        └─ Multi-Head Attention
+ ↓
+Contextual Vectors
+(Semantic Meaning)
+ ↓
+Decoder (generation)
+ ↓
+Linear Layer
+ ↓
+Softmax
+ + Temperature (temp)
+ ↓
+Next Token Prediction
+ ↓
+Output Text
+```
+
+Everything below explains this flow **step by step**.
+
+---
+
+## Text
+
+**Definition:** What humans write.
+
+**Example:** `"I want to learn GenAI"`
+
+AI doesn't understand this directly. This is raw input that needs processing.
+
+---
+
+## Tokenization
+
+**Definition:** Breaking text into smaller pieces called **tokens**.
+
+**Example:**
+
+```
+"I want to learn GenAI"
+↓
+["I", " want", " to", " learn", " Gen", "AI"]
+```
+
+**Why tokenize?**
+- Easier for computers to process
+- Handles new words better
+- Saves memory
+
+---
+
+## Vocab Size
+
+**Definition:** The total number of tokens the model knows.
+
+**Example:**
+- Vocab size = 50,000
+- This means the model has 50,000 known token pieces
+
+<Badge>Key Insight</Badge> Small vocab means more splitting. Large vocab means less splitting.
+
+---
+
+## Tokens to IDs
+
+**Definition:** Each token gets replaced by a unique number.
+
+**Example:**
+
+```
+"I" → 101
+"Gen" → 5021
+"AI" → 982
+```
+
+Why? Because **computers work with numbers, not words.**
+
+---
+
+## Vectors
+
+**Definition:** A list of numbers representing something.
+
+**Example:**
+
+```
+"cat" → [0.2, -1.3, 4.1, ...]
+```
+
+Think of vectors as **coordinates in meaning-space**.
+
+---
+
+## Embeddings
+
+**Definition:** Vectors that capture **meaning**.
+
+**Example:**
+- `"dog"` and `"puppy"` have similar embeddings
+- `"dog"` and `"laptop"` have very different embeddings
+
+This is how AI understands:
+
+> "These words are related."
+
+---
+
+## Positional Encoding
+
+**Definition:** Information about **word order**.
+
+**Example:**
+
+```
+"Dog bites man"
+vs
+"Man bites dog"
+```
+
+Same words. **Completely different meanings.**
+
+Positional encoding tells the model:
+
+> "This word came first, that came later."
+
+---
+
+## Transformer
+
+**Definition:** The core architecture behind modern GenAI models.
+
+Think of it as:
+
+> A machine that understands relationships between words **simultaneously**, rather than sequentially.
+
+**Everything important happens inside transformers.**
+
+---
+
+## Encoder
+
+**Definition:** The part of the transformer that **understands input**.
+
+**Used in models like:**
+- BERT
+- Search engines
+- Classification tasks
+
+The encoder focuses on:
+
+> "What does this text mean?"
+
+---
+
+## Self-Attention
+
+**Definition:** Each word examines other words and determines **what matters**.
+
+**Example:**
+
+```
+"The student solved the problem because he practiced."
+```
+
+The word `"he"` refers to:
+- `student` ✓
+- `problem` ✗
+
+**Self-attention figures out these relationships.**
+
+---
+
+## Multi-Head Attention
+
+**Definition:** Multiple self-attention mechanisms running in parallel.
+
+Each **head** focuses on different aspects:
+- Grammar
+- Meaning
+- Long-distance context
+
+It's like reading the same sentence through **multiple lenses simultaneously**.
+
+---
+
+## Contextual Vectors
+
+**Definition:** Embeddings enriched with context after attention processing.
+
+**Example:**
+
+The word `"bank"` means:
+- River bank in one sentence
+- Financial institution in another
+
+**Contextual vectors change based on usage.**
+
+---
+
+## Semantic Meaning
+
+**Definition:** The actual understanding of meaning, not just words.
+
+This isn't a single step but **emerges** after attention mechanisms and multiple layers process the information.
+
+---
+
+## Decoder
+
+**Definition:** The part of the transformer that **generates text**.
+
+**Used in models like:**
+- GPT
+- ChatGPT
+- Text generation models
+
+The decoder continuously asks:
+
+> "What token should come next?"
+
+---
+
+## Linear Layer
+
+**Definition:** Converts internal vectors into scores for each possible token.
+
+Think of it as:
+
+> "Prepare answer candidates for all possible next words."
+
+---
+
+## Softmax
+
+**Definition:** Converts scores into **probabilities**.
+
+**Example:**
+
+```
+Scores:
+["AI": 0.6, "ML": 0.3, "pizza": 0.1]
+```
+
+Now the model can make a selection based on these probabilities.
+
+---
+
+## Temperature
+
+**Definition:** Controls **randomness** in output.
+
+**Example:**
+- **Low temperature** → safe, predictable answers
+- **High temperature** → creative, unpredictable answers
+
+Same model. **Different behavior.**
+
+---
+
+## Next Token Prediction
+
+**Definition:** The fundamental operation of GenAI.
+
+The model does **one thing**: predict the next token.
+
+It repeats this process continuously to generate complete text.
+
+---
+
+## Knowledge Cutoff
+
+**Definition:** The date until which the model was trained.
+
+**Example:**
+- Model trained through 2024
+- Doesn't know about 2025 events
+
+This isn't a limitation by design, just a **constraint of the training data**.
+
+---
+
+## Project Idea: Build Your Own Tokenizer
+
+**Why this project?**
+
+Because **everything starts here**.
+
+By building a tokenizer, you'll learn:
+- How text gets split into tokens
+- How vocab size affects tokenization
+- How text becomes numbers
+
+If you understand tokenization, you understand **how GenAI begins processing information**.
+
+---
+
+## Final Summary
+
+> **GenAI = text → tokens → numbers → attention → meaning → probabilities → next token**
+
+That's it. No magic involved. Just sophisticated pattern matching at scale.
+
+---

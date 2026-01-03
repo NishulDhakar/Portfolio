@@ -9,6 +9,7 @@ import { BlogPostPreview } from '@/types/blog';
 
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
 interface BlogPageClientProps {
   initialPosts: BlogPostPreview[];
@@ -51,21 +52,23 @@ export function BlogPageClient({
   }, [searchParams, initialPosts]);
 
   return (
-    <Container className="py-8 sm:py-12 md:py-16 mt-8 sm:mt-10 md:mt-14">
-      <div className="space-y-6 sm:space-y-8">
+    <div className="mt-8 sm:mt-10 md:mt-12 py-4">
         {/* Header */}
-        <div className="space-y-3 sm:space-y-4 text-center">
-          <h1
-            className={`font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide leading-tight`}
-          >
-            Blogs
-          </h1>
-          <p className="mx-auto max-w-2xl text-sm sm:text-base md:text-lg text-muted-foreground px-4">
-            Thoughts, tutorials, and insights on engineering, and programming.
-          </p>
-        </div>
-
-        <Separator />
+           <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <h1
+                    className={`font-[family-name:var(--font-instrument-serif)] flex justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide leading-tight`}
+                >
+                    Blogs
+                </h1>
+                <div className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed text-center mt-2 px-4">
+                  
+                </div>
+                <Separator className="my-6 sm:my-8" />
+            </motion.div>
 
         {/* Blog Posts */}
         <div className="space-y-4 sm:space-y-6">
@@ -84,6 +87,5 @@ export function BlogPageClient({
           <BlogList posts={filteredPosts} />
         </div>
       </div>
-    </Container>
   );
 }

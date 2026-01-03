@@ -53,7 +53,7 @@ export const generateMetadata = (): Metadata => {
 
 function BlogPageLoading() {
   return (
-    <Container className="py-16 mt-14">
+    <div className="">
       <div className="space-y-8">
         {/* Header Skeleton */}
         <div className="space-y-4 text-center">
@@ -87,7 +87,7 @@ function BlogPageLoading() {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
 
