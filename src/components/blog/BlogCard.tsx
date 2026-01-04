@@ -11,6 +11,7 @@ import Image from 'next/image';
 
 import ArrowRight from '../svgs/ArrowRight';
 import Calender from '../svgs/Calender';
+import { motion } from "framer-motion";
 
 interface BlogCardProps {
   post: BlogPostPreview;
@@ -27,6 +28,7 @@ export function BlogCard({ post }: BlogCardProps) {
   });
 
   return (
+
     <Card className="group h-full w-full overflow-hidden transition-all p-0 border-gray-100 dark:border-gray-800 shadow-none">
       <CardHeader className="p-0">
         <div className="relative aspect-video overflow-hidden">

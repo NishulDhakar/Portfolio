@@ -65,10 +65,10 @@ export function BlogPageClient({
                     Blogs
                 </h1>
                 <div className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed text-center mt-2 px-4">
-                  
+                  Thoughts, tutorials, and insights on engineering, and programming.
                 </div>
                 <Separator className="my-6 sm:my-8" />
-            </motion.div>
+         
 
         {/* Blog Posts */}
         <div className="space-y-4 sm:space-y-6">
@@ -86,6 +86,7 @@ export function BlogPageClient({
 
           <BlogList posts={filteredPosts} />
         </div>
+           </motion.div>
       </div>
   );
 }

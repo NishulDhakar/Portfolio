@@ -94,8 +94,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
-            <div className="space-y-6">
-              <Separator />
+            <div className="space-y-6 mb-20 mt-20">
               <div className="space-y-6">
                 <h2 className="text-2xl font-semibold">Related Posts</h2>
                 <BlogList posts={relatedPosts} />

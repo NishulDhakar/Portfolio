@@ -5,14 +5,14 @@ import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
 import TechSkills from "@/components/sections/landingPage/Skills";
 import { Separator } from "@/components/ui/separator";
-import Footer from "@/components/layout/Footer";
+// import Footer from "@/components/layout/Footer";
 // import DetailedBio from "@/components/sections/landingPage/DetailedBio";
 // import HowCanIHelp from "@/components/sections/landingPage/HowCanIHelp";
 // import Container from "@/components/common/Container";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-1 sm:gap-2">
+    <div className="flex flex-col gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10">
 
       {/* Intro Section */}
       <Reveal>
@@ -52,18 +52,14 @@ export default function HomePage() {
         <Github />
       </Reveal>
 
-      <Reveal>
+      {/* <Reveal>
         <Separator className="my-6 sm:my-8" />
-      </Reveal>
+      </Reveal> */}
 
       {/* Contact / Reachout */}
       <Reachout />
 
-      <Reveal>
-        <Separator className="my-6 sm:my-8" />
-      </Reveal>
 
-      <Footer />
 
     </div>
   );

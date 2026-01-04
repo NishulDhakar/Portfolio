@@ -10,7 +10,7 @@ import ProjectCard from "@/components/sections/Projects/ProjectCard";
 import Container from "@/components/common/Container";
 
 export default function ProjectsPageClient() {
-    const containerClassName = "mt-8 sm:mt-10 md:mt-12 py-4";
+    const containerClassName = "mt-8 sm:mt-10 md:mt-12 py-4 ";
     const gridClassName = "grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 py-8 sm:py-10 md:py-12";
     const titleClassName =
         "text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-center";

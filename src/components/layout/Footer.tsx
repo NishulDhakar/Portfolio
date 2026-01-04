@@ -1,8 +1,11 @@
 "use client";
 
+import { Separator } from "../ui/separator";
+
 export default function Footer() {
   return (
     <footer className="mb-8 sm:mb-10 md:mb-12">
+      <Separator className="mb-6" />
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 text-xs text-secondary opacity-70">
           {/* Left */}

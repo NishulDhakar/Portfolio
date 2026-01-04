@@ -1,0 +1,348 @@
+---
+title: "GenAI Part 2"
+description: "GenAI Part 2: Prompt Engineering explained from scratch. Learn how prompts actually work, different prompting styles, and how real GenAI apps control model behavior."
+tags: ["genai", "prompt-engineering", "llm", "chatgpt", "beginners"]
+image: '/blog/genAIpart2.png'
+date: "2026-01-03"
+isPublished: true
+---
+
+# GenAI Part 2: Prompt Engineering Explained
+
+Prompt Engineering sounds fancy, but at its core, it's very simple.
+
+GenAI models don't **think**. They don't **understand intent** like humans.
+
+They only do one thing:
+
+> **Predict the next token based on your input.**
+
+So if the output feels bad, unclear, or useless — the problem is usually the **prompt**, not the model.
+
+---
+
+## What Is a Prompt?
+
+**Definition:** A prompt is **anything you give to an AI model as input**.
+
+That's it.
+
+### Examples:
+
+```
+Explain GenAI
+```
+
+```
+Write a LinkedIn post about learning AI
+```
+
+```
+Fix this JavaScript bug
+```
+
+All of these are prompts.
+
+You can think of a prompt as:
+- Instructions
+- Context
+- Expectations
+
+Combined into one input.
+
+---
+
+## Why Prompt Engineering Exists
+
+AI models are extremely powerful — but they are also extremely **literal**.
+
+They don't guess what you *meant*. They respond only to what you *wrote*.
+
+> **Better prompt → better output**  
+> **Vague prompt → vague output**
+
+**Key Insight:** Prompt engineering is the skill of **communicating clearly with AI**.
+
+---
+
+## Prompt Styles
+
+Prompt styles are different **ways of asking** the same thing.
+
+### Example Topic:
+
+> Explain recursion
+
+#### Direct Prompt
+
+```
+Explain recursion
+```
+
+#### Beginner-Friendly Prompt
+
+```
+Explain recursion with a simple real-world example for beginners
+```
+
+#### Interview-Oriented Prompt
+
+```
+Explain recursion and common interview mistakes
+```
+
+Same topic. **Very different answers.**
+
+---
+
+## Code Prompting
+
+When prompting for code, clarity matters even more.
+
+### Weak Prompt
+
+```
+Write login code
+```
+
+### Better Prompt
+
+```
+Write a React login component
+```
+
+### Strong Prompt
+
+```
+Write a React login component using Tailwind CSS with email and password validation
+```
+
+### Production-Level Prompt
+
+```
+Act as a senior frontend engineer.
+Write a clean React login component using Tailwind CSS.
+Include validation, error states, and readable structure.
+```
+
+Adding **role + context + constraints** improves output dramatically.
+
+---
+
+## System Prompt
+
+A system prompt defines **who the AI is supposed to be**.
+
+You don't always see it, but it controls:
+- Tone
+- Behavior
+- Rules
+- Boundaries
+
+### Example System Prompt:
+
+```
+You are an experienced GenAI instructor.
+Explain concepts from scratch.
+Use simple language.
+Give real-world examples.
+Avoid unnecessary jargon.
+```
+
+Everything the model replies after this follows these rules.
+
+This is how:
+- Tutors
+- Interview bots
+- Customer support bots
+
+are built.
+
+---
+
+## Zero-Shot Prompting
+
+**Definition:** Asking a question **without giving any examples**.
+
+### Example:
+
+```
+Classify this sentence as positive or negative:
+"I love this product"
+```
+
+The model figures it out on its own.
+
+### When to use:
+- Simple tasks
+- Clear instructions
+- General questions
+
+---
+
+## Few-Shot Prompting
+
+**Definition:** Giving the model **examples first**, then asking it to continue.
+
+### Example:
+
+```
+Text: "I love this phone" → Positive
+Text: "Worst experience ever" → Negative
+
+Text: "The app is slow"
+```
+
+Now the model understands:
+- The task
+- The format
+- The pattern
+
+**Pro Tip:** Few-shot prompting is used when **consistency matters**.
+
+---
+
+## Chain of Thought Prompting
+
+Sometimes the model answers too fast — and makes mistakes.
+
+Chain of thought prompting forces the model to **reason step by step**.
+
+### Basic Prompt
+
+```
+Solve this problem
+```
+
+### Chain of Thought Prompt
+
+```
+Solve this problem step by step and explain your reasoning
+```
+
+This improves:
+- Accuracy
+- Logic
+- Clarity
+
+Internally, most advanced GenAI systems rely on this technique.
+
+---
+
+## Self-Consistency Prompting
+
+LLMs are probabilistic. The same question can give different answers.
+
+Self-consistency means:
+
+> Ask the model to reason multiple times and choose the best answer.
+
+### Example:
+
+```
+Solve this problem.
+Think of three different solutions and select the most accurate one.
+```
+
+This is useful for:
+- Math
+- Logic
+- Complex reasoning
+
+---
+
+## Persona-Based Prompting
+
+Persona-based prompting makes the AI behave like a **specific type of person**.
+
+### Example:
+
+```
+You are a strict DSA interviewer.
+Ask me one question at a time.
+Give feedback after each answer.
+```
+
+This technique is used in:
+- Learning tools
+- Interview prep
+- Coaching apps
+
+---
+
+## Role-Playing Prompting
+
+Role-playing is interactive persona prompting.
+
+### Example:
+
+```
+You are a startup investor.
+I will pitch my idea.
+Ask tough questions and challenge assumptions.
+```
+
+The AI now follows a **role**, not just a task.
+
+---
+
+## Handling "User Can Ask Anything"
+
+Real users ask:
+- Unclear questions
+- Out-of-scope questions
+- Sometimes unsafe questions
+
+Good prompts include rules like:
+
+```
+If the question is unclear, ask for clarification.
+If it is unsafe, politely refuse.
+If it is outside scope, explain limitations.
+```
+
+This is how real-world chatbots stay reliable.
+
+---
+
+## GIGO (Garbage In, Garbage Out)
+
+A fundamental rule:
+
+> **Bad input → bad output**  
+> **Good input → good output**
+
+AI does not fix unclear thinking. It reflects it.
+
+**Prompt engineering is about thinking clearly first.**
+
+---
+
+## Zero-Shot One-Line Prompting
+
+This is how most people use AI:
+
+```
+Explain transformers
+```
+
+It works — but it's not optimized.
+
+Now you know how to:
+- Add context
+- Add structure
+- Add intent
+
+And get **much better results**.
+
+---
+
+## Final Summary
+
+> **Prompt Engineering = clear instructions + context + expectations**
+
+GenAI doesn't need smarter models. It needs **clearer prompts**.
+
+Once you master prompting, every GenAI tool becomes more powerful.
+
+---

@@ -18,7 +18,7 @@ const Reachout = () => {
   };
 
   return (
-    <section id="reachout" className="mt-2">
+    <section id="reachout" className="mt-24 mb-20">
       <div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

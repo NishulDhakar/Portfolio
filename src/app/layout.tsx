@@ -13,6 +13,8 @@ import MinimalHeader from "@/components/layout/MinimalNav";
 import Container from "@/components/common/Container";
 
 import { siteConfig } from "@/config/site";
+import Footer from "@/components/layout/Footer";
+import { Separator } from "@radix-ui/react-separator";
 
 export const metadata = createMetadata({
   title: {
@@ -61,6 +63,7 @@ export default function RootLayout({
               <main className="flex-grow">{children}</main>
               <Analytics />
             </div>
+            <Footer />
           </Container>
         </ThemeProvider>
 
