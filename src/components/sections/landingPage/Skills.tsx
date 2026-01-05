@@ -119,7 +119,7 @@ export default function TechSkills() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     className="group"
                   >
-                    <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-background border border-border hover:border-foreground/20 transition-all duration-200 flex items-center gap-1.5 sm:gap-2 cursor-default shadow-sm">
+                    <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-secondary/30 backdrop-blur-sm border border-border/50 hover:border-foreground/20 hover:bg-secondary/50 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 cursor-default shadow-sm group-hover:shadow-md">
                       <skill.icon className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors", skill.color)} />
                       <span className="text-xs sm:text-sm font-mono text-foreground/90">
                         {skill.name}

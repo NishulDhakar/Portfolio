@@ -29,7 +29,7 @@ export default function ExperienceContent() {
             <motion.div key={index}>
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="flex w-full items-center justify-between p-4 sm:p-5 md:p-6 text-left"
+                className="group/item flex w-full items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-white/5 transition-colors rounded-xl"
               >
 
                 <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">

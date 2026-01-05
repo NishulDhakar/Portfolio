@@ -1,0 +1,270 @@
+---
+title: "How to Run Any Ollama Model Locally Using Docker"
+description: "A practical, no-nonsense guide to running Ollama models locally with Docker. Learn to set up your own AI inference server without the complexity."
+tags: ["ollama", "docker", "llm", "fastapi", "local-ai", "beginners"]
+image: '/blog/local.png'
+date: "2026-01-05"
+isPublished: true
+---
+
+# How to Run Any Ollama Model Locally Using Docker
+
+Let's be honest for a second.
+
+Most AI blogs sound like this:
+
+> "First, deploy the containerized inference engine using an orchestration layer..."
+
+And you're thinking: **What does that even mean?**
+
+So let's do this differently. No buzzwords. No fake complexity.
+
+Just a clean, practical guide to running any Ollama model locally using Docker, in a way that actually makes sense.
+
+If you can copy-paste commands, you can do this.
+
+---
+
+## System Requirements
+
+Before you start, make sure your system meets these requirements:
+
+### Minimum Requirements
+- **RAM:** 8GB (for 2B models like Gemma 2B)
+- **Storage:** 10GB free space
+- **Docker:** Installed and running
+- **OS:** Linux, macOS, or Windows with WSL2
+
+### Recommended Requirements
+- **RAM:** 16GB+ (for larger models like Llama 7B)
+- **Storage:** 50GB+ free space
+- **GPU:** Optional but speeds up inference significantly
+
+<Badge>Important</Badge> Smaller models like `gemma:2b` can run on modest hardware. Larger models like `llama3:70b` need serious resources.
+
+### When You CAN Run This
+- You have at least 8GB RAM
+- You need privacy for sensitive data
+- You want to learn how LLMs work
+- You're building a proof of concept
+
+### When You SHOULD NOT Run This
+- You need 24/7 uptime (use cloud services)
+- Your laptop has less than 8GB RAM
+- You need the absolute latest models
+- You're building production apps for thousands of users
+
+---
+
+## Why Run Models Locally Anyway?
+
+Before we touch code, one honest question: Why would anyone want to run models locally when ChatGPT exists?
+
+Here's why:
+
+**Privacy** - Your data stays on your machine
+
+**No API cost** - Free inference after setup
+
+**Low latency** - No network calls
+
+**Real understanding** - You actually learn how AI systems work
+
+Also, let's be real — "I run my own LLM locally" just sounds cool.
+
+---
+
+## The Mental Model (Most Important Part)
+
+Read this slowly. This is the core idea.
+
+```
+Your App (FastAPI)
+        ↓
+Ollama (Model Server)
+        ↓
+Actual Model (Gemma, Llama, etc.)
+```
+
+- **FastAPI** sends requests
+- **Ollama** owns and runs models
+- **Docker** keeps Ollama isolated and clean
+
+<Badge>Key Insight</Badge> Your app does NOT store models. Your app does NOT download models. Ollama does everything model-related.
+
+If this clicks, the rest is easy.
+
+---
+
+## Step 1: Start Ollama Using Docker
+
+### Why Docker?
+
+Because it saves you from:
+- Dependency hell
+- OS issues
+- "It works on my machine" syndrome
+
+### Create docker-compose.yml
+
+```yaml
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - models:/root/.ollama/models
+
+volumes:
+  models:
+```
+
+<Badge>Note</Badge> This volume setup persists your models even if you delete the container.
+
+### Run the container
+
+```bash
+docker compose up -d
+```
+
+If Docker starts quietly without errors — good sign.
+
+### Check if Ollama is alive
+
+```bash
+curl http://localhost:11434
+```
+
+If you see something like `"Ollama is running"` — congratulations. Ollama is breathing.
+
+---
+
+## Step 2: Pull a Model (The Right Way)
+
+This is where most people mess up.
+
+**Wrong approaches:**
+- Pulling models in FastAPI
+- Writing model names randomly
+- Assuming Ollama "guesses" model names
+
+No. Ollama is strict. Very strict.
+
+### Enter the container
+
+```bash
+docker exec -it genai-learning-ollama-1 bash
+```
+
+### Pull a model
+
+Let's pick something lightweight and safe:
+
+```bash
+ollama pull gemma:2b
+```
+
+Wait. Yes, it takes time. Yes, it's worth it.
+
+### Verify
+
+```bash
+ollama list
+```
+
+You **must** see `gemma:2b`.
+
+### Exit container
+
+```bash
+exit
+```
+
+### Double-check from host
+
+```bash
+curl http://localhost:11434/api/tags
+```
+
+If it shows your model — you're officially a local LLM owner.
+
+---
+
+## Step 3: Create a Simple FastAPI App
+
+Now comes the fun part — using the model.
+
+### Install dependencies
+
+```bash
+pip install fastapi uvicorn ollama
+```
+
+### Create ollama_api.py
+
+```python
+from fastapi import FastAPI, Body
+from ollama import Client
+
+app = FastAPI()
+
+client = Client(host="http://localhost:11434")
+
+@app.post("/chat")
+def chat(prompt: str = Body(..., embed=True)):
+    response = client.chat(
+        model="gemma:2b",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return {"response": response["message"]["content"]}
+```
+
+Notice something important?
+
+- No model downloading
+- No magic
+- Just a clean request to Ollama
+
+As it should be.
+
+---
+
+## Step 4: Run the Server
+
+```bash
+uvicorn ollama_api:app --reload
+```
+
+### Open browser
+
+Navigate to: `http://127.0.0.1:8000/docs`
+
+### Send a prompt
+
+Try something like:
+
+```json
+{
+  "prompt": "Explain tokenization like I'm five."
+}
+```
+
+And boom. Your local AI responds.
+
+---
+
+## What You Can Do Next
+
+Once this works, you can:
+- Stream responses (ChatGPT typing effect)
+- Add memory (multi-turn chat)
+- Add tools (functions)
+- Build RAG systems
+- Create agents
+
+But first  **enjoy this win**.
+
+---

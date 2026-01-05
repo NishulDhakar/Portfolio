@@ -3,18 +3,14 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Instrument_Serif, Geist as GeistSans } from "next/font/google";
 import { createMetadata } from "@/lib/createMetadata";
-// import Footer from "@/components/layout/Footer";
-// import { Reveal } from "@/components/common/reveal";
 import { ThemeProvider } from "next-themes";
-// import FloatingActions from "@/components/layout/FloatingActions";
-// import { ParticlesDemo } from "@/components/common/Particlesbg";
-// import ResizablePortfolioNavigation from "@/components/layout/Navbar";
 import MinimalHeader from "@/components/layout/MinimalNav";
 import Container from "@/components/common/Container";
+import Footer from "@/components/layout/Footer";
+import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 import { siteConfig } from "@/config/site";
-import Footer from "@/components/layout/Footer";
-import { Separator } from "@radix-ui/react-separator";
 
 export const metadata = createMetadata({
   title: {
@@ -23,6 +19,7 @@ export const metadata = createMetadata({
   },
   description: siteConfig.description,
   image: siteConfig.ogImage,
+  path: "/",
 });
 
 const geistSans = GeistSans({
@@ -47,6 +44,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <JsonLd type="website" />
+        <JsonLd type="person" />
+      </head>
       <body
         className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
         suppressHydrationWarning
@@ -57,6 +58,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AnalyticsTracker />
           <Container>
             <div className="flex min-h-screen flex-col">
               <MinimalHeader />

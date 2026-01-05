@@ -5,10 +5,14 @@ import { Reveal } from "@/components/common/reveal";
 import Experience from "@/components/sections/landingPage/Experience";
 import TechSkills from "@/components/sections/landingPage/Skills";
 import { Separator } from "@/components/ui/separator";
-// import Footer from "@/components/layout/Footer";
-// import DetailedBio from "@/components/sections/landingPage/DetailedBio";
-// import HowCanIHelp from "@/components/sections/landingPage/HowCanIHelp";
-// import Container from "@/components/common/Container";
+import { createMetadata } from "@/lib/createMetadata";
+import { siteConfig } from "@/config/site";
+
+export const metadata = createMetadata({
+  title: siteConfig.title,
+  description: siteConfig.description,
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -18,11 +22,6 @@ export default function HomePage() {
       <Reveal>
         <About />
       </Reveal>
-
-      {/* Services / How Can I Help Section */}
-      {/* <Reveal>
-        <HowCanIHelp />
-      </Reveal> */}
 
       <Reveal>
         <Separator className="my-6 sm:my-8" />
@@ -52,14 +51,8 @@ export default function HomePage() {
         <Github />
       </Reveal>
 
-      {/* <Reveal>
-        <Separator className="my-6 sm:my-8" />
-      </Reveal> */}
-
       {/* Contact / Reachout */}
       <Reachout />
-
-
 
     </div>
   );

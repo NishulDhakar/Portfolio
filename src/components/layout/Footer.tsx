@@ -1,6 +1,7 @@
 "use client";
 
 import { Separator } from "../ui/separator";
+import LiveVisitors from "../widgets/LiveVisitors";
 
 export default function Footer() {
   return (
@@ -18,8 +19,7 @@ export default function Footer() {
 
           {/* Right */}
           <div className="sm:text-right">
-            {/* Visitors{" "}
-            <span className="text-primary">#736</span> */}
+            <LiveVisitors />
             <br className="hidden sm:block" />
             Bhopal, India ·{" "}
             {new Date().toLocaleTimeString("en-IN", {

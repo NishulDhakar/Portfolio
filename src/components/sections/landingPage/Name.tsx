@@ -17,7 +17,7 @@ export default function Name() {
         onMouseLeave={() => setHover(false)}
       >
         {/* INSTAGRAM RING */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neutral-500 via-neutral-500 to-neutral-500 p-[3px] animate-spin-slow">
+        <div className="absolute inset-0 rounded-full dark:bg-gray-600 bg-gray-400 p-[3px]">
           <div className="h-full w-full rounded-full bg-white dark:bg-black p-[2px]">
             <div className="relative h-full w-full rounded-full overflow-hidden">
               <Image
