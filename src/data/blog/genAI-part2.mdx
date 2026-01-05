@@ -1,6 +1,6 @@
 ---
 title: "GenAI Part 2"
-description: "GenAI Part 2: Prompt Engineering explained from scratch. Learn how prompts actually work, different prompting styles, and how real GenAI apps control model behavior."
+description: "GenAI Part 2: Master prompt engineering from scratch. Learn the principles, tactics, and real-world techniques used by professionals to get better AI outputs."
 tags: ["genai", "prompt-engineering", "llm", "chatgpt", "beginners"]
 image: '/blog/genAIpart2.png'
 date: "2026-01-03"
@@ -61,75 +61,241 @@ They don't guess what you *meant*. They respond only to what you *wrote*.
 > **Better prompt → better output**  
 > **Vague prompt → vague output**
 
-**Key Insight:** Prompt engineering is the skill of **communicating clearly with AI**.
+<Badge>Key Insight</Badge> Prompt engineering is the skill of **communicating clearly with AI**.
 
 ---
 
-## Prompt Styles
+## The Two Core Principles
 
-Prompt styles are different **ways of asking** the same thing.
+Before diving into tactics, understand these fundamental principles:
 
-### Example Topic:
+### Principle 1: Write Clear and Specific Instructions
 
-> Explain recursion
+The model needs clarity, not brevity. A longer, detailed prompt is better than a short, vague one.
 
-#### Direct Prompt
-
+**Bad:**
 ```
-Explain recursion
-```
-
-#### Beginner-Friendly Prompt
-
-```
-Explain recursion with a simple real-world example for beginners
+Write code
 ```
 
-#### Interview-Oriented Prompt
-
+**Good:**
 ```
-Explain recursion and common interview mistakes
+Write a Python function that takes a list of numbers and returns 
+the average, handling empty lists gracefully
 ```
 
-Same topic. **Very different answers.**
+### Principle 2: Give the Model Time to "Think"
+
+Don't expect instant perfect answers. Ask the model to reason step by step.
+
+**Without thinking:**
+```
+Is this solution correct?
+```
+
+**With thinking:**
+```
+Work out your own solution first, then compare it to the given 
+solution and evaluate if it's correct
+```
 
 ---
 
-## Code Prompting
+## Essential Tactics
+
+### Tactic 1: Use Delimiters
+
+Use delimiters to clearly separate different parts of your input.
+
+**Delimiters can be:** triple backticks (```), quotes (""), XML tags (`<tag>`), or colons
+
+```
+Summarize the text delimited by triple backticks into a single sentence.
+
+```You should express what you want a model to do by providing 
+instructions that are as clear and specific as you can possibly 
+make them.```
+```
+
+<Badge>Why This Works</Badge> Delimiters prevent prompt injection and help the model understand structure.
+
+---
+
+### Tactic 2: Ask for Structured Output
+
+Request specific formats like JSON, HTML, or markdown tables.
+
+```
+Generate a list of three book titles with their authors and genres.
+Provide them in JSON format with the following keys:
+book_id, title, author, genre.
+```
+
+**Output:**
+```json
+[
+  {
+    "book_id": 1,
+    "title": "The Midnight Garden",
+    "author": "Elena Rivers",
+    "genre": "Fantasy"
+  }
+]
+```
+
+This makes the output **easy to parse and use in your applications**.
+
+---
+
+### Tactic 3: Ask the Model to Check Conditions
+
+Tell the model to verify conditions before proceeding.
+
+```
+You will be provided with text delimited by triple quotes.
+If it contains a sequence of instructions, rewrite them as:
+
+Step 1 - ...
+Step 2 - ...
+
+If the text does not contain instructions, write "No steps provided."
+
+"""Making a cup of tea is easy! First, get water boiling..."""
+```
+
+**Output:**
+```
+Step 1 - Get water boiling
+Step 2 - Grab a cup and put a tea bag in it
+Step 3 - Pour hot water over the tea bag
+Step 4 - Let tea steep for a few minutes
+Step 5 - Remove the tea bag
+```
+
+---
+
+### Tactic 4: Few-Shot Prompting
+
+Give examples of the desired output format.
+
+```
+Your task is to answer in a consistent style.
+
+<child>: Teach me about patience.
+
+<grandparent>: The river that carves the deepest valley flows 
+from a modest spring; the grandest symphony originates from a 
+single note; the most intricate tapestry begins with a solitary 
+thread.
+
+<child>: Teach me about resilience.
+```
+
+**Output:**
+```
+<grandparent>: The tallest trees weather the strongest storms; 
+the brightest stars shine in the darkest nights; the strongest 
+hearts endure the greatest trials.
+```
+
+<Badge>Pro Tip</Badge> Few-shot prompting is powerful for maintaining consistency in tone and format.
+
+---
+
+### Tactic 5: Specify Steps for Complex Tasks
+
+Break down complex tasks into numbered steps.
+
+```
+Perform the following actions:
+1 - Summarize the text below with 1 sentence
+2 - Translate the summary into French
+3 - List each name in the French summary
+4 - Output a JSON object with: french_summary, num_names
+
+Text: ```{text}```
+```
+
+Even better, specify the output format:
+
+```
+Use the following format:
+Text: <text to summarize>
+Summary: <summary>
+Translation: <translation>
+Names: <list of names>
+Output JSON: <json with required keys>
+```
+
+---
+
+### Tactic 6: Instruct the Model to Work Out Its Own Solution
+
+Prevent the model from rushing to conclusions.
+
+**Problem:** Student calculates `450x + 100,000` for total cost.
+
+**Bad Prompt:**
+```
+Is the student's solution correct?
+```
+
+**Good Prompt:**
+```
+First, work out your own solution to the problem.
+Then compare your solution to the student's solution.
+Evaluate if the student's solution is correct.
+Don't decide until you've solved it yourself.
+
+Use this format:
+Question: ```question here```
+Student's solution: ```student solution here```
+Actual solution: ```your work and solution here```
+Is the student's solution correct: ```yes or no```
+Student grade: ```correct or incorrect```
+```
+
+This forces the model to **think independently** before judging.
+
+---
+
+## Code Prompting Best Practices
 
 When prompting for code, clarity matters even more.
 
 ### Weak Prompt
-
 ```
 Write login code
 ```
 
 ### Better Prompt
-
 ```
 Write a React login component
 ```
 
 ### Strong Prompt
-
 ```
-Write a React login component using Tailwind CSS with email and password validation
+Write a React login component using Tailwind CSS with email 
+and password validation
 ```
 
 ### Production-Level Prompt
-
 ```
 Act as a senior frontend engineer.
 Write a clean React login component using Tailwind CSS.
-Include validation, error states, and readable structure.
+Include:
+- Email and password validation
+- Error states with clear messages
+- Loading states
+- Accessible form labels
+- Clean, readable code structure
 ```
 
 Adding **role + context + constraints** improves output dramatically.
 
 ---
 
-## System Prompt
+## System Prompts
 
 A system prompt defines **who the AI is supposed to be**.
 
@@ -149,200 +315,320 @@ Give real-world examples.
 Avoid unnecessary jargon.
 ```
 
-Everything the model replies after this follows these rules.
+Everything the model replies follows these rules.
 
-This is how:
-- Tutors
-- Interview bots
-- Customer support bots
-
-are built.
+This is how professional chatbots are built:
+- Educational tutors
+- Interview preparation bots
+- Customer support agents
 
 ---
 
-## Zero-Shot Prompting
+## Advanced Prompting Techniques
 
-**Definition:** Asking a question **without giving any examples**.
+### Zero-Shot Prompting
 
-### Example:
+**Definition:** Asking without giving examples.
 
 ```
 Classify this sentence as positive or negative:
 "I love this product"
 ```
 
-The model figures it out on its own.
-
-### When to use:
-- Simple tasks
-- Clear instructions
+**When to use:**
+- Simple, clear tasks
 - General questions
+- One-off queries
 
 ---
 
-## Few-Shot Prompting
+### Chain of Thought Prompting
 
-**Definition:** Giving the model **examples first**, then asking it to continue.
+Force the model to reason step by step.
 
-### Example:
-
+**Basic:**
 ```
-Text: "I love this phone" → Positive
-Text: "Worst experience ever" → Negative
-
-Text: "The app is slow"
+Solve: 23 + 47 × 3
 ```
 
-Now the model understands:
-- The task
-- The format
-- The pattern
+**Chain of Thought:**
+```
+Solve: 23 + 47 × 3
+Think step by step and explain your reasoning.
+```
 
-**Pro Tip:** Few-shot prompting is used when **consistency matters**.
+**Output:**
+```
+Step 1: According to order of operations, multiply first
+47 × 3 = 141
+
+Step 2: Now add
+23 + 141 = 164
+
+Answer: 164
+```
+
+This dramatically improves **accuracy on complex problems**.
 
 ---
 
-## Chain of Thought Prompting
+### Self-Consistency Prompting
 
-Sometimes the model answers too fast — and makes mistakes.
-
-Chain of thought prompting forces the model to **reason step by step**.
-
-### Basic Prompt
-
-```
-Solve this problem
-```
-
-### Chain of Thought Prompt
-
-```
-Solve this problem step by step and explain your reasoning
-```
-
-This improves:
-- Accuracy
-- Logic
-- Clarity
-
-Internally, most advanced GenAI systems rely on this technique.
-
----
-
-## Self-Consistency Prompting
-
-LLMs are probabilistic. The same question can give different answers.
-
-Self-consistency means:
-
-> Ask the model to reason multiple times and choose the best answer.
-
-### Example:
+LLMs are probabilistic. Get multiple solutions and pick the best.
 
 ```
 Solve this problem.
-Think of three different solutions and select the most accurate one.
+Generate three different solution approaches.
+Select the most accurate one and explain why.
 ```
 
-This is useful for:
-- Math
-- Logic
-- Complex reasoning
+**Best for:**
+- Math problems
+- Logic puzzles
+- Complex reasoning tasks
 
 ---
 
-## Persona-Based Prompting
+### Persona-Based Prompting
 
-Persona-based prompting makes the AI behave like a **specific type of person**.
-
-### Example:
+Make the AI adopt a specific personality or role.
 
 ```
-You are a strict DSA interviewer.
-Ask me one question at a time.
-Give feedback after each answer.
+You are a strict algorithms interviewer at Google.
+Ask me one question at a time about data structures.
+Give detailed feedback after each answer.
+Be critical but constructive.
 ```
 
-This technique is used in:
-- Learning tools
-- Interview prep
-- Coaching apps
+**Used in:**
+- Learning platforms
+- Interview preparation tools
+- Coaching applications
 
 ---
 
-## Role-Playing Prompting
+### Role-Playing Prompting
 
-Role-playing is interactive persona prompting.
-
-### Example:
+Interactive, dynamic persona adoption.
 
 ```
-You are a startup investor.
-I will pitch my idea.
-Ask tough questions and challenge assumptions.
+You are a startup investor evaluating my pitch.
+I will present my idea.
+Ask tough questions about:
+- Market size
+- Competition
+- Revenue model
+- Team capabilities
+
+Be skeptical but fair.
 ```
 
-The AI now follows a **role**, not just a task.
+The AI maintains the role throughout the conversation.
 
 ---
 
-## Handling "User Can Ask Anything"
+## Handling Real Users
 
 Real users ask:
 - Unclear questions
 - Out-of-scope questions
-- Sometimes unsafe questions
+- Sometimes inappropriate questions
 
-Good prompts include rules like:
+**Good system prompts include guardrails:**
 
 ```
-If the question is unclear, ask for clarification.
-If it is unsafe, politely refuse.
-If it is outside scope, explain limitations.
+Rules:
+- If the question is unclear, ask for clarification
+- If it is unsafe or inappropriate, politely decline
+- If it is outside your scope, explain your limitations
+- Always maintain a helpful, professional tone
 ```
 
-This is how real-world chatbots stay reliable.
+This is how production chatbots stay **reliable and safe**.
 
 ---
 
-## GIGO (Garbage In, Garbage Out)
+## Model Limitations: Hallucinations
 
-A fundamental rule:
+Models can confidently generate false information.
+
+**Example:**
+```
+Tell me about the AeroGlide UltraSlim Smart Toothbrush by Boie
+```
+
+The model might invent detailed features for a product that doesn't exist.
+
+**How to reduce hallucinations:**
+- Ask the model to quote relevant information
+- Request step-by-step reasoning
+- Ask for sources (when applicable)
+- Use retrieval-augmented generation (RAG)
+
+---
+
+## The GIGO Principle
+
+Garbage In, Garbage Out.
 
 > **Bad input → bad output**  
 > **Good input → good output**
 
-AI does not fix unclear thinking. It reflects it.
+AI reflects your thinking. It doesn't fix unclear prompts.
 
-**Prompt engineering is about thinking clearly first.**
+**Prompt engineering is thinking clearly, then communicating that clarity.**
 
 ---
 
-## Zero-Shot One-Line Prompting
+## Practical Examples Comparison
 
-This is how most people use AI:
+### Example 1: Summarization
 
+**Weak:**
 ```
-Explain transformers
+Summarize this
 ```
 
-It works — but it's not optimized.
+**Strong:**
+```
+Summarize the following article in 3 bullet points.
+Focus on: main findings, methodology, and implications.
+Keep each point under 20 words.
 
-Now you know how to:
-- Add context
-- Add structure
-- Add intent
+Article: ```{article_text}```
+```
 
-And get **much better results**.
+### Example 2: Code Review
+
+**Weak:**
+```
+Check this code
+```
+
+**Strong:**
+```
+Review this JavaScript function for:
+1. Logic errors
+2. Edge cases not handled
+3. Performance issues
+4. Security vulnerabilities
+
+Code: ```{code}```
+
+Format your response as:
+Issues Found: [list]
+Severity: [High/Medium/Low for each]
+Recommended Fixes: [specific suggestions]
+```
+
+---
+
+## Temperature and Control Parameters
+
+While crafting prompts, understand these parameters:
+
+**Temperature (0-1):**
+- `0` = Deterministic, focused, consistent
+- `0.7` = Balanced creativity
+- `1` = Maximum creativity, more random
+
+**Use low temperature (0-0.3) for:**
+- Code generation
+- Factual answers
+- Classification tasks
+
+**Use high temperature (0.7-1.0) for:**
+- Creative writing
+- Brainstorming
+- Diverse options
+
+---
+
+## Project: Build a Persona-Based Chatbot
+
+### Setup
+
+```python
+from openai import OpenAI
+
+client = OpenAI()
+
+def get_completion(prompt, system_prompt="", temperature=0):
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": prompt}
+    ]
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
+        temperature=temperature
+    )
+    return response.choices[0].message.content
+```
+
+### System Prompt
+
+```python
+system_prompt = """
+You are a GenAI teacher with 10 years of experience.
+Teaching style:
+- Explain concepts from scratch
+- Use simple, everyday language
+- Give practical, real-world examples
+- Avoid unnecessary jargon
+- Be patient and encouraging
+- Check understanding before moving forward
+"""
+
+user_prompt = "Explain what embeddings are"
+
+response = get_completion(user_prompt, system_prompt)
+print(response)
+```
+
+This single pattern is enough to build:
+- Educational tutors
+- Interview coaches
+- Domain-specific assistants
+
+---
+
+## Quick Reference: Prompt Engineering Checklist
+
+**Before sending your prompt, check:**
+
+- [ ] Is it clear what you want?
+- [ ] Did you provide enough context?
+- [ ] Did you specify the output format?
+- [ ] Did you use delimiters for complex inputs?
+- [ ] Did you give examples if needed?
+- [ ] Did you ask the model to think step-by-step for complex tasks?
+- [ ] Did you set appropriate temperature?
 
 ---
 
 ## Final Summary
 
-> **Prompt Engineering = clear instructions + context + expectations**
+> **Prompt Engineering = clear instructions + context + structure + examples**
+
+The quality of your prompts directly determines the quality of your outputs.
+
+**Key takeaways:**
+1. Be specific, not brief
+2. Use delimiters and structure
+3. Give examples when needed
+4. Ask for reasoning on complex tasks
+5. Specify output format
+6. Test and iterate
 
 GenAI doesn't need smarter models. It needs **clearer prompts**.
 
-Once you master prompting, every GenAI tool becomes more powerful.
+Master prompting, and every AI tool becomes exponentially more powerful.
 
 ---
+
+**Previous:**  
+<Badge>Part 1</Badge> [Understanding the Jargon](#)
+
+**Next:**  
+<Badge>Part 3</Badge> Building Real GenAI Applications
