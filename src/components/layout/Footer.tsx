@@ -2,6 +2,7 @@
 
 import { Separator } from "../ui/separator";
 import LiveVisitors from "../widgets/LiveVisitors";
+import TotalViews from "../widgets/TotalViews";
 
 export default function Footer() {
   return (
@@ -18,14 +19,18 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="sm:text-right">
-            <LiveVisitors />
-            <br className="hidden sm:block" />
-            Bhopal, India ·{" "}
-            {new Date().toLocaleTimeString("en-IN", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
+          <div className="sm:text-right space-y-1">
+            <div className="flex flex-col sm:items-end gap-1">
+              <TotalViews />
+            </div>
+            <div className="hidden sm:block h-1" />
+            <div>
+              Bhopal, India ·{" "}
+              {new Date().toLocaleTimeString("en-IN", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </div>
           </div>
         </div>
       </div>
