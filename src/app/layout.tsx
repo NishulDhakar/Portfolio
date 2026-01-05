@@ -68,7 +68,7 @@ export default function RootLayout({
         <JsonLd type="person" />
       </head>
       <body
-        className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
+        className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
         suppressHydrationWarning
       >
         <ThemeProvider

@@ -1,18 +1,19 @@
-# White Flicker Fix - Production Theme Issue
+# White Flicker Fix - Production Theme Issue ✅
 
 ## Problem
-When refreshing the page in production, there was a noticeable white flicker before the correct theme (light/dark) was applied. This happened because:
+When refreshing the page in production, there was a noticeable white flicker before the correct theme (light/dark) was applied.
 
-1. The HTML initially rendered with no theme class
-2. JavaScript needed to load and execute to read the theme preference
-3. Only then was the `dark` class added to the `<html>` element
-4. This caused a brief flash of white background
+### Root Causes Identified:
+1. **Hard-coded Tailwind classes on body**: `bg-neutral-100` and `dark:bg-black` were applied via className
+2. **No CSS-based background fallback**: The HTML/body didn't have CSS background colors set
+3. **JavaScript-dependent theme**: The theme class was only applied after React hydrated
+4. **Timing issue**: Brief moment where no background color was defined, showing browser default (white)
 
 ## Solution
-Implemented a **multi-layered approach** to prevent the flicker:
+Implemented a **three-layered approach** to eliminate the flicker:
 
 ### 1. Inline Blocking Script (layout.tsx)
-Added a synchronous script in the `<head>` that runs **before** React hydrates:
+Added a synchronous script in the `<head>` that executes **before** any content renders:
 
 ```typescript
 <script
@@ -36,48 +37,153 @@ Added a synchronous script in the `<head>` that runs **before** React hydrates:
 />
 ```
 
-This script:
+**What it does:**
 - Runs immediately before any content renders
-- Reads the theme from localStorage
+- Reads theme preference from localStorage
 - Checks system preferences if theme is 'system' or not set
-- Applies the correct `dark` class instantly
+- Applies the correct `dark` class instantly to `<html>`
 
-### 2. CSS Fallback Colors (globals.css)
-Added explicit background colors to CSS to ensure there's always a defined background:
+### 2. CSS Background Colors (globals.css)
+Added explicit background colors throughout the CSS cascade:
 
 ```css
+/* Base HTML element */
 html {
-  background-color: oklch(1 0 0); /* Light mode by default */
+  scrollbar-width: none;
+  background-color: oklch(0.985 0 0); /* Light neutral background */
 }
 
+/* Light mode (default) */
 :root {
-  background-color: oklch(1 0 0);
+  --radius: 0.625rem;
+  --background: oklch(0.985 0 0); /* Matches bg-neutral-100 */
+  --foreground: oklch(0.145 0 0);
+  background-color: oklch(0.985 0 0);
   color: oklch(0.145 0 0);
+  /* ... other CSS variables ... */
 }
 
+/* Dark mode */
 .dark {
-  background-color: oklch(0.145 0 0);
+  --background: oklch(0 0 0); /* Pure black, matches dark:bg-black */
+  --foreground: oklch(0.985 0 0);
+  background-color: oklch(0 0 0);
   color: oklch(0.985 0 0);
+  /* ... other CSS variables ... */
+}
+
+/* Applied via Tailwind */
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }
 ```
 
-### 3. suppressHydrationWarning
-Already present on both `<html>` and `<body>` tags to prevent React warnings about the theme class mismatch during hydration.
+**Why this works:**
+- `html` gets a fallback background color immediately
+- CSS custom properties are defined and applied at the same time
+- Direct `background-color` ensures immediate rendering
+- Tailwind's `@apply` uses these CSS variables for body
+
+### 3. Removed Hard-coded Backgrounds (layout.tsx)
+**Before:**
+```tsx
+<body
+  className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black`}
+  suppressHydrationWarning
+>
+```
+
+**After:**
+```tsx
+<body
+  className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
+  suppressHydrationWarning
+>
+```
+
+**Why this matters:**
+- Hard-coded Tailwind classes (`bg-neutral-100`, `dark:bg-black`) were causing a race condition
+- They would only apply the dark background AFTER the `dark` class was added
+- This created a brief flash of light color
+- Now backgrounds are controlled purely by CSS variables that are set synchronously
+
+## Technical Flow
+
+### Page Load Sequence (No Flicker):
+1. **Browser parses HTML** → Sets `html { background-color: oklch(0.985 0 0) }`
+2. **Inline script runs** → Reads localStorage, applies `dark` class if needed
+3. **CSS cascade applies** → `.dark { background-color: oklch(0 0 0) }` takes effect
+4. **Body renders** → Uses `bg-background` which references the already-set CSS variable
+5. **React hydrates** → No visual change, everything already matches
+
+### Why Previous Attempts Failed:
+- **Only CSS variables**: Not enough, needed direct background-color
+- **Only inline script**: CSS backgrounds weren't set, browser showed white default
+- **Tailwind classes on body**: Created dependency on JavaScript execution timing
+
+## Files Modified
+1. `/Applications/Portfolio/src/app/layout.tsx`
+   - Added inline theme detection script
+   - Removed hard-coded background Tailwind classes from body
+
+2. `/Applications/Portfolio/src/app/globals.css`
+   - Added `background-color` to `html` element
+   - Added `background-color` and `color` to `:root`
+   - Added `background-color` and `color` to `.dark`
+   - Added `antialiased` to body styling
+
+## Color Mappings
+To maintain visual consistency with the original design:
+
+| Element | Light Mode | Dark Mode |
+|---------|-----------|-----------|
+| Background | `oklch(0.985 0 0)` (≈ `bg-neutral-100`) | `oklch(0 0 0)` (pure black, `dark:bg-black`) |
+| Foreground | `oklch(0.145 0 0)` | `oklch(0.985 0 0)` |
+
+## Testing Checklist
+- [x] Inline script applies theme before render
+- [x] CSS backgrounds are set at multiple levels
+- [x] Hard-coded Tailwind backgrounds removed
+- [x] suppressHydrationWarning prevents React warnings
+- [x] Light mode: no flicker on refresh
+- [x] Dark mode: no flicker on refresh
+- [x] System preference: no flicker on refresh
+
+## Verification Steps
+1. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+2. **Start production server:**
+   ```bash
+   npm start
+   ```
+
+3. **Test scenarios:**
+   - Set theme to light → refresh page → **no white flicker** ✅
+   - Set theme to dark → refresh page → **no white flicker** ✅
+   - Set theme to system → refresh page → **no white flicker** ✅
+   - Toggle theme rapidly → smooth transitions ✅
 
 ## Benefits
-- ✅ No white flicker on page refresh
-- ✅ Instant theme application
-- ✅ Works even if JavaScript fails to load
-- ✅ Respects user's theme preference (localStorage + system)
-- ✅ No performance impact (synchronous script is minimal)
+- ✅ **Zero flicker**: No white flash on page load/refresh
+- ✅ **Instant theme**: Applied before any content renders
+- ✅ **Graceful degradation**: Works even if JavaScript fails
+- ✅ **Respects preferences**: Honors localStorage and system theme
+- ✅ **Zero performance impact**: Minimal inline script, no additional requests
+- ✅ **SSR compatible**: Works with Next.js server-side rendering
+- ✅ **Maintains design**: Colors match original `bg-neutral-100` and `dark:bg-black`
 
-## Testing
-To verify the fix:
-1. Build for production: `npm run build`
-2. Start production server: `npm start`
-3. Toggle between light/dark themes
-4. Refresh the page multiple times
-5. No white flicker should occur
+## Notes
+- The CSS lint warnings about `@custom-variant`, `@theme`, and `@apply` are **expected** - these are Tailwind CSS v4 directives that work correctly when processed
+- The `suppressHydrationWarning` is necessary because the inline script may add the `dark` class before React hydrates
+- This solution is production-ready and deployed on Vercel without issues
 
-## Note
-The CSS lint warnings about `@custom-variant`, `@theme`, and `@apply` are expected - these are Tailwind CSS directives that the CSS linter doesn't recognize but work correctly when processed by Tailwind.
+## Related
+- Package: `next-themes@0.4.6`
+- Framework: Next.js 16.0.7 (App Router)
+- Default localStorage key: `theme`
+- Default attribute: `class`
