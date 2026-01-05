@@ -42,9 +42,9 @@ export const generateMetadata = (): Metadata => {
 export default function AboutPage() {
   return (
     <div className="pt-20 pb-20">
-          <Reveal>
+          {/* <Reveal>
         <DetailedBio />
-      </Reveal>
+      </Reveal> */}
       <Reveal>
         <Info />
       </Reveal>

@@ -35,8 +35,8 @@ const pages: PageItem[] = [
   { title: "Bookmarks", path: "/bookmarks", description: "Curated resources", icon: <Bookmark />, category: "Content" },
   { title: "Contact", path: "/contact", description: "Get in touch", icon: <Mail />, category: "Main" },
   { title: "Analytics", path: "/analytics", description: "Visitor insights", icon: <BarChart3 />, category: "Tools" },
-  { title: "PlacementReady", path: "/placementready", description: "Placement prep platform", icon: <Cpu />, category: "Projects" },
-  { title: "PlanYourMeal", path: "/planyourmeal", description: "Meal planning app", icon: <Cpu />, category: "Projects" },
+//   { title: "PlacementReady", path: "/placementready", description: "Placement prep platform", icon: <Cpu />, category: "Projects" },
+//   { title: "PlanYourMeal", path: "/planyourmeal", description: "Meal planning app", icon: <Cpu />, category: "Projects" },
 ];
 
 export default function AllPagesDirectory() {

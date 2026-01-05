@@ -16,11 +16,16 @@ export async function connectToDatabase() {
             throw new Error('MONGO_URI not found in environment variables');
         }
 
-        client = new MongoClient(uri);
+        // Add connection options for better reliability
+        client = new MongoClient(uri, {
+            retryWrites: true,
+            w: 'majority',
+        });
+
         await client.connect();
+
+        // Database name is specified in the connection string or use default
         db = client.db('portfolio_analytics');
-
-
 
         // Create indexes for better performance
         await createIndexes(db);
@@ -46,8 +51,6 @@ async function createIndexes(db: Db) {
         await usersCollection.createIndex({ userId: 1 }, { unique: true });
         await usersCollection.createIndex({ lastVisit: -1 });
         await usersCollection.createIndex({ visitCount: -1 });
-
-
     } catch (error) {
         console.error('[MongoDB] Error creating indexes:', error);
     }
@@ -66,7 +69,6 @@ if (typeof process !== 'undefined') {
     process.on('SIGINT', async () => {
         if (client) {
             await client.close();
-
         }
     });
 }

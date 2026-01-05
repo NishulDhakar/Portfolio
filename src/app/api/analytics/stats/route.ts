@@ -6,10 +6,8 @@ export async function GET(request: NextRequest) {
         const { searchParams } = new URL(request.url);
         const minutesAgo = parseInt(searchParams.get("minutesAgo") || "5", 10);
 
-        // Get stats from the store
-        const stats = analyticsStore.getStats(minutesAgo);
-
-
+        // Get stats from the store (now async with MongoDB)
+        const stats = await analyticsStore.getStats(minutesAgo);
 
         return NextResponse.json(stats, {
             headers: {

@@ -20,10 +20,12 @@ export default function LiveVisitors() {
                 const response = await fetch("/api/analytics/stats?minutesAgo=5");
 
                 if (!response.ok) {
+                    console.error("Analytics API error:", response.status, response.statusText);
                     throw new Error("Failed to fetch stats");
                 }
 
                 const data: AnalyticsStats = await response.json();
+                console.log("Analytics data received:", data); // Debug log
                 setStats(data);
                 setError(false);
             } catch (err) {
@@ -43,8 +45,14 @@ export default function LiveVisitors() {
         return () => clearInterval(interval);
     }, []);
 
+    // Show error state temporarily for debugging
     if (error) {
-        return null; // Silently fail
+        return (
+            <div className="inline-flex items-center gap-1.5 text-red-500">
+                <Users className="w-3 h-3" />
+                <span className="text-xs">offline</span>
+            </div>
+        );
     }
 
     if (isLoading) {
