@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Copy, Check, Mail } from "lucide-react";
-
+import { useTheme } from "next-themes";
 
 import Container from "@/components/common/Container";
 
 const Reachout = () => {
   const [copied, setCopied] = useState(false);
+  const { resolvedTheme } = useTheme();
   const email = "nishuldhakar123@gmail.com";
 
   const handleCopy = () => {
@@ -64,6 +65,29 @@ const Reachout = () => {
                   </span>
                 </button>
               </div>
+
+              {/* Peerlist Badge */}
+              {resolvedTheme === "dark" ? (
+                <div className="mt-18 dark:bg-black flex justify-center">
+                  <a href="https://peerlist.io/nishuldhakar/project/a-modern-responsive-portfolio-website" target="_blank" rel="noreferrer">
+                    <img
+                      src="https://peerlist.io/api/v1/projects/embed/PRJH9OBGMDEMDLORR26ADDNQNPJQQA?showUpvote=true&theme=dark"
+                      alt="A modern, responsive portfolio website"
+                      style={{ width: 'auto', height: '72px' }}
+                    />
+                  </a>
+                </div>
+              ) : (
+                <div className="mt-18 dark:bg-black flex justify-center">
+                  <a href="https://peerlist.io/nishuldhakar/project/a-modern-responsive-portfolio-website" target="_blank" rel="noreferrer">
+                    <img
+                      src="https://peerlist.io/api/v1/projects/embed/PRJH9OBGMDEMDLORR26ADDNQNPJQQA?showUpvote=true&theme=light"
+                      alt="A modern, responsive portfolio website"
+                      style={{ width: 'auto', height: '72px' }}
+                    />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>
