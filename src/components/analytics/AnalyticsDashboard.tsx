@@ -299,28 +299,8 @@ const EngagementCard = memo(
 
 const ReturningUsers = memo(({ users }: { users: UserData[] }) => (
   <div>
-    <h2 className="text-xl font-semibold mb-4">
-      Loyal Users
-    </h2>
-    <div className="border rounded-xl divide-y">
-      {users.length ? (
-        users.map((u, i) => (
-          <div
-            key={u.userId}
-            className="flex justify-between p-4"
-          >
-            <span className="font-mono text-xs">
-              #{i + 1} — {u.userId.slice(0, 8)}
-            </span>
-            <span>{u.visitCount} visits</span>
-          </div>
-        ))
-      ) : (
-        <p className="p-6 text-muted-foreground text-center">
-          No returning users
-        </p>
-      )}
-    </div>
+    
+
   </div>
 ));
 

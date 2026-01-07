@@ -8,15 +8,21 @@
 html {
   scrollbar-width: none;
   background-color: oklch(0.985 0 0);
+  color: oklch(0.145 0 0);
 }
 
 /* Prevent initial white flash on dark-preferred systems by matching
    the user's system preference at the earliest paint via CSS. */
 @media (prefers-color-scheme: dark) {
-  html {
+  html:not(.dark) {
     background-color: oklch(0 0 0);
     color: oklch(0.985 0 0);
   }
+}
+
+html.dark {
+  background-color: oklch(0 0 0);
+  color: oklch(0.985 0 0);
 }
 
 @font-face {
@@ -243,6 +249,8 @@ html {
 
   body {
     @apply bg-background text-foreground antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
 
