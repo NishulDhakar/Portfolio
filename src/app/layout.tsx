@@ -45,34 +45,64 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var d = document;
+                var e = d.documentElement;
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  var effectiveTheme = theme === 'system' || !theme ? systemTheme : theme;
+                  
+                  if (effectiveTheme === 'dark') {
+                    e.classList.add('dark');
+                    e.style.cssText = 'background-color: oklch(0 0 0) !important; color: oklch(0.985 0 0) !important;';
+                  } else {
+                    e.classList.remove('dark');
+                    e.style.cssText = 'background-color: oklch(0.985 0 0) !important; color: oklch(0.145 0 0) !important;';
+                  }
+                } catch (err) {
+                  var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  if (systemTheme === 'dark') {
+                    e.style.cssText = 'background-color: oklch(0 0 0) !important; color: oklch(0.985 0 0) !important;';
+                  } else {
+                    e.style.cssText = 'background-color: oklch(0.985 0 0) !important; color: oklch(0.145 0 0) !important;';
+                  }
+                }
+              })();
+            `,
+          }}
+        />
         <style
           dangerouslySetInnerHTML={{
             __html: `
               html {
-                background-color: oklch(0.985 0 0);
-                color: oklch(0.145 0 0);
+                background-color: oklch(0.985 0 0) !important;
+                color: oklch(0.145 0 0) !important;
               }
               html.dark {
-                background-color: oklch(0 0 0);
-                color: oklch(0.985 0 0);
+                background-color: oklch(0 0 0) !important;
+                color: oklch(0.985 0 0) !important;
               }
               body {
-                background-color: oklch(0.985 0 0);
-                color: oklch(0.145 0 0);
+                background-color: oklch(0.985 0 0) !important;
+                color: oklch(0.145 0 0) !important;
                 margin: 0;
               }
               html.dark body {
-                background-color: oklch(0 0 0);
-                color: oklch(0.985 0 0);
+                background-color: oklch(0 0 0) !important;
+                color: oklch(0.985 0 0) !important;
               }
               @media (prefers-color-scheme: dark) {
                 html:not(.dark) {
-                  background-color: oklch(0 0 0);
-                  color: oklch(0.985 0 0);
+                  background-color: oklch(0 0 0) !important;
+                  color: oklch(0.985 0 0) !important;
                 }
                 html:not(.dark) body {
-                  background-color: oklch(0 0 0);
-                  color: oklch(0.985 0 0);
+                  background-color: oklch(0 0 0) !important;
+                  color: oklch(0.985 0 0) !important;
                 }
               }
             `,
@@ -82,52 +112,51 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                function applyTheme() {
+                function applyBodyTheme() {
                   try {
                     var theme = localStorage.getItem('theme');
                     var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                     var effectiveTheme = theme === 'system' || !theme ? systemTheme : theme;
                     
-                    if (effectiveTheme === 'dark') {
-                      document.documentElement.classList.add('dark');
-                      document.documentElement.style.backgroundColor = 'oklch(0 0 0)';
-                      document.documentElement.style.color = 'oklch(0.985 0 0)';
-                    } else {
-                      document.documentElement.classList.remove('dark');
-                      document.documentElement.style.backgroundColor = 'oklch(0.985 0 0)';
-                      document.documentElement.style.color = 'oklch(0.145 0 0)';
-                    }
-                    
-                    // Apply to body when available
                     if (document.body) {
-                      document.body.style.backgroundColor = document.documentElement.style.backgroundColor;
-                      document.body.style.color = document.documentElement.style.color;
+                      if (effectiveTheme === 'dark') {
+                        document.body.style.setProperty('background-color', 'oklch(0 0 0)', 'important');
+                        document.body.style.setProperty('color', 'oklch(0.985 0 0)', 'important');
+                      } else {
+                        document.body.style.setProperty('background-color', 'oklch(0.985 0 0)', 'important');
+                        document.body.style.setProperty('color', 'oklch(0.145 0 0)', 'important');
+                      }
                     }
                   } catch (e) {
-                    // Fallback to system preference
                     var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    if (systemTheme === 'dark') {
-                      document.documentElement.style.backgroundColor = 'oklch(0 0 0)';
-                      document.documentElement.style.color = 'oklch(0.985 0 0)';
-                    } else {
-                      document.documentElement.style.backgroundColor = 'oklch(0.985 0 0)';
-                      document.documentElement.style.color = 'oklch(0.145 0 0)';
-                    }
                     if (document.body) {
-                      document.body.style.backgroundColor = document.documentElement.style.backgroundColor;
-                      document.body.style.color = document.documentElement.style.color;
+                      if (systemTheme === 'dark') {
+                        document.body.style.setProperty('background-color', 'oklch(0 0 0)', 'important');
+                        document.body.style.setProperty('color', 'oklch(0.985 0 0)', 'important');
+                      } else {
+                        document.body.style.setProperty('background-color', 'oklch(0.985 0 0)', 'important');
+                        document.body.style.setProperty('color', 'oklch(0.145 0 0)', 'important');
+                      }
                     }
                   }
                 }
                 
-                // Apply immediately
-                applyTheme();
-                
-                // Also apply when DOM is ready (in case body wasn't available)
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', applyTheme);
+                if (document.body) {
+                  applyBodyTheme();
                 } else {
-                  applyTheme();
+                  var observer = new MutationObserver(function(mutations) {
+                    if (document.body) {
+                      applyBodyTheme();
+                      observer.disconnect();
+                    }
+                  });
+                  observer.observe(document.documentElement, { childList: true, subtree: true });
+                  setTimeout(function() {
+                    if (document.body) {
+                      applyBodyTheme();
+                      observer.disconnect();
+                    }
+                  }, 0);
                 }
               })();
             `,
@@ -141,10 +170,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
         suppressHydrationWarning
-        style={{
-          backgroundColor: 'var(--background, oklch(0.985 0 0))',
-          color: 'var(--foreground, oklch(0.145 0 0))',
-        }}
       >
         <ThemeProvider
           attribute="class"
