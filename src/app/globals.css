@@ -10,6 +10,15 @@ html {
   background-color: oklch(0.985 0 0);
 }
 
+/* Prevent initial white flash on dark-preferred systems by matching
+   the user's system preference at the earliest paint via CSS. */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: oklch(0 0 0);
+    color: oklch(0.985 0 0);
+  }
+}
+
 @font-face {
   font-family: 'Hanken Grotesk';
   src: url('/fonts/HankenGrotesk-Variable.ttf') format('truetype');
