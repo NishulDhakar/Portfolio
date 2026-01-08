@@ -79,11 +79,6 @@ export function createMetadata({
       site: siteConfig.author.twitter,
     },
     icons,
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 5,
-    },
     verification: {
       // Add your verification codes here when available
       // google: 'your-google-verification-code',

@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     },
 };
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function BookmarksPage() {
     return <BookmarksPageClient />;
 }

@@ -14,6 +14,9 @@ export const metadata = createMetadata({
   path: "/",
 });
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function HomePage() {
   return (
     <div className="flex flex-col gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10">

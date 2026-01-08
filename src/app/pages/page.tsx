@@ -6,6 +6,9 @@ export const metadata = createMetadata({
     description: "Complete directory of all pages in this portfolio. Browse through projects, blog posts, and more.",
 });
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function PagesPage() {
     return <AllPagesDirectory />;
 }

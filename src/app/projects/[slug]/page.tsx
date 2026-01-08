@@ -57,6 +57,9 @@ export async function generateMetadata({
   };
 }
 
+export { viewport } from "@/lib/viewport";
+
+
 // Page
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
@@ -70,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <Container className="py-16 mt-14">
-      
+
       <div className="space-y-12">
         {/* Back Button */}
         <div>

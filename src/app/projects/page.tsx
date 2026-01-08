@@ -32,6 +32,9 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function ProjectsPage() {
   return <ProjectsPageClient />;
 }

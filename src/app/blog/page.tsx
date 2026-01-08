@@ -51,6 +51,9 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
+export { viewport } from "@/lib/viewport";
+
+
 function BlogPageLoading() {
   return (
     <div className="">

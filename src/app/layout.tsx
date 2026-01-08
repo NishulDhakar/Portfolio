@@ -22,6 +22,9 @@ export const metadata = createMetadata({
   path: "/",
 });
 
+export { viewport } from "@/lib/viewport";
+
+
 const geistSans = GeistSans({
   weight: '400',
   style: 'normal',

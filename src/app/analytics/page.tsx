@@ -6,6 +6,9 @@ export const metadata = createMetadata({
     description: "Real-time analytics dashboard for portfolio traffic insights",
 });
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function AnalyticsPage() {
     return <AnalyticsDashboard />;
 }

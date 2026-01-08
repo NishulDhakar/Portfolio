@@ -39,10 +39,13 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
+export { viewport } from "@/lib/viewport";
+
+
 export default function AboutPage() {
   return (
     <div className="pt-20 pb-20">
-          {/* <Reveal>
+      {/* <Reveal>
         <DetailedBio />
       </Reveal> */}
       <Reveal>

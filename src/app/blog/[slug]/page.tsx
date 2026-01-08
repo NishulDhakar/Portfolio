@@ -66,6 +66,9 @@ export async function generateMetadata({
   };
 }
 
+export { viewport } from "@/lib/viewport";
+
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
