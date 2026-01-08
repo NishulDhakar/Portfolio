@@ -82,89 +82,23 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               html {
-                background-color: oklch(0.985 0 0) !important;
-                color: oklch(0.145 0 0) !important;
+                background-color: oklch(0.985 0 0);
+                color: oklch(0.145 0 0);
               }
               html.dark {
-                background-color: oklch(0 0 0) !important;
-                color: oklch(0.985 0 0) !important;
-              }
-              body {
-                background-color: oklch(0.985 0 0) !important;
-                color: oklch(0.145 0 0) !important;
-                margin: 0;
-              }
-              html.dark body {
-                background-color: oklch(0 0 0) !important;
-                color: oklch(0.985 0 0) !important;
+                background-color: oklch(0 0 0);
+                color: oklch(0.985 0 0);
               }
               @media (prefers-color-scheme: dark) {
                 html:not(.dark) {
-                  background-color: oklch(0 0 0) !important;
-                  color: oklch(0.985 0 0) !important;
-                }
-                html:not(.dark) body {
-                  background-color: oklch(0 0 0) !important;
-                  color: oklch(0.985 0 0) !important;
+                  background-color: oklch(0 0 0);
+                  color: oklch(0.985 0 0);
                 }
               }
             `,
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function applyBodyTheme() {
-                  try {
-                    var theme = localStorage.getItem('theme');
-                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    var effectiveTheme = theme === 'system' || !theme ? systemTheme : theme;
-                    
-                    if (document.body) {
-                      if (effectiveTheme === 'dark') {
-                        document.body.style.setProperty('background-color', 'oklch(0 0 0)', 'important');
-                        document.body.style.setProperty('color', 'oklch(0.985 0 0)', 'important');
-                      } else {
-                        document.body.style.setProperty('background-color', 'oklch(0.985 0 0)', 'important');
-                        document.body.style.setProperty('color', 'oklch(0.145 0 0)', 'important');
-                      }
-                    }
-                  } catch (e) {
-                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    if (document.body) {
-                      if (systemTheme === 'dark') {
-                        document.body.style.setProperty('background-color', 'oklch(0 0 0)', 'important');
-                        document.body.style.setProperty('color', 'oklch(0.985 0 0)', 'important');
-                      } else {
-                        document.body.style.setProperty('background-color', 'oklch(0.985 0 0)', 'important');
-                        document.body.style.setProperty('color', 'oklch(0.145 0 0)', 'important');
-                      }
-                    }
-                  }
-                }
-                
-                if (document.body) {
-                  applyBodyTheme();
-                } else {
-                  var observer = new MutationObserver(function(mutations) {
-                    if (document.body) {
-                      applyBodyTheme();
-                      observer.disconnect();
-                    }
-                  });
-                  observer.observe(document.documentElement, { childList: true, subtree: true });
-                  setTimeout(function() {
-                    if (document.body) {
-                      applyBodyTheme();
-                      observer.disconnect();
-                    }
-                  }, 0);
-                }
-              })();
-            `,
-          }}
-        />
+
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
         <JsonLd type="website" />

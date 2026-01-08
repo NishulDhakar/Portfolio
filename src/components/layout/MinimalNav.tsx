@@ -20,7 +20,7 @@ export default function MinimalHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-neutral-100/80 dark:bg-black/80 backdrop-blur-md border-b border-transparent">
+    <header className="sticky top-0 z-50 backdrop-blur-md border-b border-transparent">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-3 sm:py-4">
         <nav className="flex items-center justify-between">
           {/* Desktop Navigation */}
