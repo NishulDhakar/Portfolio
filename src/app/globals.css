@@ -7,12 +7,11 @@
 
 html {
   scrollbar-width: none;
-  background-color: oklch(0.985 0 0);
-  color: oklch(0.145 0 0);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-/* Prevent initial white flash on dark-preferred systems by matching
-   the user's system preference at the earliest paint via CSS. */
+/* Prevent initial white flash on dark-preferred systems */
 @media (prefers-color-scheme: dark) {
   html:not(.dark) {
     background-color: oklch(0 0 0);
@@ -20,7 +19,8 @@ html {
   }
 }
 
-html.dark {
+/* Ensure data-theme takes precedence if used */
+[data-theme='dark'] {
   background-color: oklch(0 0 0);
   color: oklch(0.985 0 0);
 }

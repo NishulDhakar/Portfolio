@@ -65,29 +65,6 @@ const Reachout = () => {
                   </span>
                 </button>
               </div>
-
-              {/* Peerlist Badge */}
-              {resolvedTheme === "dark" ? (
-                <div className="mt-18 dark:bg-black flex justify-center">
-                  <a href="https://peerlist.io/nishuldhakar/project/a-modern-responsive-portfolio-website" target="_blank" rel="noreferrer">
-                    <img
-                      src="https://peerlist.io/api/v1/projects/embed/PRJH9OBGMDEMDLORR26ADDNQNPJQQA?showUpvote=true&theme=dark"
-                      alt="A modern, responsive portfolio website"
-                      style={{ width: 'auto', height: '72px' }}
-                    />
-                  </a>
-                </div>
-              ) : (
-                <div className="mt-18 dark:bg-black flex justify-center">
-                  <a href="https://peerlist.io/nishuldhakar/project/a-modern-responsive-portfolio-website" target="_blank" rel="noreferrer">
-                    <img
-                      src="https://peerlist.io/api/v1/projects/embed/PRJH9OBGMDEMDLORR26ADDNQNPJQQA?showUpvote=true&theme=light"
-                      alt="A modern, responsive portfolio website"
-                      style={{ width: 'auto', height: '72px' }}
-                    />
-                  </a>
-                </div>
-              )}
             </div>
           </div>
         </motion.div>

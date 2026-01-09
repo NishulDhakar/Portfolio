@@ -47,27 +47,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-  <body
-    className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
-  >
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <AnalyticsTracker />
-      <Container>
-        <div className="flex min-h-screen flex-col">
-          <MinimalHeader />
-          <main className="flex-grow">{children}</main>
-          <Analytics />
-        </div>
-        <Footer />
-      </Container>
-    </ThemeProvider>
-  </body>
-</html>
+      <body
+        className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AnalyticsTracker />
+          <Container>
+            <div className="flex min-h-screen flex-col">
+              <MinimalHeader />
+              <main className="flex-grow">{children}</main>
+              <Analytics />
+            </div>
+            <Footer />
+          </Container>
+        </ThemeProvider>
+      </body>
+    </html>
 
   );
 }
