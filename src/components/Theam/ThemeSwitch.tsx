@@ -21,10 +21,6 @@ export const useThemeToggle = ({
 
   const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    setIsDark(resolvedTheme === 'dark');
-  }, [resolvedTheme]);
-
   const styleId = 'theme-transition-styles';
 
   const updateStyles = useCallback((css: string, name: string) => {

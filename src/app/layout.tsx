@@ -3,7 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Instrument_Serif, Geist as GeistSans } from "next/font/google";
 import { createMetadata } from "@/lib/createMetadata";
-import { ThemeProvider } from "next-themes";
+// import { ThemeProvider } from "next-themes";
 import MinimalHeader from "@/components/layout/MinimalNav";
 import Container from "@/components/common/Container";
 import Footer from "@/components/layout/Footer";
@@ -108,12 +108,12 @@ export default function RootLayout({
         className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
         suppressHydrationWarning
       >
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           <AnalyticsTracker />
           <Container>
             <div className="flex min-h-screen flex-col">
@@ -123,7 +123,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </Container>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
 
       </body>
     </html>
