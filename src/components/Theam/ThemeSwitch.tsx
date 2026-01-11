@@ -21,6 +21,11 @@ export const useThemeToggle = ({
 
   const [isDark, setIsDark] = useState(false);
 
+  // Sync isDark with resolvedTheme from next-themes
+  useEffect(() => {
+    setIsDark(resolvedTheme === 'dark');
+  }, [resolvedTheme]);
+
   const styleId = 'theme-transition-styles';
 
   const updateStyles = useCallback((css: string, name: string) => {
