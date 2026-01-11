@@ -53,9 +53,9 @@ export default function MinimalHeader() {
           </button>
 
           {/* Theme Toggle */}
-          <div className="opacity-60 text-sm">
+          {/* <div className="opacity-60 text-sm">
             <ThemeToggleButton variant="circle" start="top-right" blur />
-          </div>
+          </div> */}
         </nav>
 
         {/* Mobile Navigation Menu */}
