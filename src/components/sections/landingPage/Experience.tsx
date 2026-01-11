@@ -44,7 +44,7 @@ export default function ExperienceContent() {
                   </div>
 
                   <div className="flex flex-col gap-0.5 sm:gap-1 min-w-0 flex-1">
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-zinc-900 dark:text-zinc-100 leading-tight truncate">
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-neutral-900 dark:text-neutral-50 leading-tight truncate">
                       {item.company}
                     </h3>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1 md:gap-2">

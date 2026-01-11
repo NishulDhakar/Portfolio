@@ -8,7 +8,7 @@ export default function QuickInfo() {
   return (
     <aside className="space-y-4 mt-6">
       <div>
-        <h3 className="text-xs font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">
+        <h3 className="text-xs font-semibold text-neutral-900 dark:text-neutral-50 mb-2 uppercase tracking-wider">
           Status
         </h3>
         <div className="space-y-2 text-sm text-secondary dark:text-gray-300">
@@ -24,7 +24,7 @@ export default function QuickInfo() {
       </div>
 
       <div>
-        <h3 className="text-xs font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">
+        <h3 className="text-xs font-semibold text-neutral-900 dark:text-neutral-50 mb-2 uppercase tracking-wider">
           Focus
         </h3>
         <ul className="space-y-1 text-sm text-secondary dark:text-gray-300 list-disc list-inside">
