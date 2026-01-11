@@ -7,16 +7,29 @@
 
 html {
   scrollbar-width: none;
-  background-color: var(--background);
-  color: var(--foreground);
+  /* Set initial background to prevent flash */
+  background-color: oklch(0.985 0 0);
+  color: oklch(0.145 0 0);
 }
 
 /* Prevent initial white flash on dark-preferred systems */
 @media (prefers-color-scheme: dark) {
-  html:not(.dark) {
-    background-color: oklch(0 0 0);
-    color: oklch(0.985 0 0);
+  html {
+    background-color: oklch(0 0 0) !important;
+    color: oklch(0.985 0 0) !important;
   }
+  
+  body {
+    background-color: oklch(0 0 0) !important;
+    color: oklch(0.985 0 0) !important;
+  }
+}
+
+/* Ensure dark class takes precedence */
+html.dark,
+html.dark body {
+  background-color: oklch(0 0 0) !important;
+  color: oklch(0.985 0 0) !important;
 }
 
 /* Ensure data-theme takes precedence if used */

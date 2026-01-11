@@ -11,6 +11,7 @@ import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 import { siteConfig } from "@/config/site";
+import { ThemeScript } from "@/components/theme/ThemeScript";
 
 export const metadata = createMetadata({
   title: {
@@ -47,6 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body
         className={`${geistSans.className} ${instrumentSerif.variable} flex min-h-screen flex-col`}
       >
