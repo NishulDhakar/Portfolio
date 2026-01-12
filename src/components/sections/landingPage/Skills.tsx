@@ -46,7 +46,7 @@ export default function TechSkills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="mb-6 sm:mb-8 md:mb-10 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-semibold tracking-tight text-foreground"
+          className="mb-6 sm:mb-8 md:mb-10 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-semibold text-foreground"
         >
           Skills
         </motion.h2>

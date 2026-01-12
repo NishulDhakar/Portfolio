@@ -24,7 +24,7 @@ export default function MinimalHeader() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-3 sm:py-4">
         <nav className="flex items-center justify-between">
           {/* Desktop Navigation */}
-          <div className="hidden sm:flex gap-4 md:gap-6 text-sm text-secondary">
+          <div className="hidden sm:flex gap-4 md:gap-6 text-sm text-foreground">
             {links.map((link) => {
               const isActive = pathname === link.href;
 
@@ -46,7 +46,7 @@ export default function MinimalHeader() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="sm:hidden p-2 text-secondary hover:text-primary transition-colors"
+            className="sm:hidden p-2 text-foreground hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -71,7 +71,7 @@ export default function MinimalHeader() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block py-2 text-base transition-opacity hover:opacity-100 ${isActive
                     ? "text-primary underline underline-offset-4"
-                    : "text-secondary opacity-60"
+                    : "text-foreground opacity-60"
                     }`}
                 >
                   {link.name}

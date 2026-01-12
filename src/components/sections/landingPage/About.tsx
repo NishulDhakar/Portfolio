@@ -16,7 +16,7 @@ export default function About() {
 
         <motion.div>
           <div className="space-y-6 sm:space-y-8">
-            <div className="space-y-4 sm:space-y-6 text-secondary leading-relaxed text-sm sm:text-base md:text-md font-light tracking-wide">
+            <div className="space-y-4 text-foreground sm:space-y-6 leading-relaxed text-sm sm:text-base md:text-md font-light tracking-wide">
               <p>
                 I build{" "}
                 <span className="font-medium text-foreground dark:text-white relative inline-block">
