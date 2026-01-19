@@ -18,6 +18,22 @@ export const projectsData: ProjectCardProps[] = [
     // },
   },
 
+    {
+    title: "Job Hunting",
+    href: "https://jobshunting.vercel.app/",
+    github: "https://github.com/NishulDhakar/JobHunting",
+    description:
+      "A job hunting platform, designed to help fresher find jobs. Built with Next.js, TypeScript, and Tailwind CSS.",
+    status: "running",
+    image: "/Projects/jobs.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind"],
+    type: "Fullstack",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/blync",
+    // },
+  },
+
   {
     title: "Uni Notes",
     href: "https://rgpvnotes.nishul.dev/",
@@ -90,7 +106,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/invest.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB",],
-    type: "Fin-Fullstack",
+    type: "Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/projects/simple-invest",
@@ -171,7 +187,7 @@ export const projectsData: ProjectCardProps[] = [
     status: "running",
     image: "/Projects/pay.jpeg",
     technologies: ["React", "Tailwind", "Node.js", "MongoDB"],
-    type: "Fin-Fullstack",
+    type: "Fullstack",
     // viewDetails: {
     //   type: "Details",
     //   href: "/quickpay",

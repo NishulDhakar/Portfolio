@@ -21,7 +21,7 @@ export default function ProjectsPageClient() {
         (project) => filter === "All" || project.type === filter
     );
 
-    const types = ["All", "Frontend", "Fullstack", "Fin-Fullstack", "System"];
+    const types = ["All", "Frontend", "Fullstack", "System"];
 
     return (
         <div className={containerClassName}>
