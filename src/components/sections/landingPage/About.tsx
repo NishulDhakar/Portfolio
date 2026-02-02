@@ -7,47 +7,20 @@ import Container from "@/components/common/Container";
 export default function About() {
   return (
     <section className="relative mt-8 sm:mt-12 md:mt-16">
-      {/* Background Gradient Blob */}
-      {/* <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl -z-10 mix-blend-screen pointer-events-none" />
-      <div className="absolute top-10 -right-4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-10 mix-blend-screen pointer-events-none" /> */}
-
       <div className="space-y-6 sm:space-y-8">
         <Name />
 
         <motion.div>
-          <div className="space-y-6 sm:space-y-8">
-            <div className="space-y-4 text-foreground sm:space-y-6 leading-relaxed text-sm sm:text-base md:text-md font-light tracking-wide">
-              <p>
-                I build{" "}
-                <span className="font-medium text-foreground dark:text-white relative inline-block">
-                  clean, fast web systems
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary/50"></span>
-                </span>{" "}
-                with{" "}
-                <span className="font-medium text-foreground dark:text-white relative inline-block">
-                  Next.js, TypeScript, and Tailwind CSS
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary/50"></span>
-                </span>
-                .
-              </p>
+<p className="font-sans">
+          I build <span className="font-bold text-foreground dark:text-white">end-to-end products</span> from idea to production.
+          Working across <span className="font-bold text-foreground dark:text-white">frontend</span>,{" "}
+          <span className="font-bold text-foreground dark:text-white">backend</span>, and{" "}
+          <span className="font-bold text-foreground dark:text-white">AI systems</span>,{" "}
+          I take ownership of the <span className="font-bold text-foreground dark:text-white">entire lifecycle </span> 
+          design, build, deploy, and iterate focused on{" "}
+          <span className="font-bold text-foreground dark:text-white">shipping real results</span>.
+        </p>
 
-              <p>
-                I'm currently exploring{" "}
-                <span className="font-medium text-foreground dark:text-white">
-                  Applied AI
-                </span>{" "}
-                including{" "}
-                <span className="font-medium text-foreground dark:text-white">
-                  GenAI, RAG systems, and AI agents
-                </span>{" "}
-                to create{" "}
-                <span className="font-medium text-foreground dark:text-white">
-                  intelligent, real-world products
-                </span>
-                .
-              </p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

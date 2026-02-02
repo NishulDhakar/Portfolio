@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 
 
-import { FaDartLang, FaFlutter } from "react-icons/fa6";
+// import { FaDartLang, FaFlutter } from "react-icons/fa6";
 
 import { PiFileCssFill } from "react-icons/pi";
 
@@ -57,7 +57,6 @@ export type Category =
   | "language"
   | "Web"
   | "database"
-  | "mobile"
   | "Cloud"
   | "tools"
   | "AI/ML"
@@ -79,8 +78,7 @@ export const techSkills: Skill[] = [
   { name: "TypeScript", icon: BiLogoTypescript, color: "text-blue-600", variant: "secondary", category: "language" },
   { name: "Python", icon: SiPython, color: "text-blue-400", variant: "secondary", category: "language" },
   { name: "PHP", icon: FaPhp, color: "text-purple-600", variant: "secondary", category: "language" },
-  { name: "Dart", icon: FaDartLang, color: "text-blue-600", variant: "secondary", category: "language" },
-    { name: "Core Java", icon: FaJava, color: "text-orange-600", variant: "secondary", category: "language" },
+    { name: "Java", icon: FaJava, color: "text-orange-600", variant: "secondary", category: "language" },
 
   // 🎨 Frontend / Web
   { name: "HTML", icon: FaHtml5, color: "text-orange-500", variant: "ghost", category: "Web" },
@@ -103,12 +101,21 @@ export const techSkills: Skill[] = [
   { name: "MongoDB", icon: SiMongodb, color: "text-green-500", variant: "ghost", category: "database" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-700", variant: "ghost", category: "database" },
   { name: "MySQL", icon: SiMysql, color: "text-blue-700", variant: "ghost", category: "database" },
+  
 
     // 📊 Data & ML (Python Ecosystem)
 { name: "NumPy", icon: SiNumpy, color: "text-blue-500", variant: "ghost", category: "data" },
 { name: "Pandas", icon: SiPandas, color: "text-indigo-500", variant: "ghost", category: "data" },
-{ name: "scikit-learn", icon: SiScikitlearn, color: "text-orange-500", variant: "ghost", category: "AI/ML" },
 { name: "yfinance", icon: SiPython, color: "text-green-500", variant: "ghost", category: "data" },
+
+
+// 🤖 AI / ML Tools & Libraries
+{ name: "LangChain", icon: GiArtificialHive, color: "text-green-500", variant: "ghost", category: "AI/ML" },
+{name: "LangGraph", icon: GiArtificialHive, color: "text-green-500", variant: "ghost", category: "AI/ML" },
+{ name: "PyTorch", icon: GiArtificialHive, color: "text-red-500", variant: "ghost", category: "AI/ML" },
+{ name: "scikit-learn", icon: SiScikitlearn, color: "text-orange-500", variant: "ghost", category: "AI/ML" },
+
+
 
 
   // 🤖 AI
@@ -116,7 +123,7 @@ export const techSkills: Skill[] = [
 
   // 📱 Mobile
   // { name: "React Native", icon: SiReact, color: "text-cyan-500", variant: "ghost", category: "mobile" },
-  { name: "Flutter", icon: FaFlutter, color: "text-blue-400", variant: "ghost", category: "mobile" },
+  // { name: "Flutter", icon: FaFlutter, color: "text-blue-400", variant: "ghost", category: "mobile" },
   // { name: "Firebase", icon: IoLogoFirebase, color: "text-yellow-500", variant: "ghost", category: "mobile" },
 
   // ⚙️ DevOps

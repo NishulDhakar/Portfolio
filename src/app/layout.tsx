@@ -8,10 +8,12 @@ import MinimalHeader from "@/components/layout/MinimalNav";
 import Container from "@/components/common/Container";
 import Footer from "@/components/layout/Footer";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
-import { JsonLd } from "@/components/seo/JsonLd";
+
 
 import { siteConfig } from "@/config/site";
 import { ThemeScript } from "@/components/theme/ThemeScript";
+
+import FloatingActions from "@/components/layout/FloatingActions";
 
 export const metadata = createMetadata({
   title: {
@@ -61,6 +63,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AnalyticsTracker />
+          <FloatingActions />
           <Container>
             <div className="flex min-h-screen flex-col">
               <MinimalHeader />

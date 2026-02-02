@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function HireMeButton() {
   return (
     <Link
-      href="https://drive.google.com/file/d/1UybppwwtUHWW6SorFZlNCbWNvvQQHk9h/view?usp=sharing"
+      href="https://drive.google.com/file/d/1N99JJRYqrxe-ztK2hIDGrBjZfmE4tMy9/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="View Nishul Dhakar's Resume"

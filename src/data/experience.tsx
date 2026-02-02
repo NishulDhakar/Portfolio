@@ -27,18 +27,18 @@ export const experience: Experience[] = [
       "Built production features using React, Next.js, and Laravel.",
     ],
   },
-  {
-    title: "Freelance Full-Stack Developer",
-    company: "Freelancing",
-    location: "Remote",
-    startDate: "Jan 2025",
-    endDate: "Present",
-    logo: "/image.png",
-    employmentType: "Self-employed",
-    points: [
-      "Built and deployed production-ready web applications for clients and personal products.",
-      "Focused on performance, UX, and scalable architecture.",
-      "Successfully delivered projects ranging from e-commerce platforms to custom dashboards."
-    ],
-  },
+  // {
+  //   title: "Freelance Full-Stack Developer",
+  //   company: "Freelancing",
+  //   location: "Remote",
+  //   startDate: "Jan 2025",
+  //   endDate: "Present",
+  //   logo: "/image.png",
+  //   employmentType: "Self-employed",
+  //   points: [
+  //     "Built and deployed production-ready web applications for clients and personal products.",
+  //     "Focused on performance, UX, and scalable architecture.",
+  //     "Successfully delivered projects ranging from e-commerce platforms to custom dashboards."
+  //   ],
+  // },
 ];

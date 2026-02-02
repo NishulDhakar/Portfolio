@@ -13,7 +13,7 @@ const categoryMetadata: Record<Category | "all", { icon: React.ElementType; labe
   language: { icon: FileCode, label: "Languages", emoji: "💻" },
   Web: { icon: Globe, label: "Web", emoji: "🌐" },
   database: { icon: Database, label: "Databases", emoji: "🗄️" },
-  mobile: { icon: Globe, label: "Mobile", emoji: "📱" },
+  // mobile: { icon: Globe, label: "Mobile", emoji: "📱" },
   tools: { icon: SiApachespark, label: "Tools", emoji: "🧰" },
   Cloud: { icon: Cloud, label: "Cloud", emoji: "☁️" },
   "AI/ML": { icon: Brain, label: "AI/ML", emoji: "🤖" },
@@ -36,7 +36,7 @@ export default function TechSkills() {
     return techSkills.filter((s) => s.category === category).length;
   };
 
-  const categories: (Category | "all")[] = ["all", "language", "Web", "database", "mobile", "tools", "Cloud", "AI/ML", "data"];
+  const categories: (Category | "all")[] = ["all", "language", "Web", "database", "AI/ML", "data"];
 
   return (
     <section className="mt-2">

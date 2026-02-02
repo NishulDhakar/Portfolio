@@ -7,6 +7,7 @@ import TechSkills from "@/components/sections/landingPage/Skills";
 import { Separator } from "@/components/ui/separator";
 import { createMetadata } from "@/lib/createMetadata";
 import { siteConfig } from "@/config/site";
+import HireMeButton from "@/components/sections/landingPage/Hireme";
 
 export const metadata = createMetadata({
   title: siteConfig.title,

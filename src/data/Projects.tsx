@@ -147,6 +147,16 @@ export const projectsData: ProjectCardProps[] = [
     // },
   },
 
+  {
+    title: "propsoch landingpage",
+    href: "https://propsoch.nishul.dev/",
+    github: "https://github.com/NishulDhakar/propsoch_landingpage",
+    description: "A modern landing page for propsoch designed to showcase features, benefits, and product value with smooth animations and a clean UI.",
+    status: "running",
+    image: "/Projects/propsoch.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    type: "Frontend",
+  },
     {
     title: "KitHub",
     href: "https://kithub.nishul.dev/",
