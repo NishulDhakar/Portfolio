@@ -9,8 +9,8 @@ export default function Name() {
 
   const avatarSrc =
     resolvedTheme === "dark"
-      ? "/about/nishul-dark.jpg"
-      : "/about/nishul.jpg";
+      ? "/About/nishul-dark.jpg"
+      : "/About/nishul.jpg";
 
   return (
     <div className="flex flex-col items-start gap-4 sm:gap-6 lg:flex-row lg:items-center lg:gap-8 mb-6 sm:mb-8">
