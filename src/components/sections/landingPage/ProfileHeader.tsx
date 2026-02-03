@@ -36,7 +36,7 @@ export default function ProfileHeader() {
                         className="relative h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-white dark:border-zinc-950 bg-zinc-200 dark:bg-zinc-800 overflow-hidden shadow-xl"
                     >
                         <Image
-                            src="/image1.png"
+                            src="/nishul.jpg"
                             alt="Nishul Dhakar"
                             fill
                             className="object-cover"

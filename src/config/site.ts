@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Full Stack Software Engineer specializing in web development, AI/ML, and DevOps. Building scalable applications with React, Next.js, Node.js, Python, and modern cloud technologies. Experienced in GenAI, RAG systems, and intelligent automation.",
   url: "https://nishul.dev",
-  ogImage: "/image1.png",
+  ogImage: "/nishul.jpg",
   icons: "/favicon.ico",
   keywords: [
     // Personal Brand
@@ -128,7 +128,7 @@ export const siteConfig = {
         "tech articles",
         "developer blog",
       ],
-      ogImage: "/image1.png",
+      ogImage: "/nishul.jpg",
     },
     projects: {
       title: "Projects - Full Stack, AI/ML & DevOps Portfolio",
@@ -145,7 +145,7 @@ export const siteConfig = {
         "open source projects",
         "github projects",
       ],
-      ogImage: "/image1.png",
+      ogImage: "/nishul.jpg",
     },
     about: {
       title: "About - Software Engineer | Web Dev, AI/ML & DevOps",
@@ -160,7 +160,7 @@ export const siteConfig = {
         "developer background",
         "technical skills",
       ],
-      ogImage: "/image1.png",
+      ogImage: "/nishul.jpg",
     },
     capabilities: {
       title: "Skills & Expertise - Web Development, AI/ML & DevOps",
@@ -175,7 +175,7 @@ export const siteConfig = {
         "frameworks",
         "technologies",
       ],
-      ogImage: "/image1.png",
+      ogImage: "/nishul.jpg",
     }
   }
 };
