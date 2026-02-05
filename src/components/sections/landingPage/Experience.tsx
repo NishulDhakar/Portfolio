@@ -12,7 +12,7 @@ export default function ExperienceContent() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section className="">
+    <section className="mb-6 sm:mb-8 md:mb-10">
       <div>
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
@@ -29,7 +29,7 @@ export default function ExperienceContent() {
             <motion.div key={index}>
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="group/item flex w-full items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-white/5 transition-colors rounded-xl"
+                className="group/item flex w-full items-center justify-between text-left transition-colors rounded-xl"
               >
 
                 <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
@@ -44,15 +44,15 @@ export default function ExperienceContent() {
                   </div>
 
                   <div className="flex flex-col gap-0.5 sm:gap-1 min-w-0 flex-1">
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-neutral-900 dark:text-neutral-50 leading-tight truncate">
+                    <h3 className="text-sm font-mono sm:text-sm font-medium text-neutral-900 dark:text-neutral-50 leading-tight truncate">
                       {item.company}
                     </h3>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1 md:gap-2">
-                      <span className="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400 truncate">
+                      <span className="text-xs font-mono sm:text-xs font-medium text-zinc-500 dark:text-zinc-400 truncate">
                         {item.title}
                       </span>
                       <span className="hidden sm:block h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700 shrink-0" />
-                      <span className="text-[10px] sm:text-[11px] font-mono text-zinc-400 dark:text-zinc-500 truncate">
+                      <span className="text-[10px] font-mono sm:text-[11px] font-medium text-zinc-400 dark:text-zinc-500 truncate">
                         {item.startDate} — {item.endDate}
                       </span>
                     </div>
@@ -77,7 +77,7 @@ export default function ExperienceContent() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0, ease: "circOut" }}
                   >
-                    <div className="border-t border-zinc-100 dark:border-white/5 px-4 sm:px-6 pb-6 sm:pb-8 pt-4 sm:pt-6 md:px-[88px]">
+                    <div className="border-t border-zinc-100 dark:border-white/5 mt-6">
                       <ul className="space-y-3 sm:space-y-4">
                         {item.points.map((point, idx) => (
                           <motion.li

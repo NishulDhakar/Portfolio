@@ -102,7 +102,7 @@ export default function ProjectCard({
             <span
               key={tech}
               className="
-                text-[9px] sm:text-[10px] font-bold uppercase tracking-wider 
+                text-[9px] sm:text-[8px] font-bold uppercase tracking-wider 
                 px-1.5 sm:px-2 py-0.5 sm:py-1
                 bg-gray-50 dark:bg-zinc-800/50 
                 text-gray-500 dark:text-zinc-400 
@@ -122,20 +122,22 @@ export default function ProjectCard({
         </div>
 
         {/* Title */}
-        <h3
+        <Link
+          href={href}
+          target="_blank"
           className="
-            font-heading text-lg sm:text-xl font-bold 
+            font-heading text-lg sm:text-lg font-bold 
             text-gray-900 dark:text-zinc-100 
-            mb-2 line-clamp-1
+            line-clamp-1
             group-hover:text-blue-500 dark:group-hover:text-blue-400
-            transition-colors
+            transition-colors font-mono
           "
         >
           {title}
-        </h3>
+        </Link>
 
         {/* Description */}
-        <p className="text-xs sm:text-sm text-gray-500 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-4 sm:mb-6">
+        <p className="text-xs sm:text-xs font-mono text-gray-500 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-4 sm:mb-6">
           {description}
         </p>
 
@@ -147,11 +149,11 @@ export default function ProjectCard({
               target="_blank"
               className="
                 inline-flex items-center gap-1.5 sm:gap-2 
-                text-xs sm:text-sm font-semibold 
+                text-xs sm:text-xs font-semibold 
                 text-gray-900 dark:text-zinc-100 
                 hover:text-blue-600 dark:hover:text-blue-400 
                 transition-colors group/link
-                line-clamp-1
+                line-clamp-1 font-mono 
               "
             >
               <span className="hidden sm:inline">View Project Live</span>
@@ -166,7 +168,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="
-                flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center 
+                flex h-9 w-9 sm:h-8 sm:w-8 items-center justify-center 
                 rounded-xl 
                 border border-black/10 dark:border-white/10 
                 bg-white dark:bg-zinc-800 
@@ -174,7 +176,7 @@ export default function ProjectCard({
                 transition-all hover:scale-105 active:scale-95
               "
             >
-              <Github size={16} className="sm:w-[18px] sm:h-[18px]" />
+              <Github size={16} className="sm:w-[16px] sm:h-[16px]" />
             </a>
           )}
         </div>

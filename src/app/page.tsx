@@ -8,6 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { createMetadata } from "@/lib/createMetadata";
 import { siteConfig } from "@/config/site";
 import HireMeButton from "@/components/sections/landingPage/Hireme";
+import DiagonalPattern from "@/components/common/DiagonalPattern";
+import Container from "@/components/common/Container";
+import FeaturedProjects from "@/components/sections/landingPage/FeaturedProjects";
 
 export const metadata = createMetadata({
   title: siteConfig.title,
@@ -20,44 +23,61 @@ export { viewport } from "@/lib/viewport";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10">
+    <Container>
+      <div className="min-h-screen transition-colors duration-300 relative">
+        <div className="relative mx-auto max-w-4xl">
 
-      {/* Intro Section */}
-      <Reveal>
-        <About />
-      </Reveal>
+          {/* Intro Section */}
+          <Reveal delay={0.1}>
+            <About />
+          </Reveal>
 
-      <Reveal>
-        <Separator className="my-6 sm:my-8" />
-      </Reveal>
+          <Reveal delay={0.2}>
+            <Separator className="my-6 sm:my-8" />
+          </Reveal>
 
 
-      {/* Experience Section */}
-      <Reveal>
-        <Experience />
-      </Reveal>
+          {/* Experience Section */}
+          <Reveal delay={0.3}>
+            <Experience />
+          </Reveal>
 
-      <Reveal>
-        <Separator className="my-6 sm:my-8" />
-      </Reveal>
+          <Reveal delay={0.4}>
+            <Separator className="my-6 sm:my-8" />
+          </Reveal>
 
-      {/* Skills Section */}
-      <Reveal>
-        <TechSkills />
-      </Reveal>
+          {/* Skills Section */}
+          <Reveal delay={0.5}>
+            <TechSkills />
+          </Reveal>
 
-      <Reveal>
-        <Separator className="my-6 sm:my-8" />
-      </Reveal>
+          <Reveal delay={0.6}>
+            <Separator className="my-6 sm:my-8" />
+          </Reveal>
 
-      {/* Github Contributions */}
-      <Reveal>
-        <Github />
-      </Reveal>
+          {/* Featured Projects */}
+          <Reveal delay={0.65}>
+            <FeaturedProjects />
+          </Reveal>
 
-      {/* Contact / Reachout */}
-      <Reachout />
+          <Reveal delay={0.7}>
+            <Separator className="my-6 sm:my-8" />
+          </Reveal>
 
-    </div>
+          {/* Github Contributions */}
+          <Reveal delay={0.75}>
+            <Github />
+          </Reveal>
+
+          
+
+          {/* Contact / Reachout */}
+          <Reveal delay={0.8}>
+            <Reachout />
+          </Reveal>
+
+        </div>
+      </div>
+    </Container>
   );
 }

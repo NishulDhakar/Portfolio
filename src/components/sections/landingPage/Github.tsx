@@ -1,202 +1,183 @@
 "use client";
 
-import { githubConfig } from "@/config/Github";
-import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { Tooltip } from "react-tooltip";
 
+import { githubConfig } from "@/config/Github";
 import GithubIcon from "@/components/svgs/Github";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 
-const ActivityCalendar = dynamic(
-  () => import("react-activity-calendar").then((mod) => mod.ActivityCalendar),
-  { ssr: false }
-);
+import "react-calendar-heatmap/dist/styles.css";
+import "@/styles/github-calendar.css"; // We will create this
+
+const CalendarHeatmap = dynamic(() => import("react-calendar-heatmap"), {
+  ssr: false,
+});
 
 type ContributionItem = {
   date: string;
   count: number;
-  level: 0 | 1 | 2 | 3 | 4;
 };
 
-// Convert GitHub API "contributionLevel" → 0–4
-function convertLevel(level: string): 0 | 1 | 2 | 3 | 4 {
-  switch (level) {
-    case "FIRST_QUARTILE":
-      return 1;
-    case "SECOND_QUARTILE":
-      return 2;
-    case "THIRD_QUARTILE":
-      return 3;
-    case "FOURTH_QUARTILE":
-      return 4;
-    default:
-      return 0; // NONE
-  }
-}
+// Start of 2025 (or variable based on requirements)
+// User asked for "activities in 2025" in config, so let's filter for 2025?
+// Or just last year as per previous functionality?
+// The image showed "1431 activities in 2025".
+// Let's stick to the previous "lastYear" logic initially but maybe adjust if needed.
+// Actually, react-calendar-heatmap needs startDate and endDate.
 
-// Filter contributions from last 365 days
-function filterLastYear(contributions: ContributionItem[]) {
-  const oneYearAgo = new Date();
-  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-  return contributions.filter((item) => new Date(item.date) >= oneYearAgo);
+function shiftDate(date: Date, numDays: number) {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + numDays);
+  return newDate;
 }
-
-import Container from "@/components/common/Container";
 
 export default function Github() {
-  const [contributions, setContributions] = useState<ContributionItem[]>([]);
-  const [totalContributions, setTotalContributions] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
   const { theme } = useTheme();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
+  const [data, setData] = useState<ContributionItem[] | null>(null);
+  const [error, setError] = useState(false);
 
-        const response = await fetch(
-          `${githubConfig.apiUrl}/${githubConfig.username}.json`
+  // Cache busting / consistency
+  useEffect(() => {
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const res = await fetch(
+          `${githubConfig.apiUrl}/${githubConfig.username}.json`,
+          { signal: controller.signal, cache: "force-cache" }
         );
 
-        if (!response.ok) {
-          setHasError(true);
-          setIsLoading(false);
-          return;
-        }
+        if (!res.ok) throw new Error();
 
-        const data = await response.json();
+        const json = await res.json();
 
-        if (!data?.contributions) {
-          setHasError(true);
-          setIsLoading(false);
-          return;
-        }
+        const mapped: ContributionItem[] = json.contributions
+          .flat()
+          .map((c: any) => ({
+            date: c.date,
+            count: c.contributionCount,
+          }));
+        // We don't filter by date here necessarily, let the calendar component handle range
+        // But cleaning up is good.
+        // .filter((x: ContributionItem) => lastYear(x.date));
 
-        // The API returns array of weeks (2D array): contributions[weeks][days]
-        const raw = data.contributions.flat();
-
-        // Map API fields → Calendar component format
-        const mapped = raw.map((item: { date: string; contributionCount: number; contributionLevel: string }) => ({
-          date: item.date,
-          count: item.contributionCount,
-          level: convertLevel(item.contributionLevel),
-        }));
-
-        const filtered = filterLastYear(mapped);
-
-        setContributions(filtered);
-        setTotalContributions(mapped.reduce((s: number, x: { count: number }) => s + x.count, 0));
-      } catch (err) {
-        console.error("GitHub API failed →", err);
-        setHasError(true);
-      } finally {
-        setIsLoading(false);
+        setData(mapped);
+      } catch (e) {
+        console.error(e);
+        setError(true);
       }
-    }
+    })();
 
-    fetchData();
+    return () => controller.abort();
   }, []);
 
+  const total = useMemo(
+    () =>
+      data?.reduce((s, x) => {
+        // Only count if within our displayed range. 
+        // For simplicity, summing all fetched for now or we can refine logic later.
+        const d = new Date(x.date);
+        return d.getFullYear() === 2025 ? s + x.count : s;
+      }, 0) ?? 0,
+    [data]
+  );
+
+  // Calculate date range for 2025 (as requested in text) or last year
+  // User text in config says "activities in 2025".
+  const startDate = new Date("2025-01-01");
+  const endDate = new Date("2025-12-31");
+
+  const loading = !data && !error;
+
   return (
-    <section className="mt-4">
-      <div className="space-y-6">
-        {/* Header */}
-        <div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-bold tracking-tight text-foreground"
-          >
-            {githubConfig.title}
-          </motion.h2>
-          {/* <h2 className="text-2xl font-[family-name:var(--font-instrument-serif)] font-bold"></h2> */}
-          {/* <p className="text-sm text-muted-foreground">
-            <b>{githubConfig.username}</b>&apos;s {githubConfig.subtitle}
-          </p> */}
+    <section className="mt-4 space-y-6">
+      {/* Header */}
+      <motion.h2
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-xl sm:text-2xl font-bold tracking-tight"
+      >
+        {githubConfig.title}
+      </motion.h2>
 
-          {!isLoading && !hasError && totalContributions > 0 && (
-            <p className="text-xs sm:text-sm text-primary font-medium mt-1">
-              Total:{" "}
-              <span className="font-black">
-                {totalContributions.toLocaleString()}
-              </span>{" "}
-              contributions
-            </p>
-          )}
+      {/* Loading */}
+      {loading && (
+        <div className="py-16 text-center animate-pulse text-sm text-muted-foreground">
+          Loading activity…
         </div>
+      )}
 
-        {/* Loading UI */}
-        {isLoading && (
-          <div className="flex items-center justify-center py-16">
-            <div className="text-center">
-              <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-sm text-muted-foreground">
-                {githubConfig.loadingState.description}
-              </p>
-            </div>
+      {/* Error */}
+      {error && (
+        <div className="p-8 text-center border-2 border-dashed rounded-xl">
+          <GithubIcon className="w-8 h-8 mx-auto mb-4" />
+          <Button asChild variant="outline">
+            <Link href={`https://github.com/${githubConfig.username}`}>
+              Visit GitHub
+            </Link>
+          </Button>
+        </div>
+      )}
+
+      {/* Calendar */}
+      {data && (
+        <div className="rounded-lg border p-4 bg-background/50">
+          <div className="w-full">
+            <CalendarHeatmap
+              startDate={startDate}
+              endDate={endDate}
+              values={data}
+              classForValue={(value) => {
+                if (!value || value.count === 0) {
+                  return "color-empty";
+                }
+                if (value.count < 3) return "color-scale-1";
+                if (value.count < 6) return "color-scale-2";
+                if (value.count < 10) return "color-scale-3";
+                return "color-scale-4";
+              }}
+              tooltipDataAttrs={(value: any) => {
+                if (!value || !value.date) {
+                  return {} as any;
+                }
+                return {
+                  "data-tooltip-id": "github-tooltip",
+                  "data-tooltip-content": `${value.count} activities on ${value.date}`,
+                } as any;
+              }}
+              showWeekdayLabels={true}
+            />
+            <Tooltip id="github-tooltip" className="z-50 text-xs" />
           </div>
-        )}
 
-        {/* Error UI */}
-        {!isLoading && (hasError || contributions.length === 0) && (
-          <div className="p-8 text-center text-muted-foreground border-2 border-dashed border-border rounded-xl">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
-              <GithubIcon className="w-8 h-8" />
+          {/* Footer: Count + Legend */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 pt-2 border-t border-border/50 mt-4">
+            <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+              {total.toLocaleString()} activities in 2025
             </div>
-            <p className="font-medium mb-2">{githubConfig.errorState.title}</p>
-            <p className="text-sm mb-4">
-              {githubConfig.errorState.description}
-            </p>
-            <Button variant="outline" asChild>
-              <Link
-                href={`https://github.com/${githubConfig.username}`}
-                className="inline-flex items-center gap-2"
-              >
-                <GithubIcon className="w-4 h-4" />
-                {githubConfig.errorState.buttonText}
-              </Link>
-            </Button>
-          </div>
-        )}
 
-        {/* Heatmap */}
-        {!isLoading && !hasError && contributions.length > 0 && (
-          <div className="relative overflow-hidden w-full">
-            <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-4 md:p-6">
-              <div className="w-full overflow-x-auto pb-2 scrollbar-hide">
-                <div className="min-w-[700px] md:min-w-0">
-                  <ActivityCalendar
-                    data={contributions}
-                    blockSize={12}
-                    blockMargin={4}
-                    fontSize={githubConfig.fontSize}
-                    colorScheme={theme === "dark" ? "dark" : "light"}
-                    maxLevel={githubConfig.maxLevel}
-                    showMonthLabels
-                    showColorLegend
-                    theme={githubConfig.theme}
-                    labels={{
-                      months: githubConfig.months,
-                      weekdays: githubConfig.weekdays,
-                      totalCount: githubConfig.totalCountLabel,
-                    }}
-                  />
-                </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span>Less</span>
+              <div className="flex gap-1">
+                {/* Legend Swatches - matched to CSS classes */}
+                <div className="w-3 h-3 rounded-[2px] bg-[var(--color-github-0)]" />
+                <div className="w-3 h-3 rounded-[2px] bg-[var(--color-github-1)]" />
+                <div className="w-3 h-3 rounded-[2px] bg-[var(--color-github-2)]" />
+                <div className="w-3 h-3 rounded-[2px] bg-[var(--color-github-3)]" />
+                <div className="w-3 h-3 rounded-[2px] bg-[var(--color-github-4)]" />
               </div>
-              <p className="text-[10px] text-muted-foreground mt-2 md:hidden italic">
-                Scroll horizontally to see full activity →
-              </p>
+              <span>More</span>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

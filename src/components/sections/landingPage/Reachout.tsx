@@ -27,14 +27,14 @@ const Reachout = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="mb-8 sm:mb-10 md:mb-12 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="mb-8 sm:mb-10 md:mb-4 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-bold tracking-tight text-foreground">
             Reach Out
           </h2>
 
           <div className="flex flex-col gap-8 sm:gap-10 md:gap-12">
             {/* Text & Email */}
             <div className="space-y-6 sm:space-y-8">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-sm font-mono  sm:text-sm text-muted-foreground leading-relaxed max-w-2xl">
                 Most of the time, you&apos;ll catch me coding or playing chess online.
                 I&apos;m always open to discussing new projects, creative ideas, or
                 opportunities to be part of your visions.

@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import { projectsData } from "@/data/Projects";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { motion } from "framer-motion";
-import { Particles } from "@/components/ui/magicui/particles";
+import { motion } from "framer-motion"
 import ProjectCard from "@/components/sections/Projects/ProjectCard";
 import Container from "@/components/common/Container";
 
@@ -26,12 +25,10 @@ export default function ProjectsPageClient() {
     return (
         <div className={containerClassName}>
 
-
-
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
             >
                 <h1
                     className={`${titleClassName} font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide leading-tight`}

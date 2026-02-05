@@ -14,6 +14,7 @@ import { siteConfig } from "@/config/site";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 
 import FloatingActions from "@/components/layout/FloatingActions";
+import DiagonalPattern from "@/components/common/DiagonalPattern";
 
 export const metadata = createMetadata({
   title: {
@@ -66,7 +67,6 @@ export default function RootLayout({
           <FloatingActions />
           <Container>
             <div className="flex min-h-screen flex-col">
-              <MinimalHeader />
               <main className="flex-grow">{children}</main>
               <Analytics />
             </div>

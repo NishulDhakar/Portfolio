@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, type CSSProperties } from "react"
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 

@@ -1,7 +1,5 @@
 "use client";
-import { motion } from "motion/react";
-import React from "react";
-import { easeInOut } from "motion"; 
+import { motion } from "framer-motion"
 
 export const LoaderOne = () => {
   const transition = (x: number) => {
@@ -10,7 +8,7 @@ export const LoaderOne = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: easeInOut, 
+      ease: "easeInOut" as const,
     };
   };
   return (
@@ -44,7 +42,7 @@ export const LoaderTwo = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: easeInOut, // ✅ fixed
+      ease: "easeInOut" as const, // ✅ fixed
     };
   };
   return (
@@ -91,7 +89,7 @@ export const LoaderThree = () => {
         animate={{ pathLength: 1, fill: "var(--fill-final)" }}
         transition={{
           duration: 2,
-          ease: easeInOut, // ✅ fixed
+          ease: "easeInOut" as const, // ✅ fixed
           repeat: Infinity,
           repeatType: "reverse",
         }}
@@ -104,11 +102,11 @@ export const LoaderThree = () => {
 export const LoaderFour = ({ text = "Loading..." }: { text?: string }) => {
   return (
     <div className="relative font-bold text-black [perspective:1000px] dark:text-white">
-    <motion.div
-  initial={{ skewX: "0deg" }}
-  animate={{ skewX: "10deg" }}
-  transition={{ duration: 1 }}
->
+      <motion.div
+        initial={{ skewX: "0deg" }}
+        animate={{ skewX: "10deg" }}
+        transition={{ duration: 1 }}
+      >
         {text}
       </motion.div>
       <motion.span
@@ -122,7 +120,7 @@ export const LoaderFour = ({ text = "Loading..." }: { text?: string }) => {
           duration: 0.5,
           repeat: Infinity,
           repeatType: "reverse",
-          ease:easeInOut, 
+          ease: "easeInOut" as const,
           times: [0, 0.2, 0.5, 0.8, 1],
         }}
       >
@@ -139,7 +137,7 @@ export const LoaderFour = ({ text = "Loading..." }: { text?: string }) => {
           duration: 0.8,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: easeInOut,
+          ease: "easeInOut" as const,
           times: [0, 0.3, 0.6, 0.8, 1],
         }}
       >
@@ -171,7 +169,7 @@ export const LoaderFive = ({ text }: { text: string }) => {
             repeat: Infinity,
             repeatType: "loop",
             delay: i * 0.05,
-            ease: easeInOut, 
+            ease: "easeInOut" as const,
             repeatDelay: 2,
           }}
         >

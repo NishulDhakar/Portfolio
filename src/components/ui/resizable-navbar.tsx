@@ -4,7 +4,7 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   useScroll,
   useMotionValueEvent,
-} from "motion/react";
+} from "framer-motion";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -75,9 +75,9 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible },
-            )
+            child as React.ReactElement<{ visible?: boolean }>,
+            { visible },
+          )
           : child,
       )}
     </div>
@@ -100,7 +100,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const pathname = usePathname();
-  
+
   // Helper function to determine if a link is active
   const isActive = (path: string) => {
     if (path === '/') {
@@ -116,19 +116,18 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           key={`nav-${idx}`}
           className="transform transition-transform duration-500 hover:scale-105 active:scale-95"
         >
-          <Link 
+          <Link
             href={item.link}
             onClick={onItemClick}
-            className={`text-sm sm:text-md lg:text-lg font-[family-name:var(--font-instrument-serif)] hover:opacity-80 hover:underline transition-opacity duration-200 ${
-              isActive(item.link) ? 'opacity-100' : 'opacity-60'
-            }`}
+            className={`text-sm sm:text-md lg:text-lg font-[family-name:var(--font-instrument-serif)] hover:opacity-80 hover:underline transition-opacity duration-200 ${isActive(item.link) ? 'opacity-100' : 'opacity-60'
+              }`}
           >
             {item.name}
           </Link>
         </div>
       ))}
       <div className="transform transition-transform duration-400 hover:scale-105 active:scale-95">
-       <ThemeToggleButton variant="circle" start="top-right" blur />
+        <ThemeToggleButton variant="circle" start="top-right" blur />
       </div>
     </div>
   );
@@ -209,7 +208,7 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <div className="transform transition-transform duration-400 hover:scale-105 active:scale-95">
-      <Link 
+      <Link
         href="/"
         className="text-lg sm:text-xl font-[family-name:var(--font-instrument-serif)] font-medium hover:opacity-80 hover:underline transition-opacity duration-200"
       >
@@ -233,9 +232,9 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+    | React.ComponentPropsWithoutRef<"a">
+    | React.ComponentPropsWithoutRef<"button">
+  )) => {
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 

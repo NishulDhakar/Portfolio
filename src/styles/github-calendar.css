@@ -1,0 +1,53 @@
+/* Github Heatmap Colors - Grayscale */
+
+:root {
+    --color-github-0: #ebedf0;
+    --color-github-1: #ced4da;
+    --color-github-2: #adb5bd;
+    --color-github-3: #6c757d;
+    --color-github-4: #212529;
+}
+
+.dark {
+    --color-github-0: #161b22;
+    --color-github-1: #343a40;
+    --color-github-2: #6c757d;
+    --color-github-3: #adb5bd;
+    --color-github-4: #ced4da;
+}
+
+.react-calendar-heatmap text {
+    font-size: 10px;
+    fill: var(--color-github-3);
+    /* Muted labels */
+}
+
+.react-calendar-heatmap .react-calendar-heatmap-small-text {
+    font-size: 5px;
+}
+
+.react-calendar-heatmap rect:hover {
+    stroke: #555;
+    stroke-width: 1px;
+}
+
+/* Color Scales */
+.react-calendar-heatmap .color-empty {
+    fill: var(--color-github-0);
+}
+
+.react-calendar-heatmap .color-scale-1 {
+    fill: var(--color-github-1);
+}
+
+.react-calendar-heatmap .color-scale-2 {
+    fill: var(--color-github-2);
+}
+
+.react-calendar-heatmap .color-scale-3 {
+    fill: var(--color-github-3);
+}
+
+.react-calendar-heatmap .color-scale-4 {
+    fill: var(--color-github-4);
+}

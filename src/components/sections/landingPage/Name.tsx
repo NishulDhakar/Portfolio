@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { socialLinks } from "@/data/socialLinks";
+import { ThemeToggleButton } from "@/components/Theam/ThemeSwitch";
 
 export default function Name() {
   const { resolvedTheme } = useTheme();
@@ -36,27 +36,18 @@ export default function Name() {
 
       {/* Text Content */}
       <div className="flex flex-col w-full">
-        <p className="font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
-          Hey, Nishul here.
+        <p className="font-[family-name:var(--font-instrument-serif)] mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
+          Nishul Dhakar
         </p>
 
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Full Stack Developer
-        </p>
+        <span className="text-sm font-mono sm:text-sm text-muted-foreground leading-relaxed">
+          Engineer • Developer • Builder
+        </span>
+      </div>
 
-        <div className="flex mt-2 items-center gap-4 sm:gap-6">
-          {Object.entries(socialLinks).map(([name, { href, icon: Icon }]) => (
-            <a
-              key={name}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={name}
-              className="text-foreground dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
-            >
-              <Icon className="w-5 h-5" />
-            </a>
-          ))}
+      <div>
+        <div className="opacity-60 top-0 right-0 text-sm">
+          <ThemeToggleButton variant="circle" start="top-right" blur />
         </div>
       </div>
     </div>

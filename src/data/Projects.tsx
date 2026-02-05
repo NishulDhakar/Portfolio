@@ -19,6 +19,22 @@ export const projectsData: ProjectCardProps[] = [
   },
 
     {
+    title: "Simple Invest",
+    href: "https://invest.nishul.dev/",
+    github: "https://github.com/NishulDhakar/Simple-Invest",
+    description:
+      "A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
+    status: "running",
+    image: "/Projects/invest.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB",],
+    type: "Fullstack",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/projects/simple-invest",
+    // },
+  },
+
+    {
     title: "Job Hunting",
     href: "https://jobshunting.vercel.app/",
     github: "https://github.com/NishulDhakar/JobHunting",
@@ -34,6 +50,22 @@ export const projectsData: ProjectCardProps[] = [
     // },
   },
 
+    {
+    title: "PostaVid",
+    href: "https://playavid.vercel.app/",
+    github: "https://github.com/NishulDhakar/playavid",
+    description:
+      "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
+    status: "running",
+    image: "/Projects/share.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+    type: "Fullstack",
+    // viewDetails: {
+    //   type: "Details",
+    //   href: "/postavid",
+    // },
+  },
+  
   {
     title: "Uni Notes",
     href: "https://rgpvnotes.nishul.dev/",
@@ -95,39 +127,6 @@ export const projectsData: ProjectCardProps[] = [
   // },
 },
 
-
-
-  {
-    title: "Simple Invest",
-    href: "https://invest.nishul.dev/",
-    github: "https://github.com/NishulDhakar/Simple-Invest",
-    description:
-      "A simple investment tracker with real-time insights and automated email updates for market and watchlist stocks.",
-    status: "running",
-    image: "/Projects/invest.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Inngest", "MongoDB",],
-    type: "Fullstack",
-    // viewDetails: {
-    //   type: "Details",
-    //   href: "/projects/simple-invest",
-    // },
-  },
-
-  {
-    title: "PostaVid",
-    href: "https://playavid.vercel.app/",
-    github: "https://github.com/NishulDhakar/playavid",
-    description:
-      "A video-sharing platform where users can create accounts, upload, and share videos. Uses MongoDB and ImageKit for smooth video storage and streaming.",
-    status: "running",
-    image: "/Projects/share.jpeg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    type: "Fullstack",
-    // viewDetails: {
-    //   type: "Details",
-    //   href: "/postavid",
-    // },
-  },
 
 
 

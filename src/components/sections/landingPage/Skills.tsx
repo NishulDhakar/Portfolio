@@ -46,13 +46,13 @@ export default function TechSkills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="mb-6 sm:mb-8 md:mb-10 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-semibold text-foreground"
+          className="mb-6 sm:mb-8 md:mb-4 font-[family-name:var(--font-instrument-serif)] text-xl sm:text-2xl font-semibold text-foreground"
         >
           Skills
         </motion.h2>
 
         {/* Category Filter Pills */}
-        <div className="mb-6 sm:mb-8 -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="mb-6 sm:mb-8 mx-4 px-4 md:mx-0 md:px-0">
           <div className="flex flex-nowrap md:flex-wrap gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {categories.map((category, index) => {
               const isActive = activeCategory === category;
@@ -66,7 +66,6 @@ export default function TechSkills() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.2, delay: index * 0.03 }}
-                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setActiveCategory(category)}
                   className={cn(
@@ -78,7 +77,7 @@ export default function TechSkills() {
                 >
                   <CategoryIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-colors group-hover:text-foreground" />
 
-                  <span className="whitespace-nowrap">{label}</span>
+                  <span className="whitespace-nowrap text-xs sm:text-xs">{label}</span>
 
                   <span
                     className={cn(
@@ -116,12 +115,12 @@ export default function TechSkills() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2, delay: index * 0.02 }}
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
                     className="group"
                   >
                     <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-secondary/30 backdrop-blur-sm border border-border/50 hover:border-foreground/20 hover:bg-secondary/50 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 cursor-default shadow-sm group-hover:shadow-md">
                       <skill.icon className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors", skill.color)} />
-                      <span className="text-xs sm:text-sm font-mono text-foreground/90">
+                      <span className="text-xs sm:text-xs font-mono text-foreground/90">
                         {skill.name}
                       </span>
                     </div>
